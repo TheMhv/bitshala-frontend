@@ -16,7 +16,7 @@ import {
   IconButton,
   Tooltip,
 } from '@mui/material';
-import { BookOpen, User, Eye, Download, UserPlus, Clock, MessageSquare, CalendarPlus, Trophy } from 'lucide-react';
+import { BookOpen, User, Eye, Download, UserPlus, Clock, MessageSquare, CalendarPlus } from 'lucide-react';
 import { useMyCohorts, useCohorts, useJoinCohort, useJoinCohortWaitlist } from '../../hooks/cohortHooks';
 import apiService from '../../services/apiService';
 import { useUser } from '../../hooks/userHooks';
@@ -360,29 +360,10 @@ const MyStudentDashboard = () => {
             const row = cohort as DashboardCohortRow;
             const isJoining = loadingCohortId === row.id;
 
-            // Standings are public — no enrolment or account needed. Hidden for
-            // Upcoming cohorts, which have nothing to rank yet.
-            const leaderboardAction = row.status !== 'Upcoming' ? (
-              <Tooltip title="View leaderboard" arrow>
-                <IconButton
-                  size="small"
-                  onClick={() => navigate(`/results/${row.id}`)}
-                  sx={{
-                    color: '#facc15',
-                    bgcolor: 'rgba(250,204,21,0.1)',
-                    '&:hover': { bgcolor: 'rgba(250,204,21,0.2)' },
-                  }}
-                >
-                  <Trophy size={16} />
-                </IconButton>
-              </Tooltip>
-            ) : null;
-
             if (row.enrolled) {
               const certificate = myCertificates?.find((c) => c.cohortId === row.id);
               return (
                 <>
-                  {leaderboardAction}
                   <Tooltip title="View cohort details" arrow>
                     <IconButton
                       size="small"
@@ -460,7 +441,6 @@ const MyStudentDashboard = () => {
             if (row.registrationOpen) {
               return (
                 <>
-                {leaderboardAction}
                 <Button
                   size="small"
                   startIcon={
@@ -490,7 +470,6 @@ const MyStudentDashboard = () => {
 
             return (
               <>
-              {leaderboardAction}
               <Button
                 size="small"
                 startIcon={
