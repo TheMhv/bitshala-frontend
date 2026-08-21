@@ -255,7 +255,7 @@ const StudentDetailPage = () => {
                     Instructions
                   </Button>
                 )}
-                {cohortIdParam && (
+                {canViewOtherScores && cohortIdParam && (
                   <Button
                     variant="outlined"
                     size="small"
