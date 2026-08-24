@@ -29,13 +29,13 @@ import {
   BookOpen,
   BarChart3,
   Award,
-  FileCheck,
+  // FileCheck,
   FileText,
   ClipboardList,
   MessageSquare,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { useMyFellowships } from '../hooks/fellowshipHooks';
+// import { useMyFellowships } from '../hooks/fellowshipHooks';
 import { useUser } from '../hooks/userHooks';
 import { useAuth } from '../hooks/useAuth';
 import { UserRole } from '../types/enums';
@@ -69,15 +69,17 @@ const instructionLinks = [
 
 // The apply form has no sidebar entry — it opens from the Apply button on
 // the My Applications page.
-const baseFellowshipStudentLinks: NavItem[] = [
-  { label: 'My Applications', path: '/fellowship/applications', icon: ClipboardList },
-];
+//
+// const baseFellowshipStudentLinks: NavItem[] = [
+//   { label: 'My Applications', path: '/fellowship/applications', icon: ClipboardList },
+// ];
 
 // Shown only once an application is approved (i.e. a fellowship exists).
-const awardedFellowshipStudentLinks: NavItem[] = [
-  { label: 'My Fellowships', path: '/fellowship/me', icon: Award },
-  { label: 'My Reports', path: '/fellowship/reports', icon: FileCheck },
-];
+//
+// const awardedFellowshipStudentLinks: NavItem[] = [
+//   { label: 'My Fellowships', path: '/fellowship/me', icon: Award },
+//   { label: 'My Reports', path: '/fellowship/reports', icon: FileCheck },
+// ];
 
 const adminFellowshipLinks = [
   { label: 'Applications', path: '/admin/fellowships/applications', icon: FileText },
@@ -181,21 +183,23 @@ const Sidebar = () => {
 
   // My Fellowships / My Reports only make sense once an application has been
   // approved — approval is what creates the user's first fellowship.
-  const myFellowshipsQuery = useMyFellowships({ page: 0, pageSize: 1 }, { enabled: isAuthenticated });
-  const hasFellowship = (myFellowshipsQuery.data?.totalRecords ?? 0) > 0;
-  const fellowshipStudentLinks = hasFellowship
-    ? [...baseFellowshipStudentLinks, ...awardedFellowshipStudentLinks]
-    : baseFellowshipStudentLinks;
+  //
+  // const myFellowshipsQuery = useMyFellowships({ page: 0, pageSize: 1 }, { enabled: isAuthenticated });
+  // const hasFellowship = (myFellowshipsQuery.data?.totalRecords ?? 0) > 0;
+  // const fellowshipStudentLinks = hasFellowship
+  //   ? [...baseFellowshipStudentLinks, ...awardedFellowshipStudentLinks]
+  //   : baseFellowshipStudentLinks;
 
   const isActive = (path: string) => location.pathname === path;
 
   // The apply form opens from the My Applications page (it has no sidebar
   // entry of its own), so it keeps that link highlighted.
-  const isStudentLinkActive = (path: string) =>
-    isActive(path) ||
-    (path === '/fellowship/applications' &&
-      (location.pathname === '/fellowship' ||
-        location.pathname.startsWith('/fellowship/apply')));
+  //
+  // const isStudentLinkActive = (path: string) =>
+  //   isActive(path) ||
+  //   (path === '/fellowship/applications' &&
+  //     (location.pathname === '/fellowship' ||
+  //       location.pathname.startsWith('/fellowship/apply')));
 
   const fellowshipsSectionActive =
     location.pathname.startsWith('/fellowship') ||
@@ -291,63 +295,66 @@ const Sidebar = () => {
 
         <Divider sx={{ borderColor: '#27272a', my: 1.5 }} />
 
-        <List disablePadding>
-          <Box
-            ref={fellowshipsAnchorRef}
-            onMouseEnter={() => collapsed && openFellowshipsHover()}
-            onMouseLeave={() => collapsed && closeFellowshipsHover()}
-          >
-            <ListItemButton
-              onClick={() =>
-                collapsed
-                  ? navigate('/fellowship/applications')
-                  : setFellowshipsOpen((o) => !o)
-              }
-              sx={{
-                borderRadius: 1.5,
-                py: 1.25,
-                px: collapsed ? 0 : 2,
-                justifyContent: collapsed ? 'center' : 'flex-start',
-                minHeight: 44,
-                ...(fellowshipsSectionActive ? activeItemSx : inactiveItemSx),
-              }}
-            >
-              {collapsed ? (
-                <ListItemIcon sx={{ minWidth: 0, color: 'inherit', justifyContent: 'center' }}>
-                  <Award size={20} strokeWidth={fellowshipsSectionActive ? 2.2 : 1.8} />
-                </ListItemIcon>
-              ) : (
-                <>
-                  <ListItemText
-                    primary="Fellowships"
-                    primaryTypographyProps={{ fontSize: '0.875rem', fontWeight: 500 }}
-                  />
-                  {fellowshipsOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                </>
-              )}
-            </ListItemButton>
-          </Box>
 
-          {collapsed && (
-            <Popper
-              open={fellowshipsHover}
-              anchorEl={fellowshipsAnchorRef.current}
-              placement="right-start"
-              sx={{ zIndex: 1300 }}
+        {isAdmin && (
+          <>
+          <List disablePadding>
+            <Box
+              ref={fellowshipsAnchorRef}
+              onMouseEnter={() => collapsed && openFellowshipsHover()}
+              onMouseLeave={() => collapsed && closeFellowshipsHover()}
             >
-              <Paper
-                onMouseEnter={openFellowshipsHover}
-                onMouseLeave={closeFellowshipsHover}
+              <ListItemButton
+                onClick={() =>
+                  collapsed
+                    ? navigate('/fellowship/applications')
+                    : setFellowshipsOpen((o) => !o)
+                }
                 sx={{
-                  bgcolor: '#1c1c1f',
-                  border: '1px solid #27272a',
                   borderRadius: 1.5,
-                  py: 0.5,
-                  ml: 0,
-                  minWidth: 200,
+                  py: 1.25,
+                  px: collapsed ? 0 : 2,
+                  justifyContent: collapsed ? 'center' : 'flex-start',
+                  minHeight: 44,
+                  ...(fellowshipsSectionActive ? activeItemSx : inactiveItemSx),
                 }}
               >
-                {fellowshipStudentLinks.map((link) => {
+                {collapsed ? (
+                  <ListItemIcon sx={{ minWidth: 0, color: 'inherit', justifyContent: 'center' }}>
+                    <Award size={20} strokeWidth={fellowshipsSectionActive ? 2.2 : 1.8} />
+                  </ListItemIcon>
+                ) : (
+                  <>
+                    <ListItemText
+                      primary="Fellowships"
+                      primaryTypographyProps={{ fontSize: '0.875rem', fontWeight: 500 }}
+                    />
+                    {fellowshipsOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                  </>
+                )}
+              </ListItemButton>
+            </Box>
+
+            {collapsed && (
+              <Popper
+                open={fellowshipsHover}
+                anchorEl={fellowshipsAnchorRef.current}
+                placement="right-start"
+                sx={{ zIndex: 1300 }}
+              >
+                <Paper
+                  onMouseEnter={openFellowshipsHover}
+                  onMouseLeave={closeFellowshipsHover}
+                  sx={{
+                    bgcolor: '#1c1c1f',
+                    border: '1px solid #27272a',
+                    borderRadius: 1.5,
+                    py: 0.5,
+                    ml: 0,
+                    minWidth: 200,
+                  }}
+                >
+                  {/*{fellowshipStudentLinks.map((link) => {
                   const active = isStudentLinkActive(link.path);
                   const Icon = link.icon;
                   return (
@@ -372,63 +379,63 @@ const Sidebar = () => {
                       </Typography>
                     </ListItemButton>
                   );
-                })}
-                {isAdmin && (
-                  <>
-                    <Divider sx={{ borderColor: '#27272a', my: 0.5 }} />
-                    <Typography
-                      sx={{
-                        px: 2,
-                        pt: 0.5,
-                        pb: 0.25,
-                        fontSize: '0.65rem',
-                        fontWeight: 700,
-                        color: '#52525b',
-                        textTransform: 'uppercase',
-                        letterSpacing: 0.6,
-                      }}
-                    >
-                      Admin
-                    </Typography>
-                    {adminFellowshipLinks.map((link) => {
-                      const active = isActive(link.path);
-                      const Icon = link.icon;
-                      return (
-                        <ListItemButton
-                          key={link.path}
-                          onClick={() => {
-                            navigate(link.path);
-                            setFellowshipsHover(false);
-                          }}
-                          sx={{
-                            py: 0.75,
-                            px: 2,
-                            gap: 1,
-                            ...(active
-                              ? { color: '#fb923c', bgcolor: 'rgba(249,115,22,0.08)', '&:hover': { bgcolor: 'rgba(249,115,22,0.12)' } }
-                              : { color: '#a1a1aa', '&:hover': { color: '#e4e4e7', bgcolor: 'rgba(255,255,255,0.04)' } }),
-                          }}
-                        >
-                          <Icon size={15} />
-                          <Typography sx={{ fontSize: '0.8rem', fontWeight: 500 }}>
-                            {link.label}
-                          </Typography>
-                        </ListItemButton>
-                      );
-                    })}
-                  </>
-                )}
-              </Paper>
-            </Popper>
-          )}
+                })}*/}
+                  {isAdmin && (
+                    <>
+                      <Divider sx={{ borderColor: '#27272a', my: 0.5 }} />
+                      <Typography
+                        sx={{
+                          px: 2,
+                          pt: 0.5,
+                          pb: 0.25,
+                          fontSize: '0.65rem',
+                          fontWeight: 700,
+                          color: '#52525b',
+                          textTransform: 'uppercase',
+                          letterSpacing: 0.6,
+                        }}
+                      >
+                        Admin
+                      </Typography>
+                      {adminFellowshipLinks.map((link) => {
+                        const active = isActive(link.path);
+                        const Icon = link.icon;
+                        return (
+                          <ListItemButton
+                            key={link.path}
+                            onClick={() => {
+                              navigate(link.path);
+                              setFellowshipsHover(false);
+                            }}
+                            sx={{
+                              py: 0.75,
+                              px: 2,
+                              gap: 1,
+                              ...(active
+                                ? { color: '#fb923c', bgcolor: 'rgba(249,115,22,0.08)', '&:hover': { bgcolor: 'rgba(249,115,22,0.12)' } }
+                                : { color: '#a1a1aa', '&:hover': { color: '#e4e4e7', bgcolor: 'rgba(255,255,255,0.04)' } }),
+                            }}
+                          >
+                            <Icon size={15} />
+                            <Typography sx={{ fontSize: '0.8rem', fontWeight: 500 }}>
+                              {link.label}
+                            </Typography>
+                          </ListItemButton>
+                        );
+                      })}
+                    </>
+                  )}
+                </Paper>
+              </Popper>
+            )}
 
-          {!collapsed && (
-            <Collapse in={fellowshipsOpen} timeout="auto" unmountOnExit>
-              <List
-                disablePadding
-                sx={{ pl: 2.5, borderLeft: '1px solid #3f3f46', ml: 3, mt: 0.5 }}
-              >
-                {fellowshipStudentLinks.map((link) => {
+            {!collapsed && (
+              <Collapse in={fellowshipsOpen} timeout="auto" unmountOnExit>
+                <List
+                  disablePadding
+                  sx={{ pl: 2.5, borderLeft: '1px solid #3f3f46', ml: 3, mt: 0.5 }}
+                >
+                  {/*{fellowshipStudentLinks.map((link) => {
                   const active = isStudentLinkActive(link.path);
                   return (
                     <ListItemButton
@@ -450,54 +457,57 @@ const Sidebar = () => {
                       />
                     </ListItemButton>
                   );
-                })}
-                {isAdmin && (
-                  <>
-                    <Typography
-                      sx={{
-                        px: 1.5,
-                        pt: 1,
-                        pb: 0.25,
-                        fontSize: '0.65rem',
-                        fontWeight: 700,
-                        color: '#52525b',
-                        textTransform: 'uppercase',
-                        letterSpacing: 0.6,
-                      }}
-                    >
-                      Admin
-                    </Typography>
-                    {adminFellowshipLinks.map((link) => {
-                      const active = isActive(link.path);
-                      return (
-                        <ListItemButton
-                          key={link.path}
-                          onClick={() => navigate(link.path)}
-                          sx={{
-                            borderRadius: 1,
-                            py: 1,
-                            px: 1.5,
-                            mb: 0.25,
-                            ...(active
-                              ? { color: '#fb923c', bgcolor: 'rgba(249,115,22,0.1)', '&:hover': { bgcolor: 'rgba(249,115,22,0.15)' } }
-                              : { color: '#a1a1aa', '&:hover': { color: '#e4e4e7', bgcolor: 'rgba(255,255,255,0.04)' } }),
-                          }}
-                        >
-                          <ListItemText
-                            primary={link.label}
-                            primaryTypographyProps={{ fontSize: '0.9rem', fontWeight: 500 }}
-                          />
-                        </ListItemButton>
-                      );
-                    })}
-                  </>
-                )}
-              </List>
-            </Collapse>
-          )}
-        </List>
+                })}*/}
+                  {isAdmin && (
+                    <>
+                      <Typography
+                        sx={{
+                          px: 1.5,
+                          pt: 1,
+                          pb: 0.25,
+                          fontSize: '0.65rem',
+                          fontWeight: 700,
+                          color: '#52525b',
+                          textTransform: 'uppercase',
+                          letterSpacing: 0.6,
+                        }}
+                      >
+                        Admin
+                      </Typography>
+                      {adminFellowshipLinks.map((link) => {
+                        const active = isActive(link.path);
+                        return (
+                          <ListItemButton
+                            key={link.path}
+                            onClick={() => navigate(link.path)}
+                            sx={{
+                              borderRadius: 1,
+                              py: 1,
+                              px: 1.5,
+                              mb: 0.25,
+                              ...(active
+                                ? { color: '#fb923c', bgcolor: 'rgba(249,115,22,0.1)', '&:hover': { bgcolor: 'rgba(249,115,22,0.15)' } }
+                                : { color: '#a1a1aa', '&:hover': { color: '#e4e4e7', bgcolor: 'rgba(255,255,255,0.04)' } }),
+                            }}
+                          >
+                            <ListItemText
+                              primary={link.label}
+                              primaryTypographyProps={{ fontSize: '0.9rem', fontWeight: 500 }}
+                            />
+                          </ListItemButton>
+                        );
+                      })}
+                    </>
+                  )}
+                </List>
+              </Collapse>
+            )}
+          </List>
 
-        <Divider sx={{ borderColor: '#27272a', my: 1.5 }} />
+          <Divider sx={{ borderColor: '#27272a', my: 1.5 }} />
+          </>
+        )}
+
 
         {/* Instructions Section */}
         <List disablePadding>
