@@ -55,7 +55,7 @@ const CohortInstructions: React.FC<CohortInstructionsProps> = ({ cohortType }) =
   const cohortName = cohortTypeToName(cohortType as CohortType);
   usePageMeta(
     cohortName,
-    `Week-by-week curriculum for the Bitshala ${cohortName} cohort — readings, discussion questions and exercises.`,
+    `Week-by-week curriculum for the Vinteum ${cohortName} cohort — readings, discussion questions and exercises.`,
   );
 
   useEffect(() => {

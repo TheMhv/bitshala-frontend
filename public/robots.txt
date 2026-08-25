@@ -28,4 +28,4 @@ Disallow: /cohortfeedback
 Disallow: /login
 Disallow: /unauthorized
 
-Sitemap: https://app.bitshala.org/sitemap.xml
+Sitemap: https://learning.vinteum.org/sitemap.xml

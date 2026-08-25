@@ -6,39 +6,39 @@
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://app.bitshala.org/</loc>
+    <loc>https://learning.vinteum.org/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://app.bitshala.org/myDashboard</loc>
+    <loc>https://learning.vinteum.org/myDashboard</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://app.bitshala.org/general-instructions</loc>
+    <loc>https://learning.vinteum.org/general-instructions</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://app.bitshala.org/mb-instructions</loc>
+    <loc>https://learning.vinteum.org/mb-instructions</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://app.bitshala.org/lbtcl-instructions</loc>
+    <loc>https://learning.vinteum.org/lbtcl-instructions</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://app.bitshala.org/ln-instructions</loc>
+    <loc>https://learning.vinteum.org/ln-instructions</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://app.bitshala.org/bpd-instructions</loc>
+    <loc>https://learning.vinteum.org/bpd-instructions</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://app.bitshala.org/pb-instructions</loc>
+    <loc>https://learning.vinteum.org/pb-instructions</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://app.bitshala.org/bbr-instructions</loc>
+    <loc>https://learning.vinteum.org/bbr-instructions</loc>
     <priority>0.8</priority>
   </url>
 </urlset>

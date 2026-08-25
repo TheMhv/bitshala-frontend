@@ -99,7 +99,7 @@ const CohortFeedback = () => {
                     Protocol Insights.
                 </h1>
                 <p className="mb-16" style={{ color: '#777', fontSize: '0.95rem', lineHeight: 1.6, maxWidth: 480 }}>
-                    Help us refine the Bitshala learning experience. Your feedback directly shapes the next iteration of Bitcoin protocol education.
+                    Help us refine the Vinteum learning experience. Your feedback directly shapes the next iteration of Bitcoin protocol education.
                 </p>
 
                 {/* Form */}

@@ -28,7 +28,7 @@ const MyCohortInstructions: React.FC = () => {
   usePageMeta(
     cohortData?.displayName,
     cohortData
-      ? `Week-by-week curriculum for the Bitshala ${cohortData.displayName} cohort.`
+      ? `Week-by-week curriculum for the Vinteum ${cohortData.displayName} cohort.`
       : undefined,
   );
 

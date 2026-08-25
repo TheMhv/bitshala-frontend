@@ -249,7 +249,7 @@ const Sidebar = () => {
       >
         {!collapsed && (
           <Typography variant="h6" sx={{ fontWeight: 700, color: '#fafafa', fontSize: '1.1rem' }}>
-            Bitshala
+            Vinteum
           </Typography>
         )}
         <IconButton onClick={toggleCollapse} size="small" sx={{ color: '#71717a', '&:hover': { color: '#d4d4d8', bgcolor: '#27272a' } }}>

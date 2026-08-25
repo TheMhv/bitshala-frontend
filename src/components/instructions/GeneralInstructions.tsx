@@ -73,7 +73,7 @@ const GeneralInstructions: React.FC = () => {
               fontSize: { xs: '2rem', sm: '2.5rem' },
             }}
           >
-            Welcome to Bitshala Cohort
+            Welcome to Vinteum Cohort
           </Typography>
           <Typography sx={{ color: '#a1a1aa', fontSize: '1.1rem', lineHeight: 1.7 }}>
             These general instructions are aimed at helping you navigate through the program successfully.
@@ -86,7 +86,7 @@ const GeneralInstructions: React.FC = () => {
           <Box>
             <SectionTitle>Introduction Session</SectionTitle>
             <Paragraph>
-              The program begins with an introductory session. This is an ice-breaker between participants and the Bitshala team where we share what to expect in the coming <Highlight>8 weeks</Highlight>. It would be a great place to introduce oneself, get to know each other, and discuss the course structure. We will also have an intro session by Bitshala Team on <Highlight>Bitcoin dev career</Highlight>!
+              The program begins with an introductory session. This is an ice-breaker between participants and the Vinteum team where we share what to expect in the coming <Highlight>8 weeks</Highlight>. It would be a great place to introduce oneself, get to know each other, and discuss the course structure. We will also have an intro session by Vinteum Team on <Highlight>Bitcoin dev career</Highlight>!
             </Paragraph>
           </Box>
 
@@ -98,7 +98,7 @@ const GeneralInstructions: React.FC = () => {
                 <Highlight color="#60a5fa">Discord</Highlight> will be the primary means of communication. We will host all our sessions, discussions and doubt clearing on Discord, every week at the same time and same day. This will also be visible over your google calendar. Participants are expected to attend every week. We allow <Highlight color="#4ade80">one absence</Highlight> for emergencies or previous conflicts. If you miss more than <Highlight color="#f87171">2 meetings</Highlight>, we advise you to re-join the next cohort. We do it every 2 months i.e. 8 weeks.
               </Paragraph>
               <Paragraph>
-                To begin with please introduce yourself at Bitshala Discord (in the <Highlight color="#60a5fa">#Intro channel</Highlight>). Say a little bit about yourself, what you do for work and something you do for fun. These groups work best when we get to know each other. If you don't want to use your personal photo as your icon, that is totally fine. Just please change it to a unique image.
+                To begin with please introduce yourself at Vinteum Discord (in the <Highlight color="#60a5fa">#👋intros</Highlight>). Say a little bit about yourself, what you do for work and something you do for fun. These groups work best when we get to know each other. If you don't want to use your personal photo as your icon, that is totally fine. Just please change it to a unique image.
               </Paragraph>
             </Box>
           </Box>

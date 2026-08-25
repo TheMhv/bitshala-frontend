@@ -167,7 +167,7 @@ export const ResultPage: React.FC = () => {
 
   usePageMeta(
     cohortName ? `${cohortName} leaderboard` : 'Leaderboard',
-    cohortName ? `Final standings for the ${cohortName} cohort at Bitshala.` : undefined,
+    cohortName ? `Final standings for the ${cohortName} cohort at Vinteum.` : undefined,
   );
 
   const [downloadingUserId, setDownloadingUserId] = useState<string | null>(null);

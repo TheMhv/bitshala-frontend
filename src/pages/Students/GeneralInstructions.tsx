@@ -29,7 +29,7 @@ const GeneralInstructions: React.FC = () => {
 
   usePageMeta(
     'General instructions',
-    'How Bitshala cohorts work — weekly structure, group discussions, exercises and grading.',
+    'How Vinteum cohorts work — weekly structure, group discussions, exercises and grading.',
   );
 
   // Set error if user doesn't have access

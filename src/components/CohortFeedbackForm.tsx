@@ -540,7 +540,7 @@ const CohortFeedbackForm = ({ cohorts, isLoading, onSubmit, preselectedCohortId 
       <div className="flex flex-col items-center gap-5 pt-6 pb-12">
         <p className="text-center text-xs" style={{ color: '#555', maxWidth: 400 }}>
           By submitting, you confirm that your feedback is constructive and intended
-          for the betterment of the Bitshala community.
+          for the betterment of the Vinteum community.
         </p>
         <button
           type="submit"

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const DEFAULT_TITLE = 'Bitshala Portal';
+const DEFAULT_TITLE = 'Vinteum Portal';
 
 /**
  * Sets the document title and meta description for a page.
@@ -13,7 +13,7 @@ const DEFAULT_TITLE = 'Bitshala Portal';
 export const usePageMeta = (title?: string, description?: string): void => {
   useEffect(() => {
     const previousTitle = document.title;
-    document.title = title ? `${title} · Bitshala` : DEFAULT_TITLE;
+    document.title = title ? `${title} · Vinteum` : DEFAULT_TITLE;
 
     const tag = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     const previousDescription = tag?.content;
