@@ -89,18 +89,18 @@ const ProfilePage: React.FC = () => {
 
   const profileInputs: FormInputProps[] = [
     { label: "Email", id: "email", value: profile.email, type: "email" },
-    { label: "Discord Username", id: "discordUsername", value: profile.discordUsername },
-    { label: "Discord Display Name", id: "discordGlobalName", value: profile.discordGlobalName },
-    { label: "Name", id: "name", value: profile.name },
-    { label: "Role", id: "role", value: profile.role },
+    { label: "Nome de usuário do Discord", id: "discordUsername", value: profile.discordUsername },
+    { label: "Nome no Discord", id: "discordGlobalName", value: profile.discordGlobalName },
+    { label: "Nome", id: "name", value: profile.name },
+    { label: "Cargo", id: "role", value: profile.role },
     { label: "GitHub", id: "githubProfileUrl", value: profile.githubProfileUrl, type: "url" },
-    { label: "Portfolio / Side Project", id: "portfolioUrl", value: profile.portfolioUrl, type: "url" },
+    { label: "Portfolio / Projeto Secundário", id: "portfolioUrl", value: profile.portfolioUrl, type: "url" },
     { label: "LinkedIn", id: "linkedinProfileUrl", value: profile.linkedinProfileUrl, type: "url" },
-    { label: "Location", id: "location", value: profile.location },
-    { label: "First Heard Bitcoin On", id: "firstHeardAboutBitcoinOn", value: profile.firstHeardAboutBitcoinOn },
-    { label: "Why Bitcoin", id: "whyBitcoin", value: profile.whyBitcoin },
-    { label: "Weekly Hours", id: "weeklyCohortCommitmentHours", value: profile.weeklyCohortCommitmentHours?.toString() || null, type: "number" },
-    { label: "Description", id: "description", value: profile.description, isTextarea: true },
+    { label: "Localização", id: "location", value: profile.location },
+    { label: "Ouvi falar de Bitcoin a primeira vez em", id: "firstHeardAboutBitcoinOn", value: profile.firstHeardAboutBitcoinOn },
+    { label: "Por que Bitcoin?", id: "whyBitcoin", value: profile.whyBitcoin },
+    { label: "Horas Semanais", id: "weeklyCohortCommitmentHours", value: profile.weeklyCohortCommitmentHours?.toString() || null, type: "number" },
+    { label: "Descrição", id: "description", value: profile.description, isTextarea: true },
     { label: "Background", id: "background", value: profile.background, isTextarea: true }
   ];
 
@@ -114,12 +114,12 @@ const ProfilePage: React.FC = () => {
     <div>
       <div className="min-h-screen bg-zinc-900 text-zinc-100 px-8 py-6" style={{ fontFamily: 'Inter, sans-serif' }}>
         <header className="flex justify-between items-center mb-6">
-          <h1 className="text-4xl font-bold mx-4">My Profile</h1>
+          <h1 className="text-4xl font-bold mx-4">Meu Perfil</h1>
           <button
             onClick={toggleEdit}
             className="bg-orange-600 mx-4 hover:bg-orange-700 px-4 py-2 border-none rounded-md transition-colors"
           >
-            {isEditing ? 'Save' : 'Edit'}
+            {isEditing ? 'Salvar' : 'Editar'}
           </button>
         </header>
 

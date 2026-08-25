@@ -40,7 +40,7 @@ interface UserProfile {
 }
 
 const SKILLS_OPTIONS = [
-  "No skills",
+  "Sem Habilidades",
   "Full-stack",
   "Front-end",
   "Back-end",
@@ -51,18 +51,18 @@ const SKILLS_OPTIONS = [
   "Python",
   "C++",
   "Golang",
-  "Graphic Design",
-  "Video Editing",
-  "Product Management",
-  "Accounting",
-  "Law",
-  "Sales",
-  "Business Operations",
-  "Others"
+  "Design Gráfico",
+  "Edição de Vídeo",
+  "Gestão de Produtos",
+  "Contabilidade",
+  "Advocacia",
+  "Vendas",
+  "Operações Empresariais",
+  "Outros"
 ];
 
 const BITCOIN_BOOKS_OPTIONS = [
-  "Haven't read any",
+  "Não li nenhum",
   "Mastering Bitcoin",
   "Mastering Lightning Network",
   "BPD",
@@ -73,7 +73,7 @@ const BITCOIN_BOOKS_OPTIONS = [
   "Sovereign Individual",
   "The Broken Money",
   "The Blocksize War",
-  "Others"
+  "Outros"
 ];
 
 const inputSx = {
@@ -171,22 +171,22 @@ const StudentProfileData: React.FC = () => {
     if (!profile) return;
 
     if (profile.skills.length === 0) {
-      setNotification({ show: true, message: 'Please select at least one skill', type: 'error' });
+      setNotification({ show: true, message: 'Por favor, selecione pelo menos uma habilidade', type: 'error' });
       return;
     }
 
     if (profile.bitcoinBooksRead.length === 0) {
-      setNotification({ show: true, message: 'Please select at least one book/resource', type: 'error' });
+      setNotification({ show: true, message: 'Por favor, selecione pelo menos um livro/recurso', type: 'error' });
       return;
     }
 
     updateUser(profile, {
       onSuccess: () => {
-        setNotification({ show: true, message: 'Profile updated successfully!', type: 'success' });
+        setNotification({ show: true, message: 'Perfil atualizado com sucesso!', type: 'success' });
         setTimeout(() => navigate('/myDashboard'), 1200);
       },
       onError: () => {
-        setNotification({ show: true, message: 'Error updating profile', type: 'error' });
+        setNotification({ show: true, message: 'Erro ao atualizar o perfil', type: 'error' });
       },
     });
   };
@@ -202,7 +202,7 @@ const StudentProfileData: React.FC = () => {
   if (!profile) {
     return (
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', bgcolor: '#000' }}>
-        <Typography sx={{ color: '#fafafa', fontWeight: 500 }}>Failed to load profile</Typography>
+        <Typography sx={{ color: '#fafafa', fontWeight: 500 }}>Falha ao carregar perfil</Typography>
       </Box>
     );
   }
@@ -211,20 +211,20 @@ const StudentProfileData: React.FC = () => {
     <Box sx={{ minHeight: '100vh', bgcolor: '#000', p: { xs: 2, sm: 3 } }}>
       <Box sx={{ maxWidth: 900, mx: 'auto' }}>
         <Typography variant="h4" sx={{ fontWeight: 700, color: '#fafafa', mb: 1, fontSize: { xs: '1.875rem', sm: '2.125rem' } }}>
-          Profile Data
+          Dados do perfil
         </Typography>
         <Typography sx={{ color: '#71717a', mb: 4, fontSize: '0.9rem' }}>
-          Keep your profile information up to date.
+          Mantenha suas informações de perfil atualizado.
         </Typography>
 
         <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
 
           {/* Section: Identity */}
           <Box sx={sectionSx}>
-            <Typography sx={{ fontWeight: 700, color: '#fafafa', fontSize: '1rem', mb: 3 }}>Identity</Typography>
+            <Typography sx={{ fontWeight: 700, color: '#fafafa', fontSize: '1rem', mb: 3 }}>Identidade</Typography>
             <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' }, gap: 3 }}>
               <Box>
-                <Typography variant="body2" sx={labelSx}>Certificate Name*</Typography>
+                <Typography variant="body2" sx={labelSx}>Nome no Certificado*</Typography>
                 <TextField
                   fullWidth
                   name="name"
@@ -232,13 +232,13 @@ const StudentProfileData: React.FC = () => {
                   onChange={handleInputChange}
                   required
                   size="small"
-                  placeholder="Your full name"
+                  placeholder="Seu nome completo"
                   sx={inputSx}
                 />
-                <Typography sx={hintSx}>This name will appear on your certificate.</Typography>
+                <Typography sx={hintSx}>Este nome vai aparecer no seu certificado.</Typography>
               </Box>
               <Box>
-                <Typography variant="body2" sx={labelSx}>Location*</Typography>
+                <Typography variant="body2" sx={labelSx}>Localização*</Typography>
                 <TextField
                   fullWidth
                   name="location"
@@ -246,7 +246,7 @@ const StudentProfileData: React.FC = () => {
                   onChange={handleInputChange}
                   required
                   size="small"
-                  placeholder="City, Country"
+                  placeholder="Cidade, País"
                   sx={inputSx}
                 />
               </Box>
@@ -262,7 +262,7 @@ const StudentProfileData: React.FC = () => {
                   size="small"
                   sx={inputSx}
                 />
-                <Typography sx={hintSx}>Use the email linked to your Discord so roles are assigned correctly.</Typography>
+                <Typography sx={hintSx}>Use o email vinculado à seu Discord para que os cargos vinculem corretamente.</Typography>
               </Box>
               <Box>
                 <Typography variant="body2" sx={labelSx}>GitHub*</Typography>
@@ -279,7 +279,7 @@ const StudentProfileData: React.FC = () => {
                 />
               </Box>
               <Box>
-                <Typography variant="body2" sx={labelSx}>Portfolio / Side Project</Typography>
+                <Typography variant="body2" sx={labelSx}>Portfolio / Projeto Secundário</Typography>
                 <TextField
                   fullWidth
                   name="portfolioUrl"
@@ -312,14 +312,14 @@ const StudentProfileData: React.FC = () => {
           {/* Section: Discord (read-only) */}
           <Box sx={sectionSx}>
             <Typography sx={{ fontWeight: 700, color: '#fafafa', fontSize: '1rem', mb: 0.5 }}>Discord</Typography>
-            <Typography sx={{ color: '#52525b', fontSize: '0.8rem', mb: 3 }}>Synced from your Discord account. These cannot be edited.</Typography>
+            <Typography sx={{ color: '#52525b', fontSize: '0.8rem', mb: 3 }}>Sincronizado com sua conta no Discord. Estes campos não podem ser alterados.</Typography>
             <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' }, gap: 3 }}>
               <Box>
-                <Typography variant="body2" sx={labelSx}>Username</Typography>
+                <Typography variant="body2" sx={labelSx}>Nome de Usuário</Typography>
                 <TextField fullWidth name="discordUsername" value={profile.discordUsername} disabled size="small" sx={inputSx} />
               </Box>
               <Box>
-                <Typography variant="body2" sx={labelSx}>Display Name</Typography>
+                <Typography variant="body2" sx={labelSx}>Nome de Perfil</Typography>
                 <TextField fullWidth name="discordGlobalName" value={profile.discordGlobalName} disabled size="small" sx={inputSx} />
               </Box>
             </Box>
@@ -327,10 +327,10 @@ const StudentProfileData: React.FC = () => {
 
           {/* Section: Cohort Details */}
           <Box sx={sectionSx}>
-            <Typography sx={{ fontWeight: 700, color: '#fafafa', fontSize: '1rem', mb: 3 }}>Cohort Details</Typography>
+            <Typography sx={{ fontWeight: 700, color: '#fafafa', fontSize: '1rem', mb: 3 }}>Detalhes do Cohort</Typography>
             <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' }, gap: 3 }}>
               <Box>
-                <Typography variant="body2" sx={labelSx}>Hours per week willing to dedicate?*</Typography>
+                <Typography variant="body2" sx={labelSx}>Horas por semana que está disposto a se dedicar?*</Typography>
                 <TextField
                   fullWidth
                   name="weeklyCohortCommitmentHours"
@@ -344,7 +344,7 @@ const StudentProfileData: React.FC = () => {
                 />
               </Box>
               <Box>
-                <Typography variant="body2" sx={labelSx}>When did you start taking Bitcoin seriously?*</Typography>
+                <Typography variant="body2" sx={labelSx}>Quando você começou a levar o Bitcoin à sério?*</Typography>
                 <TextField
                   fullWidth
                   name="firstHeardAboutBitcoinOn"
@@ -358,7 +358,7 @@ const StudentProfileData: React.FC = () => {
                 />
               </Box>
               <Box>
-                <Typography variant="body2" sx={labelSx}>Where did you hear about this cohort?*</Typography>
+                <Typography variant="body2" sx={labelSx}>Como ficou sabendo deste cohort?*</Typography>
                 <TextField
                   fullWidth
                   name="referral"
@@ -366,7 +366,7 @@ const StudentProfileData: React.FC = () => {
                   onChange={handleInputChange}
                   required
                   size="small"
-                  placeholder="e.g. Twitter, friend, blog..."
+                  placeholder="e.g. Twitter, amigo, blog..."
                   sx={inputSx}
                 />
               </Box>
@@ -375,10 +375,10 @@ const StudentProfileData: React.FC = () => {
 
           {/* Section: About You */}
           <Box sx={sectionSx}>
-            <Typography sx={{ fontWeight: 700, color: '#fafafa', fontSize: '1rem', mb: 3 }}>About You</Typography>
+            <Typography sx={{ fontWeight: 700, color: '#fafafa', fontSize: '1rem', mb: 3 }}>Sobre Você</Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
               <Box>
-                <Typography variant="body2" sx={labelSx}>How would you describe yourself?*</Typography>
+                <Typography variant="body2" sx={labelSx}>Como você se descreveria?*</Typography>
                 <TextField
                   fullWidth
                   name="description"
@@ -387,13 +387,13 @@ const StudentProfileData: React.FC = () => {
                   required
                   multiline
                   rows={3}
-                  placeholder="A short bio..."
+                  placeholder="Uma breve biografia..."
                   sx={inputSx}
                 />
               </Box>
               <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' }, gap: 3 }}>
                 <Box>
-                  <Typography variant="body2" sx={labelSx}>Why is Bitcoin important to you?*</Typography>
+                  <Typography variant="body2" sx={labelSx}>Por que o Bitcoin é importante para você?*</Typography>
                   <TextField
                     fullWidth
                     name="background"
@@ -406,7 +406,7 @@ const StudentProfileData: React.FC = () => {
                   />
                 </Box>
                 <Box>
-                  <Typography variant="body2" sx={labelSx}>What do you hope to achieve through this Cohort?*</Typography>
+                  <Typography variant="body2" sx={labelSx}>O que você espera alcançar com este Cohort?*</Typography>
                   <TextField
                     fullWidth
                     name="whyBitcoin"
@@ -424,10 +424,10 @@ const StudentProfileData: React.FC = () => {
 
           {/* Section: Skills & Reading */}
           <Box sx={sectionSx}>
-            <Typography sx={{ fontWeight: 700, color: '#fafafa', fontSize: '1rem', mb: 3 }}>Skills & Reading</Typography>
+            <Typography sx={{ fontWeight: 700, color: '#fafafa', fontSize: '1rem', mb: 3 }}>Habilidades & Leituras</Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
               <Box>
-                <Typography variant="body2" sx={labelSx}>Skills*</Typography>
+                <Typography variant="body2" sx={labelSx}>Habilidades*</Typography>
                 <Autocomplete
                   multiple
                   options={SKILLS_OPTIONS}
@@ -453,7 +453,7 @@ const StudentProfileData: React.FC = () => {
                     })
                   }
                   renderInput={(params) => (
-                    <TextField {...params} placeholder="Add a skill..." size="small" />
+                    <TextField {...params} placeholder="Adicionar uma habilidade..." size="small" />
                   )}
                   slotProps={{
                     paper: {
@@ -469,7 +469,7 @@ const StudentProfileData: React.FC = () => {
                 />
               </Box>
               <Box>
-                <Typography variant="body2" sx={labelSx}>Books / resources you've gone through*</Typography>
+                <Typography variant="body2" sx={labelSx}>Livros / recursos que você consultou ou estudou*</Typography>
                 <Autocomplete
                   multiple
                   options={BITCOIN_BOOKS_OPTIONS}
@@ -495,7 +495,7 @@ const StudentProfileData: React.FC = () => {
                     })
                   }
                   renderInput={(params) => (
-                    <TextField {...params} placeholder="Add a book..." size="small" />
+                    <TextField {...params} placeholder="Adicionar um livro..." size="small" />
                   )}
                   slotProps={{
                     paper: {
@@ -533,7 +533,7 @@ const StudentProfileData: React.FC = () => {
                 '&.Mui-disabled': { bgcolor: '#ea580c', opacity: 0.6, color: '#fff' },
               }}
             >
-              {isUpdating ? 'Updating...' : 'Update Profile'}
+              {isUpdating ? 'Atualizando...' : 'Atualizar Perfil'}
             </Button>
           </Box>
         </Box>
@@ -552,12 +552,12 @@ const StudentProfileData: React.FC = () => {
             <AlertTriangle size={32} color="#f97316" />
           </Box>
           <Typography variant="h6" sx={{ fontWeight: 700, color: '#fafafa' }}>
-            Information Required
+            Informações Necessárias
           </Typography>
         </DialogTitle>
         <DialogContent>
           <Typography variant="body2" sx={{ color: '#d4d4d8' }}>
-            Please fill in your profile information to join a cohort
+            Por favor, preencha as informações do seu perfil para participar de uma turma.
           </Typography>
         </DialogContent>
         <DialogActions sx={{ justifyContent: 'center', pb: 3 }}>
@@ -565,7 +565,7 @@ const StudentProfileData: React.FC = () => {
             onClick={() => setShowEmailPopup(false)}
             sx={{ color: '#fafafa', bgcolor: '#3f3f46', textTransform: 'none', fontWeight: 600, px: 4, '&:hover': { bgcolor: '#52525b' } }}
           >
-            Got it
+            Entendi
           </Button>
         </DialogActions>
       </Dialog>
