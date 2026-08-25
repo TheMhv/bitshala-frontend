@@ -198,8 +198,8 @@ const DebugErrorPage = ({ error, componentStack, onReset }: DebugErrorPageProps)
       sx={{
         minHeight: '100vh',
         bgcolor: '#0e0e10',
-        color: '#fafafa',
-        fontFamily: 'Inter, ui-sans-serif, system-ui, sans-serif',
+        color: '#F7F7F5',
+        fontFamily: 'Sora, ui-sans-serif, system-ui, sans-serif',
         px: { xs: 2, md: 4 },
         py: { xs: 3, md: 5 },
       }}
@@ -239,7 +239,7 @@ const DebugErrorPage = ({ error, componentStack, onReset }: DebugErrorPageProps)
                   sx={{
                     bgcolor: 'rgba(248,113,113,0.12)',
                     color: '#fca5a5',
-                    fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+                    fontFamily: 'Sora, ui-monospace, SFMono-Regular, Menlo, monospace',
                     fontSize: '0.72rem',
                     fontWeight: 600,
                     border: '1px solid rgba(248,113,113,0.25)',
@@ -249,7 +249,7 @@ const DebugErrorPage = ({ error, componentStack, onReset }: DebugErrorPageProps)
             </Stack>
             <Typography
               sx={{
-                fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+                fontFamily: 'Sora, ui-monospace, SFMono-Regular, Menlo, monospace',
                 fontSize: '0.95rem',
                 color: '#fafafa',
                 whiteSpace: 'pre-wrap',
@@ -372,7 +372,7 @@ const DebugErrorPage = ({ error, componentStack, onReset }: DebugErrorPageProps)
                   border: '1px solid #27272a',
                   borderRadius: 0.5,
                   color: '#d4d4d8',
-                  fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+                  fontFamily: 'Sora, ui-monospace, SFMono-Regular, Menlo, monospace',
                   fontSize: '0.78rem',
                   lineHeight: 1.55,
                   overflowX: 'auto',
@@ -405,7 +405,7 @@ const DebugErrorPage = ({ error, componentStack, onReset }: DebugErrorPageProps)
                 border: '1px solid #27272a',
                 borderRadius: 0.5,
                 color: '#a1a1aa',
-                fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+                fontFamily: 'Sora, ui-monospace, SFMono-Regular, Menlo, monospace',
                 fontSize: '0.74rem',
                 lineHeight: 1.5,
                 overflowX: 'auto',
@@ -503,7 +503,7 @@ const FrameRow = ({ frame, highlight }: { frame: Frame; highlight?: boolean }) =
       <Box sx={{ minWidth: 0, flex: 1 }}>
         <Typography
           sx={{
-            fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+            fontFamily: 'Sora, ui-monospace, SFMono-Regular, Menlo, monospace',
             fontSize: '0.82rem',
             color: '#e4e4e7',
             fontWeight: 600,
@@ -516,7 +516,7 @@ const FrameRow = ({ frame, highlight }: { frame: Frame; highlight?: boolean }) =
         </Typography>
         <Typography
           sx={{
-            fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+            fontFamily: 'Sora, ui-monospace, SFMono-Regular, Menlo, monospace',
             fontSize: '0.72rem',
             color: '#71717a',
             overflow: 'hidden',

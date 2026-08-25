@@ -112,7 +112,7 @@ const ProfilePage: React.FC = () => {
 
   return (
     <div>
-      <div className="min-h-screen bg-zinc-900 text-zinc-100 px-8 py-6" style={{ fontFamily: 'Inter, sans-serif' }}>
+      <div className="min-h-screen bg-zinc-900 text-zinc-100 px-8 py-6" style={{ fontFamily: 'Sora, sans-serif' }}>
         <header className="flex justify-between items-center mb-6">
           <h1 className="text-4xl font-bold mx-4">Meu Perfil</h1>
           <button

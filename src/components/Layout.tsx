@@ -30,7 +30,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <Box sx={{ display: 'flex', height: '100vh' }}>
       <Sidebar />
-      <Box component="main" sx={{ flex: 1, overflow: 'auto' }}>
+      <Box component="main" sx={{ flex: 1, overflow: 'auto', fontFamily: 'Sora, sans-serif'}}>
         <Suspense fallback={<PageFallback />}>{children}</Suspense>
       </Box>
       {/* Rendered here so it overlays whichever page you were on. */}

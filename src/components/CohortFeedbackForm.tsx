@@ -199,7 +199,7 @@ const CohortFeedbackForm = ({ cohorts, isLoading, onSubmit, preselectedCohortId 
     boxSizing: 'border-box',
     display: 'block',
     resize: 'none',
-    fontFamily: 'Inter, sans-serif',
+    fontFamily: 'Sora, sans-serif',
   };
 
   return (
@@ -247,7 +247,7 @@ const CohortFeedbackForm = ({ cohorts, isLoading, onSubmit, preselectedCohortId 
                     appearance: 'none',
                     WebkitAppearance: 'none',
                     colorScheme: 'dark',
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'Sora, sans-serif',
                   }}
                   required
                 >

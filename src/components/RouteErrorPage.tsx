@@ -27,8 +27,8 @@ const RouteErrorPage = () => {
         justifyContent: 'center',
         padding: 24,
         background: '#0e0e10',
-        fontFamily: 'Inter, system-ui, sans-serif',
-        color: '#fafafa',
+        fontFamily: 'Sora, system-ui, sans-serif',
+        color: '#F7F7F5',
       }}
     >
       <div style={{ textAlign: 'center', maxWidth: 460 }}>

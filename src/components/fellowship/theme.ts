@@ -7,7 +7,7 @@ const ORANGE_LIGHT = '#fb923c';
 // Single source of truth for monospace text in fellowship UI.
 // Convention: mono = dates, handles, amounts, counts; Inter = everything else.
 export const fontFamilyMono =
-  'ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace';
+  'Sora, ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace';
 
 export const fellowshipDarkTheme = createTheme({
   palette: {
@@ -33,7 +33,7 @@ export const fellowshipDarkTheme = createTheme({
     info: { main: '#60a5fa' },
   },
   typography: {
-    fontFamily: 'Inter, sans-serif',
+    fontFamily: 'Sora, sans-serif',
     button: { textTransform: 'none', fontWeight: 600 },
   },
   shape: {
@@ -127,7 +127,7 @@ export const fellowshipLightTheme = createTheme({
     info: { main: '#2563eb' },
   },
   typography: {
-    fontFamily: 'Inter, sans-serif',
+    fontFamily: 'Sora, sans-serif',
     button: { textTransform: 'none', fontWeight: 600 },
   },
   shape: {
