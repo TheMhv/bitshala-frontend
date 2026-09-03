@@ -31,7 +31,7 @@ interface StudentTableGridProps {
 }
 
 const headerSx = {
-  backgroundColor: '#fed7aa',
+  backgroundColor: '#09BA5B',
   color: '#3f3f46',
   fontWeight: 600,
   fontSize: '0.75rem',

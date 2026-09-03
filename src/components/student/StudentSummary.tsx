@@ -17,7 +17,7 @@ interface StudentSummaryProps {
 const getColor = (pct: number): string => {
   if (pct >= 80) return '#4ade80';
   if (pct >= 60) return '#facc15';
-  if (pct >= 40) return '#fb923c';
+  if (pct >= 40) return '#09BA5B';
   return '#f87171';
 };
 
@@ -59,7 +59,7 @@ export const StudentSummary = ({ stats, hasExercises = true }: StudentSummaryPro
               {item.value}
             </Typography>
             {item.sub && (
-              <Typography variant="caption" sx={{ color: '#71717a' }}>
+              <Typography variant="caption" sx={{ color: '#BFBEC2' }}>
                 ({item.sub})
               </Typography>
             )}

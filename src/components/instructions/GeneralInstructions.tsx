@@ -6,14 +6,14 @@ import { ArrowLeft } from 'lucide-react';
 const SectionTitle = ({ children }: { children: React.ReactNode }) => (
   <Typography
     variant="h5"
-    sx={{ fontWeight: 700, color: '#fb923c', mb: 2, fontSize: { xs: '1.4rem', sm: '1.65rem' } }}
+    sx={{ fontWeight: 700, color: '#09BA5B', mb: 2, fontSize: { xs: '1.4rem', sm: '1.65rem' } }}
   >
     {children}
   </Typography>
 );
 
 const SubTitle = ({ children }: { children: React.ReactNode }) => (
-  <Typography sx={{ fontWeight: 600, color: '#fafafa', mb: 1, fontSize: '1.1rem' }}>
+  <Typography sx={{ fontWeight: 600, color: '#F7F7F5', mb: 1, fontSize: '1.1rem' }}>
     {children}
   </Typography>
 );
@@ -24,13 +24,13 @@ const Paragraph = ({ children }: { children: React.ReactNode }) => (
   </Typography>
 );
 
-const Highlight = ({ children, color = '#fb923c' }: { children: React.ReactNode; color?: string }) => (
+const Highlight = ({ children, color = '#09BA5B' }: { children: React.ReactNode; color?: string }) => (
   <Box component="span" sx={{ color, fontWeight: 600 }}>
     {children}
   </Box>
 );
 
-const BulletItem = ({ children, color = '#fb923c' }: { children: React.ReactNode; color?: string }) => (
+const BulletItem = ({ children, color = '#09BA5B' }: { children: React.ReactNode; color?: string }) => (
   <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5, mb: 1 }}>
     <Typography sx={{ color, fontSize: '1rem', lineHeight: 1.8, flexShrink: 0 }}>•</Typography>
     <Typography sx={{ color: '#d4d4d8', fontSize: '1rem', lineHeight: 1.8 }}>{children}</Typography>
@@ -44,7 +44,7 @@ const GeneralInstructions: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: '#000', color: '#fafafa' }}>
+    <Box sx={{ minHeight: '100vh', bgcolor: 'rgba(5, 23, 20, 1)', color: '#F7F7F5' }}>
       <Box sx={{ maxWidth: 900, mx: 'auto', px: { xs: 2, sm: 4, md: 6 }, py: { xs: 3, sm: 5 } }}>
         {/* Back button */}
         <Button
@@ -56,7 +56,7 @@ const GeneralInstructions: React.FC = () => {
             fontWeight: 500,
             mb: 4,
             px: 1.5,
-            '&:hover': { color: '#fafafa', bgcolor: 'rgba(255,255,255,0.05)' },
+            '&:hover': { color: '#F7F7F5', bgcolor: 'rgba(255,255,255,0.05)' },
           }}
         >
           Back
@@ -68,7 +68,7 @@ const GeneralInstructions: React.FC = () => {
             variant="h3"
             sx={{
               fontWeight: 800,
-              color: '#fb923c',
+              color: '#09BA5B',
               mb: 2,
               fontSize: { xs: '2rem', sm: '2.5rem' },
             }}
@@ -95,10 +95,10 @@ const GeneralInstructions: React.FC = () => {
             <SectionTitle>Communication & Attendance</SectionTitle>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
               <Paragraph>
-                <Highlight color="#60a5fa">Discord</Highlight> will be the primary means of communication. We will host all our sessions, discussions and doubt clearing on Discord, every week at the same time and same day. This will also be visible over your google calendar. Participants are expected to attend every week. We allow <Highlight color="#4ade80">one absence</Highlight> for emergencies or previous conflicts. If you miss more than <Highlight color="#f87171">2 meetings</Highlight>, we advise you to re-join the next cohort. We do it every 2 months i.e. 8 weeks.
+                <Highlight color="#09BA5B">Discord</Highlight> will be the primary means of communication. We will host all our sessions, discussions and doubt clearing on Discord, every week at the same time and same day. This will also be visible over your google calendar. Participants are expected to attend every week. We allow <Highlight color="#4ade80">one absence</Highlight> for emergencies or previous conflicts. If you miss more than <Highlight color="#f87171">2 meetings</Highlight>, we advise you to re-join the next cohort. We do it every 2 months i.e. 8 weeks.
               </Paragraph>
               <Paragraph>
-                To begin with please introduce yourself at Vinteum Discord (in the <Highlight color="#60a5fa">#👋intros</Highlight>). Say a little bit about yourself, what you do for work and something you do for fun. These groups work best when we get to know each other. If you don't want to use your personal photo as your icon, that is totally fine. Just please change it to a unique image.
+                To begin with please introduce yourself at Vinteum Discord (in the <Highlight color="#09BA5B">#👋intros</Highlight>). Say a little bit about yourself, what you do for work and something you do for fun. These groups work best when we get to know each other. If you don't want to use your personal photo as your icon, that is totally fine. Just please change it to a unique image.
               </Paragraph>
             </Box>
           </Box>
@@ -136,9 +136,9 @@ const GeneralInstructions: React.FC = () => {
             <SubTitle>60-Minute Group Discussion</SubTitle>
             <Box sx={{ pl: 1 }}>
               <BulletItem color="#4ade80">All the participants will show up in one voice channel with the Teaching Assistants (TAs)</BulletItem>
-              <BulletItem color="#60a5fa">Questions will be allocated to participants within each group, with priority given to registered participants</BulletItem>
+              <BulletItem color="#09BA5B">Questions will be allocated to participants within each group, with priority given to registered participants</BulletItem>
               <BulletItem color="#a78bfa">TAs will facilitate the discussion, assess answers, and provide feedback</BulletItem>
-              <BulletItem color="#fb923c">Participants can seek clarification on concepts and exercises from the chapter</BulletItem>
+              <BulletItem color="#09BA5B">Participants can seek clarification on concepts and exercises from the chapter</BulletItem>
             </Box>
           </Box>
 
@@ -156,8 +156,8 @@ const GeneralInstructions: React.FC = () => {
                   <BulletItem color="#4ade80">
                     <Highlight color="#4ade80">Attendance Tracking</Highlight> — Every week, if you attend you are marked <Highlight color="#4ade80">Present</Highlight>. If you do not attend, you are marked <Highlight color="#f87171">Absent</Highlight>.
                   </BulletItem>
-                  <BulletItem color="#60a5fa">
-                    <Highlight color="#60a5fa">Group Assignment</Highlight> — Based on the previous week's attendance, TAs assign present participants into groups using our custom grouping logic.
+                  <BulletItem color="#09BA5B">
+                    <Highlight color="#09BA5B">Group Assignment</Highlight> — Based on the previous week's attendance, TAs assign present participants into groups using our custom grouping logic.
                   </BulletItem>
                   <BulletItem color="#f87171">
                     <Highlight color="#f87171">Group 0 (Unassigned)</Highlight> — Absent participants are placed into <Highlight color="#f87171">Group 0</Highlight> by default. They are free to join any group TAs assign them to, but they <Highlight>must notify the TAs</Highlight>.
@@ -194,7 +194,7 @@ const GeneralInstructions: React.FC = () => {
                 <SubTitle>Performance Profiling</SubTitle>
                 <Box sx={{ pl: 1 }}>
                   <BulletItem color="#4ade80">Profiles will include strengths, areas for improvement, and overall progress.</BulletItem>
-                  <BulletItem color="#60a5fa">These profiles will serve as feedback for the participants and guide TAs in providing targeted support.</BulletItem>
+                  <BulletItem color="#09BA5B">These profiles will serve as feedback for the participants and guide TAs in providing targeted support.</BulletItem>
                 </Box>
               </Box>
 
@@ -213,7 +213,7 @@ const GeneralInstructions: React.FC = () => {
             <Box sx={{ pl: 1 }}>
               <BulletItem color="#4ade80">Non-registered participants are encouraged to join and benefit from the discussions.</BulletItem>
               <BulletItem color="#f87171">However, they will not be profiled, graded, or eligible for completion certificates.</BulletItem>
-              <BulletItem color="#60a5fa">Priority to answer questions will be given to registered participants.</BulletItem>
+              <BulletItem color="#09BA5B">Priority to answer questions will be given to registered participants.</BulletItem>
             </Box>
           </Box>
         </Box>

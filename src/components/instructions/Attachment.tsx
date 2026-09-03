@@ -50,7 +50,7 @@ const Attachment: React.FC<AttachmentProps> = ({ filename, url, imgSx }) => {
   }
 
   return (
-    <Link href={url} target="_blank" rel="noopener noreferrer" sx={{ color: '#60a5fa', fontSize: '0.9rem' }}>
+    <Link href={url} target="_blank" rel="noopener noreferrer" sx={{ color: '#09BA5B', fontSize: '0.9rem' }}>
       {filename}
     </Link>
   );

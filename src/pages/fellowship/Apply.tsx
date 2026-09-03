@@ -1248,17 +1248,17 @@ const TrackStep = ({
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  bgcolor: active ? 'rgba(249,115,22,0.12)' : 'rgba(255,255,255,0.04)',
+                  bgcolor: active ? '#0B2E28' : '#0B2E28',
                   border: '1px solid',
                   borderColor: active ? 'rgba(249,115,22,0.25)' : 'divider',
                   mb: 1.5,
                 }}
               >
-                <Icon size={16} color={active ? '#fb923c' : '#a1a1aa'} />
+                <Icon size={16} color={active ? '#09BA5B' : '#a1a1aa'} />
               </Box>
               {active && (
                 <Box sx={{ position: 'absolute', top: 12, right: 12, color: 'primary.main' }}>
-                  <CheckCircle2 size={18} fill="#f97316" color="#0a0a0a" strokeWidth={2.5} />
+                  <CheckCircle2 size={18} fill="#09BA5B" color="#142522" strokeWidth={2.5} />
                 </Box>
               )}
               <Typography sx={{ fontWeight: 600, mb: 0.25 }}>{opt.title}</Typography>

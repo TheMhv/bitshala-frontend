@@ -1,8 +1,8 @@
 import { createTheme } from '@mui/material/styles';
 
-const ORANGE = '#f97316';
-const ORANGE_DARK = '#ea580c';
-const ORANGE_LIGHT = '#fb923c';
+const ORANGE = '#09BA5B';
+const ORANGE_DARK = '#09BA5B';
+const ORANGE_LIGHT = '#09BA5B';
 
 // Single source of truth for monospace text in fellowship UI.
 // Convention: mono = dates, handles, amounts, counts; Inter = everything else.
@@ -23,14 +23,14 @@ export const fellowshipDarkTheme = createTheme({
       paper: '#19191d',
     },
     text: {
-      primary: '#fafafa',
+      primary: '#F7F7F5',
       secondary: '#a1a1aa',
     },
     divider: '#27272a',
     success: { main: '#4ade80' },
     warning: { main: '#fbbf24' },
     error: { main: '#f87171' },
-    info: { main: '#60a5fa' },
+    info: { main: '#09BA5B' },
   },
   typography: {
     fontFamily: 'Sora, sans-serif',
@@ -113,11 +113,11 @@ export const fellowshipLightTheme = createTheme({
       contrastText: '#ffffff',
     },
     background: {
-      default: '#fafafa',
+      default: '#F7F7F5',
       paper: '#ffffff',
     },
     text: {
-      primary: '#18181b',
+      primary: '#051714',
       secondary: '#52525b',
     },
     divider: '#e4e4e7',

@@ -45,11 +45,11 @@ interface WeeklyBreakdownListProps {
 }
 
 const getScoreColor = (score: number, max: number): string => {
-  if (max === 0) return '#71717a';
+  if (max === 0) return '#BFBEC2';
   const pct = (score / max) * 100;
   if (pct >= 80) return '#4ade80';
   if (pct >= 60) return '#facc15';
-  if (pct >= 40) return '#fb923c';
+  if (pct >= 40) return '#09BA5B';
   return '#f87171';
 };
 
@@ -106,7 +106,7 @@ export const WeeklyBreakdownList = ({ weeks, cohortType }: WeeklyBreakdownListPr
                   size="small"
                   sx={{
                     bgcolor: 'rgba(59,130,246,0.15)',
-                    color: '#60a5fa',
+                    color: '#09BA5B',
                     fontWeight: 600,
                     fontSize: '0.7rem',
                     height: 22,
@@ -146,7 +146,7 @@ export const WeeklyBreakdownList = ({ weeks, cohortType }: WeeklyBreakdownListPr
               <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: hasExercises ? '1fr 1fr' : '1fr' }, gap: 3, pl: { xs: 0, sm: 2 } }}>
                 {/* GD Breakdown */}
                 <Box>
-                  <Typography variant="body2" sx={{ fontWeight: 600, color: '#fb923c', mb: 1.5, fontSize: '0.85rem' }}>
+                  <Typography variant="body2" sx={{ fontWeight: 600, color: '#09BA5B', mb: 1.5, fontSize: '0.85rem' }}>
                     Group Discussion
                   </Typography>
                   {gd ? (
@@ -166,7 +166,7 @@ export const WeeklyBreakdownList = ({ weeks, cohortType }: WeeklyBreakdownListPr
                 {/* Exercise Breakdown */}
                 {hasExercises && (
                   <Box>
-                    <Typography variant="body2" sx={{ fontWeight: 600, color: '#fb923c', mb: 1.5, fontSize: '0.85rem' }}>
+                    <Typography variant="body2" sx={{ fontWeight: 600, color: '#09BA5B', mb: 1.5, fontSize: '0.85rem' }}>
                       Exercise
                     </Typography>
                     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -193,12 +193,12 @@ const ScoreRow = ({ label, score, max }: { label: string; score: number; max: nu
           sx={{
             height: '100%',
             width: max > 0 ? `${(score / max) * 100}%` : '0%',
-            bgcolor: '#f97316',
+            bgcolor: '#09BA5B',
             borderRadius: 1,
           }}
         />
       </Box>
-      <Typography variant="body2" sx={{ color: '#fb923c', fontWeight: 600, fontSize: '0.8rem', minWidth: 36, textAlign: 'right' }}>
+      <Typography variant="body2" sx={{ color: '#09BA5B', fontWeight: 600, fontSize: '0.8rem', minWidth: 36, textAlign: 'right' }}>
         {score}/{max}
       </Typography>
     </Box>

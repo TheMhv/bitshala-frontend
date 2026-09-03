@@ -29,8 +29,8 @@ const STATUS_FILTERS: { label: string; value: StatusFilter }[] = [
 ];
 
 const TRACK_COLORS: Record<FellowshipType, string> = {
-  [FellowshipType.DEVELOPER]: '#fb923c',
-  [FellowshipType.DESIGNER]: '#60a5fa',
+  [FellowshipType.DEVELOPER]: '#09BA5B',
+  [FellowshipType.DESIGNER]: '#09BA5B',
   [FellowshipType.EDUCATOR]: '#a78bfa',
 };
 
@@ -303,7 +303,7 @@ const RowActionButton = ({
       ...(emphasis
         ? {
             color: 'primary.light',
-            borderColor: 'rgba(249,115,22,0.5)',
+            borderColor: '#12332B',
             bgcolor: 'rgba(249,115,22,0.08)',
             '&:hover': { bgcolor: 'rgba(249,115,22,0.16)', borderColor: 'primary.main' },
           }

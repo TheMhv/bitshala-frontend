@@ -21,6 +21,29 @@ type CohortTableProps = {
   emptyMessage?: ReactNode;
 };
 
+// Interpolate across multiple hex color stops based on t (0 to 1)
+const interpolateColor = (t: number, colors: string[]) => {
+  const hexToRgb = (hex: string) => {
+    const n = parseInt(hex.replace('#', ''), 16);
+    return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+  };
+
+  const segments = colors.length - 1;
+  const segment = Math.min(Math.floor(t * segments), segments - 1);
+  const localT = t * segments - segment;
+
+  const [r1, g1, b1] = hexToRgb(colors[segment]);
+  const [r2, g2, b2] = hexToRgb(colors[segment + 1]);
+
+  const r = Math.round(r1 + (r2 - r1) * localT);
+  const g = Math.round(g1 + (g2 - g1) * localT);
+  const b = Math.round(b1 + (b2 - b1) * localT);
+
+  return `rgb(${r}, ${g}, ${b})`;
+};
+
+const GRADIENT_STOPS = ['#FFAE00', '#3CAE66', '#009086'];
+
 const formatDate = (iso: string): string => {
   if (!iso) return '-';
   try {
@@ -33,7 +56,7 @@ const formatDate = (iso: string): string => {
 };
 
 const headerCellSx = {
-  color: '#71717a',
+  color: '#BFBEC2',
   fontWeight: 600,
   fontSize: '0.75rem',
   textTransform: 'uppercase' as const,
@@ -47,10 +70,10 @@ const headerCellSx = {
 // The actions column is pinned right so Join / Waitlist / Leaderboard stay
 // reachable when the table scrolls horizontally on narrower screens. A sticky
 // cell can't be transparent or the scrolling content shows through, so this is
-// the flat equivalent of the container's rgba(39,39,42,0.5) over black. It
+// the flat equivalent of the container's #142522 over black. It
 // deliberately does not follow the row hover — the colour change on a pinned
 // column reads as a glitch rather than as feedback.
-const STICKY_BG = '#141415';
+const STICKY_BG = '#0F1F1C';
 
 const stickyRightSx = {
   position: 'sticky' as const,
@@ -76,8 +99,8 @@ const CohortTable = ({
   if (loading) {
     return (
       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1.5, py: 10 }}>
-        <CircularProgress size={36} sx={{ color: '#f97316' }} />
-        <Typography variant="body2" sx={{ color: '#71717a' }}>Loading cohorts...</Typography>
+        <CircularProgress size={36} sx={{ color: '#09BA5B' }} />
+        <Typography variant="body2" sx={{ color: '#BFBEC2' }}>Loading cohorts...</Typography>
       </Box>
     );
   }
@@ -86,7 +109,7 @@ const CohortTable = ({
     return (
       <Box sx={{ display: 'flex', justifyContent: 'center', py: 10, px: 2 }}>
         {typeof emptyMessage === 'string' ? (
-          <Typography variant="body2" sx={{ color: '#71717a' }}>{emptyMessage}</Typography>
+          <Typography variant="body2" sx={{ color: '#BFBEC2' }}>{emptyMessage}</Typography>
         ) : emptyMessage}
       </Box>
     );
@@ -140,7 +163,7 @@ const CohortTable = ({
                   variant="body2"
                   sx={{
                     fontWeight: 500,
-                    color: '#fafafa',
+                    color: '#F7F7F5',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
                     whiteSpace: 'nowrap',
@@ -165,20 +188,25 @@ const CohortTable = ({
                 <TableCell sx={{ ...bodyCellSx, display: { xs: 'none', sm: 'table-cell' } }}>
                   {cohort.completedWeeks !== undefined && cohort.weeks ? (
                     <Box sx={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
-                      {Array.from({ length: cohort.weeks }, (_, i) => (
-                        <Box
-                          key={i}
-                          sx={{
-                            width: 10,
-                            height: 18,
-                            borderRadius: '3px',
-                            bgcolor: i < cohort.completedWeeks! ? '#facc15' : '#3f3f46',
-                          }}
-                        />
-                      ))}
+                      {Array.from({ length: cohort.weeks }, (_, i) => {
+                        const isCompleted = i < cohort.completedWeeks!;
+                        const t = cohort.completedWeeks! > 1 ? i / (cohort.completedWeeks! - 1) : 0;
+
+                        return (
+                          <Box
+                            key={i}
+                            sx={{
+                              width: 10,
+                              height: 18,
+                              borderRadius: '3px',
+                              bgcolor: isCompleted ? interpolateColor(t, GRADIENT_STOPS) : '#3f3f46',
+                            }}
+                          />
+                        );
+                      })}
                     </Box>
                   ) : (
-                    <Typography variant="body2" sx={{ color: '#71717a' }}>-</Typography>
+                    <Typography variant="body2" sx={{ color: '#BFBEC2' }}>-</Typography>
                   )}
                 </TableCell>
               )}

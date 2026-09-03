@@ -19,7 +19,7 @@ export const FellowshipPageLayout = ({ children, title, subtitle, badge, hideIco
         sx={{
           minHeight: '100vh',
           bgcolor: '#0e0e10',
-          color: '#fafafa',
+          color: '#F7F7F5',
           px: { xs: 2, md: 5, lg: 8 },
           py: 3,
           fontFamily: 'Sora, sans-serif',
@@ -44,12 +44,12 @@ export const FellowshipPageLayout = ({ children, title, subtitle, badge, hideIco
                   width: 48,
                   height: 48,
                   borderRadius: 2.5,
-                  bgcolor: 'rgba(249,115,22,0.15)',
+                  bgcolor: '#0B2E28',
                   border: '1px solid rgba(249,115,22,0.25)',
                   flexShrink: 0,
                 }}
               >
-                <Award size={24} color="#fb923c" />
+                <Award size={24} color="#09BA5B" />
               </Box>
             )}
             <Box>
@@ -58,7 +58,7 @@ export const FellowshipPageLayout = ({ children, title, subtitle, badge, hideIco
                   variant="h5"
                   sx={{
                     fontWeight: 700,
-                    color: '#fafafa',
+                    color: '#F7F7F5',
                     fontSize: { xs: '1.5rem', md: '1.75rem' },
                   }}
                 >
@@ -70,8 +70,8 @@ export const FellowshipPageLayout = ({ children, title, subtitle, badge, hideIco
                     size="small"
                     sx={{
                       display: { xs: 'none', sm: 'inline-flex' },
-                      bgcolor: 'rgba(249,115,22,0.15)',
-                      color: '#fb923c',
+                      bgcolor: '#0B2E28',
+                      color: '#09BA5B',
                       border: '1px solid rgba(249,115,22,0.25)',
                       fontWeight: 600,
                       fontSize: '0.7rem',
@@ -81,7 +81,7 @@ export const FellowshipPageLayout = ({ children, title, subtitle, badge, hideIco
                 )}
               </Box>
               {subtitle && (
-                <Typography variant="body2" sx={{ color: '#71717a', mt: 0.5 }}>
+                <Typography variant="body2" sx={{ color: '#BFBEC2', mt: 0.5 }}>
                   {subtitle}
                 </Typography>
               )}

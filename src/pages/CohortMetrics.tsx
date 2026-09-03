@@ -24,10 +24,10 @@ const normalizeLeaderboard = (data: GetCohortLeaderboardResponseDto): Leaderboar
 };
 
 const tooltipStyle = {
-  backgroundColor: '#18181b',
+  backgroundColor: '#051714',
   border: '1px solid #3f3f46',
   borderRadius: 8,
-  color: '#fafafa',
+  color: '#F7F7F5',
   fontSize: 13,
 };
 
@@ -66,7 +66,7 @@ const MetricsTooltip = ({ active, payload }: { active?: boolean; payload?: Metri
 
   return (
     <Box sx={{ ...tooltipStyle, p: 1.5, minWidth: 180 }}>
-      <Typography sx={{ color: '#fb923c', fontWeight: 700, fontSize: '0.8rem', mb: 1 }}>
+      <Typography sx={{ color: '#09BA5B', fontWeight: 700, fontSize: '0.8rem', mb: 1 }}>
         {cohort?.label ?? ''}
       </Typography>
       {rows.map((row) => (
@@ -99,7 +99,7 @@ const FormulaBox = ({ formulas }: { formulas: { name: string; formula: string }[
     }}
   >
     {formulas.map((f, i) => (
-      <Typography key={i} sx={{ color: '#71717a', fontSize: '0.72rem', fontFamily: 'monospace', lineHeight: 1.8 }}>
+      <Typography key={i} sx={{ color: '#BFBEC2', fontSize: '0.72rem', fontFamily: 'monospace', lineHeight: 1.8 }}>
         <span style={{ color: '#a1a1aa', fontWeight: 600 }}>{f.name}</span>{' = '}{f.formula}
       </Typography>
     ))}
@@ -215,7 +215,7 @@ const CohortMetrics = () => {
   if (cohortsLoading) {
     return (
       <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '60vh' }}>
-        <CircularProgress sx={{ color: '#fb923c' }} />
+        <CircularProgress sx={{ color: '#09BA5B' }} />
       </Box>
     );
   }
@@ -225,12 +225,12 @@ const CohortMetrics = () => {
       {/* Header */}
       <Box sx={{ mb: 4 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1 }}>
-          <BarChart3 size={28} color="#fb923c" />
-          <Typography variant="h4" sx={{ fontWeight: 700, color: '#fafafa', fontSize: { xs: '1.5rem', md: '2rem' } }}>
+          <BarChart3 size={28} color="#09BA5B" />
+          <Typography variant="h4" sx={{ fontWeight: 700, color: '#F7F7F5', fontSize: { xs: '1.5rem', md: '2rem' } }}>
             Cohort Metrics
           </Typography>
         </Box>
-        <Typography sx={{ color: '#71717a', fontSize: '0.9rem' }}>
+        <Typography sx={{ color: '#BFBEC2', fontSize: '0.9rem' }}>
           Continuous analysis of retention data across cohorts and seasons
         </Typography>
       </Box>
@@ -243,9 +243,9 @@ const CohortMetrics = () => {
             label={status}
             onClick={() => setStatusFilter(status)}
             sx={{
-              bgcolor: statusFilter === status ? 'rgba(249,115,22,0.15)' : '#27272a',
-              color: statusFilter === status ? '#fb923c' : '#a1a1aa',
-              border: statusFilter === status ? '1px solid #f97316' : '1px solid #3f3f46',
+              bgcolor: statusFilter === status ? '#0B2E28' : '#27272a',
+              color: statusFilter === status ? '#09BA5B' : '#a1a1aa',
+              border: statusFilter === status ? '1px solid #09BA5B' : '1px solid #3f3f46',
               fontWeight: 600,
               fontSize: '0.8rem',
               cursor: 'pointer',
@@ -257,14 +257,14 @@ const CohortMetrics = () => {
 
       {anyLoading && (
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
-          <CircularProgress size={16} sx={{ color: '#fb923c' }} />
-          <Typography sx={{ color: '#71717a', fontSize: '0.8rem' }}>Loading cohort data...</Typography>
+          <CircularProgress size={16} sx={{ color: '#09BA5B' }} />
+          <Typography sx={{ color: '#BFBEC2', fontSize: '0.8rem' }}>Loading cohort data...</Typography>
         </Box>
       )}
 
       {chronologicalData.length === 0 && allLoaded && (
         <Box sx={{ textAlign: 'center', py: 8 }}>
-          <Typography sx={{ color: '#71717a', fontSize: '1rem' }}>
+          <Typography sx={{ color: '#BFBEC2', fontSize: '1rem' }}>
             No cohort data available for the selected filter.
           </Typography>
         </Box>
@@ -274,7 +274,7 @@ const CohortMetrics = () => {
         <Box sx={{ bgcolor: '#1c1c1f', border: '1px solid #27272a', borderRadius: 2, p: 3, mb: 3 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
             <BarChart3 size={20} color="#38bdf8" />
-            <Typography sx={{ fontWeight: 600, color: '#fafafa', fontSize: '1rem' }}>
+            <Typography sx={{ fontWeight: 600, color: '#F7F7F5', fontSize: '1rem' }}>
               Retention vs Completion
             </Typography>
             <Tooltip title={showMetricInfo ? 'Hide metric definitions' : 'Show metric definitions'} arrow>

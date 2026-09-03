@@ -78,50 +78,50 @@ const BITCOIN_BOOKS_OPTIONS = [
 
 const inputSx = {
   '& .MuiOutlinedInput-root': {
-    bgcolor: '#18181b',
+    bgcolor: '#051714',
     borderRadius: 2.5,
-    color: '#fafafa',
+    color: '#F7F7F5',
     border: '1px solid #27272a',
     transition: 'border-color 200ms, box-shadow 200ms',
     '& fieldset': { border: 'none' },
     '&:hover': { borderColor: '#3f3f46' },
-    '&.Mui-focused': { borderColor: '#f97316', boxShadow: '0 0 0 2px rgba(249,115,22,0.15)' },
+    '&.Mui-focused': { borderColor: '#09BA5B', boxShadow: '0 0 0 2px #0B2E28' },
   },
-  '& .MuiInputBase-input': { color: '#fafafa', py: 1.5, px: 2 },
+  '& .MuiInputBase-input': { color: '#F7F7F5', py: 1.5, px: 2 },
   '& .MuiInputBase-input::placeholder': { color: '#52525b', opacity: 1 },
   '& .MuiOutlinedInput-root.Mui-disabled': {
-    bgcolor: '#0a0a0a',
+    bgcolor: '#142522',
     borderColor: '#1c1c1e',
-    '& .MuiInputBase-input': { color: '#71717a', WebkitTextFillColor: '#71717a' },
+    '& .MuiInputBase-input': { color: '#BFBEC2', WebkitTextFillColor: '#BFBEC2' },
   },
 };
 
 const autocompleteSx = {
   '& .MuiOutlinedInput-root': {
-    bgcolor: '#18181b',
+    bgcolor: '#051714',
     borderRadius: 2.5,
-    color: '#fafafa',
+    color: '#F7F7F5',
     border: '1px solid #27272a',
     transition: 'border-color 200ms, box-shadow 200ms',
     '& fieldset': { border: 'none' },
     '&:hover': { borderColor: '#3f3f46' },
-    '&.Mui-focused': { borderColor: '#f97316', boxShadow: '0 0 0 2px rgba(249,115,22,0.15)' },
+    '&.Mui-focused': { borderColor: '#09BA5B', boxShadow: '0 0 0 2px #0B2E28' },
   },
-  '& .MuiInputBase-input': { color: '#fafafa' },
+  '& .MuiInputBase-input': { color: '#F7F7F5' },
   '& .MuiInputBase-input::placeholder': { color: '#52525b', opacity: 1 },
-  '& .MuiAutocomplete-popupIndicator': { color: '#71717a' },
-  '& .MuiAutocomplete-clearIndicator': { color: '#71717a' },
+  '& .MuiAutocomplete-popupIndicator': { color: '#BFBEC2' },
+  '& .MuiAutocomplete-clearIndicator': { color: '#BFBEC2' },
 };
 
 const sectionSx = {
-  bgcolor: '#0a0a0a',
+  bgcolor: '#142522',
   border: '1px solid #1c1c1e',
   borderRadius: 4,
   p: { xs: 2.5, sm: 3.5 },
 };
 
 const labelSx = { fontWeight: 600, color: '#d4d4d8', mb: 1, fontSize: '0.875rem' };
-const hintSx = { color: '#71717a', fontSize: '0.75rem', mt: 0.5 };
+const hintSx = { color: '#BFBEC2', fontSize: '0.75rem', mt: 0.5 };
 
 const StudentProfileData: React.FC = () => {
   const location = useLocation();
@@ -193,27 +193,27 @@ const StudentProfileData: React.FC = () => {
 
   if (isLoadingUser) {
     return (
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', bgcolor: '#000' }}>
-        <CircularProgress sx={{ color: '#f97316' }} />
+      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', bgcolor: 'rgba(5, 23, 20, 1)' }}>
+        <CircularProgress sx={{ color: '#09BA5B' }} />
       </Box>
     );
   }
 
   if (!profile) {
     return (
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', bgcolor: '#000' }}>
-        <Typography sx={{ color: '#fafafa', fontWeight: 500 }}>Falha ao carregar perfil</Typography>
+      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', bgcolor: 'rgba(5, 23, 20, 1)' }}>
+        <Typography sx={{ color: '#F7F7F5', fontWeight: 500 }}>Falha ao carregar perfil</Typography>
       </Box>
     );
   }
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: '#000', p: { xs: 2, sm: 3 } }}>
+    <Box sx={{ minHeight: '100vh', bgcolor: 'rgba(5, 23, 20, 1)', p: { xs: 2, sm: 3 } }}>
       <Box sx={{ maxWidth: 900, mx: 'auto' }}>
-        <Typography variant="h4" sx={{ fontWeight: 700, color: '#fafafa', mb: 1, fontSize: { xs: '1.875rem', sm: '2.125rem' } }}>
+        <Typography variant="h4" sx={{ fontWeight: 700, color: '#F7F7F5', mb: 1, fontSize: { xs: '1.875rem', sm: '2.125rem' } }}>
           Dados do perfil
         </Typography>
-        <Typography sx={{ color: '#71717a', mb: 4, fontSize: '0.9rem' }}>
+        <Typography sx={{ color: '#BFBEC2', mb: 4, fontSize: '0.9rem' }}>
           Mantenha suas informações de perfil atualizado.
         </Typography>
 
@@ -221,7 +221,7 @@ const StudentProfileData: React.FC = () => {
 
           {/* Section: Identity */}
           <Box sx={sectionSx}>
-            <Typography sx={{ fontWeight: 700, color: '#fafafa', fontSize: '1rem', mb: 3 }}>Identidade</Typography>
+            <Typography sx={{ fontWeight: 700, color: '#F7F7F5', fontSize: '1rem', mb: 3 }}>Identidade</Typography>
             <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' }, gap: 3 }}>
               <Box>
                 <Typography variant="body2" sx={labelSx}>Nome no Certificado*</Typography>
@@ -311,7 +311,7 @@ const StudentProfileData: React.FC = () => {
 
           {/* Section: Discord (read-only) */}
           <Box sx={sectionSx}>
-            <Typography sx={{ fontWeight: 700, color: '#fafafa', fontSize: '1rem', mb: 0.5 }}>Discord</Typography>
+            <Typography sx={{ fontWeight: 700, color: '#F7F7F5', fontSize: '1rem', mb: 0.5 }}>Discord</Typography>
             <Typography sx={{ color: '#52525b', fontSize: '0.8rem', mb: 3 }}>Sincronizado com sua conta no Discord. Estes campos não podem ser alterados.</Typography>
             <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' }, gap: 3 }}>
               <Box>
@@ -327,7 +327,7 @@ const StudentProfileData: React.FC = () => {
 
           {/* Section: Cohort Details */}
           <Box sx={sectionSx}>
-            <Typography sx={{ fontWeight: 700, color: '#fafafa', fontSize: '1rem', mb: 3 }}>Detalhes do Cohort</Typography>
+            <Typography sx={{ fontWeight: 700, color: '#F7F7F5', fontSize: '1rem', mb: 3 }}>Detalhes do Cohort</Typography>
             <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' }, gap: 3 }}>
               <Box>
                 <Typography variant="body2" sx={labelSx}>Horas por semana que está disposto a se dedicar?*</Typography>
@@ -375,7 +375,7 @@ const StudentProfileData: React.FC = () => {
 
           {/* Section: About You */}
           <Box sx={sectionSx}>
-            <Typography sx={{ fontWeight: 700, color: '#fafafa', fontSize: '1rem', mb: 3 }}>Sobre Você</Typography>
+            <Typography sx={{ fontWeight: 700, color: '#F7F7F5', fontSize: '1rem', mb: 3 }}>Sobre Você</Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
               <Box>
                 <Typography variant="body2" sx={labelSx}>Como você se descreveria?*</Typography>
@@ -424,7 +424,7 @@ const StudentProfileData: React.FC = () => {
 
           {/* Section: Skills & Reading */}
           <Box sx={sectionSx}>
-            <Typography sx={{ fontWeight: 700, color: '#fafafa', fontSize: '1rem', mb: 3 }}>Habilidades & Leituras</Typography>
+            <Typography sx={{ fontWeight: 700, color: '#F7F7F5', fontSize: '1rem', mb: 3 }}>Habilidades & Leituras</Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
               <Box>
                 <Typography variant="body2" sx={labelSx}>Habilidades*</Typography>
@@ -442,11 +442,11 @@ const StudentProfileData: React.FC = () => {
                           label={option}
                           {...rest}
                           sx={{
-                            bgcolor: 'rgba(249,115,22,0.15)',
-                            color: '#fb923c',
+                            bgcolor: '#0B2E28',
+                            color: '#09BA5B',
                             fontWeight: 500,
-                            border: '1px solid rgba(249,115,22,0.3)',
-                            '& .MuiChip-deleteIcon': { color: 'rgba(249,115,22,0.5)', '&:hover': { color: '#fb923c' } },
+                            border: '1px solid #09BA5B',
+                            '& .MuiChip-deleteIcon': { color: '#09BA5B', '&:hover': { color: '#09BA5B' } },
                           }}
                         />
                       );
@@ -458,10 +458,10 @@ const StudentProfileData: React.FC = () => {
                   slotProps={{
                     paper: {
                       sx: {
-                        bgcolor: '#18181b',
+                        bgcolor: '#051714',
                         border: '1px solid #27272a',
-                        '& .MuiAutocomplete-option': { color: '#fafafa', '&:hover': { bgcolor: 'rgba(249,115,22,0.15)' } },
-                        '& .MuiAutocomplete-option[aria-selected="true"]': { bgcolor: 'rgba(249,115,22,0.1)' },
+                        '& .MuiAutocomplete-option': { color: '#F7F7F5', '&:hover': { bgcolor: '#0B2E28' } },
+                        '& .MuiAutocomplete-option[aria-selected="true"]': { bgcolor: '#0B2E28' },
                       },
                     },
                   }}
@@ -484,11 +484,11 @@ const StudentProfileData: React.FC = () => {
                           label={option}
                           {...rest}
                           sx={{
-                            bgcolor: 'rgba(249,115,22,0.15)',
-                            color: '#fb923c',
+                            bgcolor: '#0B2E28',
+                            color: '#09BA5B',
                             fontWeight: 500,
-                            border: '1px solid rgba(249,115,22,0.3)',
-                            '& .MuiChip-deleteIcon': { color: 'rgba(249,115,22,0.5)', '&:hover': { color: '#fb923c' } },
+                            border: '1px solid #09BA5B',
+                            '& .MuiChip-deleteIcon': { color: '#09BA5B', '&:hover': { color: '#09BA5B' } },
                           }}
                         />
                       );
@@ -500,10 +500,10 @@ const StudentProfileData: React.FC = () => {
                   slotProps={{
                     paper: {
                       sx: {
-                        bgcolor: '#18181b',
+                        bgcolor: '#051714',
                         border: '1px solid #27272a',
-                        '& .MuiAutocomplete-option': { color: '#fafafa', '&:hover': { bgcolor: 'rgba(249,115,22,0.15)' } },
-                        '& .MuiAutocomplete-option[aria-selected="true"]': { bgcolor: 'rgba(249,115,22,0.1)' },
+                        '& .MuiAutocomplete-option': { color: '#F7F7F5', '&:hover': { bgcolor: '#0B2E28' } },
+                        '& .MuiAutocomplete-option[aria-selected="true"]': { bgcolor: '#0B2E28' },
                       },
                     },
                   }}
@@ -521,7 +521,7 @@ const StudentProfileData: React.FC = () => {
               disabled={isUpdating}
               startIcon={isUpdating ? <CircularProgress size={18} sx={{ color: '#fff' }} /> : undefined}
               sx={{
-                bgcolor: '#ea580c',
+                bgcolor: '#09BA5B',
                 fontWeight: 600,
                 textTransform: 'none',
                 px: 5,
@@ -529,8 +529,8 @@ const StudentProfileData: React.FC = () => {
                 borderRadius: 2.5,
                 fontSize: '0.95rem',
                 boxShadow: 'none',
-                '&:hover': { bgcolor: '#c2410c' },
-                '&.Mui-disabled': { bgcolor: '#ea580c', opacity: 0.6, color: '#fff' },
+                '&:hover': { bgcolor: '#09BA5B' },
+                '&.Mui-disabled': { bgcolor: '#09BA5B', opacity: 0.6, color: '#fff' },
               }}
             >
               {isUpdating ? 'Atualizando...' : 'Atualizar Perfil'}
@@ -551,7 +551,7 @@ const StudentProfileData: React.FC = () => {
           <Box sx={{ width: 64, height: 64, bgcolor: 'rgba(249,115,22,0.2)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', mx: 'auto', mb: 2 }}>
             <AlertTriangle size={32} color="#f97316" />
           </Box>
-          <Typography variant="h6" sx={{ fontWeight: 700, color: '#fafafa' }}>
+          <Typography variant="h6" sx={{ fontWeight: 700, color: '#F7F7F5' }}>
             Informações Necessárias
           </Typography>
         </DialogTitle>
@@ -563,7 +563,7 @@ const StudentProfileData: React.FC = () => {
         <DialogActions sx={{ justifyContent: 'center', pb: 3 }}>
           <Button
             onClick={() => setShowEmailPopup(false)}
-            sx={{ color: '#fafafa', bgcolor: '#3f3f46', textTransform: 'none', fontWeight: 600, px: 4, '&:hover': { bgcolor: '#52525b' } }}
+            sx={{ color: '#F7F7F5', bgcolor: '#3f3f46', textTransform: 'none', fontWeight: 600, px: 4, '&:hover': { bgcolor: '#52525b' } }}
           >
             Entendi
           </Button>

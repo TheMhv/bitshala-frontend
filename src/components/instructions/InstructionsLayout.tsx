@@ -59,14 +59,14 @@ const InstructionsLayout: React.FC<InstructionsLayoutProps> = ({
   };
 
   const activeChipSx = {
-    bgcolor: '#ea580c',
+    bgcolor: '#09BA5B',
     color: '#fff',
     fontWeight: 600,
     fontSize: '0.9rem',
     height: 34,
     cursor: 'pointer',
     '& .MuiChip-icon': { color: '#fff' },
-    '&:hover': { bgcolor: '#c2410c' },
+    '&:hover': { bgcolor: '#09BA5B' },
   };
 
   const inactiveChipSx = {
@@ -82,10 +82,10 @@ const InstructionsLayout: React.FC<InstructionsLayoutProps> = ({
   };
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: '#000', color: '#fafafa' }}>
+    <Box sx={{ minHeight: '100vh', bgcolor: 'rgba(5, 23, 20, 1)', color: '#F7F7F5' }}>
       {/* Top Header */}
       <Box sx={{ borderBottom: '1px solid #27272a', px: { xs: 2, sm: 3, md: 4 }, py: 2.5 }}>
-        <Typography variant="h5" sx={{ fontWeight: 700, color: '#fb923c', fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
+        <Typography variant="h5" sx={{ fontWeight: 700, color: '#09BA5B', fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
           {displayName}
         </Typography>
       </Box>
@@ -145,7 +145,7 @@ const InstructionsLayout: React.FC<InstructionsLayoutProps> = ({
         {activeWeek === 'exercises' ? (
           /* Exercises Content */
           <Box>
-            <Typography variant="h4" sx={{ fontWeight: 700, color: '#fb923c', mb: 4, fontSize: { xs: '1.5rem', md: '2rem' } }}>
+            <Typography variant="h4" sx={{ fontWeight: 700, color: '#09BA5B', mb: 4, fontSize: { xs: '1.5rem', md: '2rem' } }}>
               Exercises
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
@@ -154,21 +154,21 @@ const InstructionsLayout: React.FC<InstructionsLayoutProps> = ({
                 const num = i + 1;
                 const link = week.classroomAssignmentUrl;
                 return (
-                  <Paper key={week.week} elevation={0} sx={{ bgcolor: 'rgba(39,39,42,0.5)', border: '1px solid #3f3f46', borderRadius: 2, p: { xs: 3, md: 4 } }}>
-                    <Typography variant="h6" sx={{ fontWeight: 700, color: '#fb923c', mb: 2, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
+                  <Paper key={week.week} elevation={0} sx={{ bgcolor: '#142522', border: '1px solid #3f3f46', borderRadius: 2, p: { xs: 3, md: 4 } }}>
+                    <Typography variant="h6" sx={{ fontWeight: 700, color: '#09BA5B', mb: 2, fontSize: { xs: '1.1rem', md: '1.25rem' } }}>
                       Exercise {num}: {ex.title}
                     </Typography>
                     {link && (
-                      <Link href={link} target="_blank" rel="noopener noreferrer" underline="hover" sx={{ color: '#60a5fa', display: 'inline-flex', alignItems: 'center', gap: 0.5, mb: 2, fontSize: '1rem' }}>
+                      <Link href={link} target="_blank" rel="noopener noreferrer" underline="hover" sx={{ color: '#09BA5B', display: 'inline-flex', alignItems: 'center', gap: 0.5, mb: 2, fontSize: '1rem' }}>
                         Exercise {num} Assignment <ExternalLink size={14} />
                       </Link>
                     )}
                     <Typography variant="body2" sx={{ color: '#d4d4d8', mb: 2 }}>
-                      <strong style={{ color: '#fafafa' }}>Concepts:</strong> {ex.concepts}
+                      <strong style={{ color: '#F7F7F5' }}>Concepts:</strong> {ex.concepts}
                     </Typography>
-                    <Typography variant="body2" sx={{ color: '#fafafa', fontWeight: 600, mb: 1 }}>Problem Statement:</Typography>
+                    <Typography variant="body2" sx={{ color: '#F7F7F5', fontWeight: 600, mb: 1 }}>Problem Statement:</Typography>
                     <Typography variant="body2" sx={{ color: '#d4d4d8', mb: 2, lineHeight: 1.7, whiteSpace: 'pre-line' }}>{ex.problem}</Typography>
-                    <Typography variant="body2" sx={{ color: '#fafafa', fontWeight: 600, mb: 1 }}>Expected Output:</Typography>
+                    <Typography variant="body2" sx={{ color: '#F7F7F5', fontWeight: 600, mb: 1 }}>Expected Output:</Typography>
                     <Box component="ul" sx={{ pl: 3, m: 0 }}>
                       {ex.expectedOutput.map((item, idx) => (
                         <Typography key={idx} component="li" variant="body2" sx={{ color: '#d4d4d8', mb: 0.5, lineHeight: 1.6 }}>{item}</Typography>
@@ -182,19 +182,19 @@ const InstructionsLayout: React.FC<InstructionsLayoutProps> = ({
         ) : activeWeek === 'links' ? (
           /* Links Content */
           <Box>
-            <Typography variant="h4" sx={{ fontWeight: 700, color: '#fb923c', mb: 4, fontSize: { xs: '1.5rem', md: '2rem' } }}>
+            <Typography variant="h4" sx={{ fontWeight: 700, color: '#09BA5B', mb: 4, fontSize: { xs: '1.5rem', md: '2rem' } }}>
               Frequently Accessed Links
             </Typography>
             {links.length > 0 ? (
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                 {links.map((link) => (
-                  <Link key={link.url} href={link.url} target="_blank" rel="noopener noreferrer" underline="hover" sx={{ color: '#fafafa', display: 'inline-flex', alignItems: 'center', gap: 1, fontSize: '1.1rem', '&:hover': { color: '#fb923c' } }}>
+                  <Link key={link.url} href={link.url} target="_blank" rel="noopener noreferrer" underline="hover" sx={{ color: '#F7F7F5', display: 'inline-flex', alignItems: 'center', gap: 1, fontSize: '1.1rem', '&:hover': { color: '#09BA5B' } }}>
                     {link.label} <ExternalLink size={16} />
                   </Link>
                 ))}
               </Box>
             ) : (
-              <Typography sx={{ color: '#71717a', fontSize: '1rem' }}>No links available.</Typography>
+              <Typography sx={{ color: '#BFBEC2', fontSize: '1rem' }}>No links available.</Typography>
             )}
           </Box>
         ) : (
@@ -208,7 +208,7 @@ const InstructionsLayout: React.FC<InstructionsLayoutProps> = ({
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
                   {/* Title + Present Button */}
                   <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 2 }}>
-                    <Typography variant="h4" sx={{ fontWeight: 700, color: '#fb923c', fontSize: { xs: '1.5rem', md: '2rem' } }}>
+                    <Typography variant="h4" sx={{ fontWeight: 700, color: '#09BA5B', fontSize: { xs: '1.5rem', md: '2rem' } }}>
                       {currentWeek.title ?? `Week ${currentWeek.week}`}
                     </Typography>
                     {canPresent && cohortId && currentWeek.questions.length > 0 && (
@@ -219,8 +219,8 @@ const InstructionsLayout: React.FC<InstructionsLayoutProps> = ({
                           startIcon={<Presentation size={16} />}
                           onClick={() => handlePresent(currentWeek.id)}
                           sx={{
-                            bgcolor: '#fb923c',
-                            '&:hover': { bgcolor: '#f97316' },
+                            bgcolor: '#09BA5B',
+                            '&:hover': { bgcolor: '#09BA5B' },
                             textTransform: 'none',
                             fontWeight: 600,
                             fontSize: '0.85rem',
@@ -235,7 +235,7 @@ const InstructionsLayout: React.FC<InstructionsLayoutProps> = ({
                           size="small"
                           title="Open presentation in new tab"
                           onClick={() => handlePresent(currentWeek.id, true)}
-                          sx={{ color: '#a1a1aa', border: '1px solid #3f3f46', borderRadius: 2, '&:hover': { color: '#fafafa', bgcolor: 'rgba(255,255,255,0.06)' } }}
+                          sx={{ color: '#a1a1aa', border: '1px solid #3f3f46', borderRadius: 2, '&:hover': { color: '#F7F7F5', bgcolor: 'rgba(255,255,255,0.06)' } }}
                         >
                           <ExternalLink size={16} />
                         </IconButton>
@@ -309,13 +309,13 @@ const InstructionsLayout: React.FC<InstructionsLayoutProps> = ({
                             rel="noopener noreferrer"
                             clickable
                             sx={{
-                              bgcolor: 'rgba(251,146,60,0.1)',
-                              color: '#fdba74',
+                              bgcolor: '#0B2E28',
+                              color: '#09BA5B',
                               border: '1px solid rgba(251,146,60,0.2)',
                               fontWeight: 500,
                               fontSize: '0.85rem',
                               height: 36,
-                              '&:hover': { bgcolor: 'rgba(251,146,60,0.18)', color: '#fed7aa' },
+                              '&:hover': { bgcolor: '#0B2E28', color: '#09BA5B' },
                             }}
                           />
                         ))}
@@ -324,18 +324,18 @@ const InstructionsLayout: React.FC<InstructionsLayoutProps> = ({
                   )}
 
                   {/* Questions */}
-                  <Typography variant="h4" sx={{ fontWeight: 700, color: '#fb923c', fontSize: { xs: '1.5rem', md: '2rem' } }}>
+                  <Typography variant="h4" sx={{ fontWeight: 700, color: '#09BA5B', fontSize: { xs: '1.5rem', md: '2rem' } }}>
                     List of Questions
                   </Typography>
 
                   {/* Group Round */}
                   <Box>
-                    <Typography variant="h6" sx={{ fontWeight: 700, color: '#fafafa', mb: 3 }}>Group Round</Typography>
+                    <Typography variant="h6" sx={{ fontWeight: 700, color: '#F7F7F5', mb: 3 }}>Group Round</Typography>
                     <Box component="ol" sx={{ listStyle: 'none', p: 0, m: 0, display: 'flex', flexDirection: 'column', gap: 2 }}>
                       {currentWeek.questions.map((question, index) => (
                         <Box key={index} component="li">
                           <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
-                            <Typography sx={{ color: '#fb923c', fontWeight: 600, mr: 1.5, mt: 0.1, minWidth: 24, fontSize: '1.1rem' }}>
+                            <Typography sx={{ color: '#09BA5B', fontWeight: 600, mr: 1.5, mt: 0.1, minWidth: 24, fontSize: '1.1rem' }}>
                               {index + 1}.
                             </Typography>
                             <Typography sx={{ color: '#e4e4e7', lineHeight: 1.7, fontSize: '1.1rem' }}>
@@ -356,12 +356,12 @@ const InstructionsLayout: React.FC<InstructionsLayoutProps> = ({
                       (server returns [] for students) */}
                   {currentWeek.bonusQuestions.length > 0 && (
                     <Box>
-                      <Typography variant="h6" sx={{ fontWeight: 700, color: '#fafafa', mb: 3 }}>Bonus Round</Typography>
+                      <Typography variant="h6" sx={{ fontWeight: 700, color: '#F7F7F5', mb: 3 }}>Bonus Round</Typography>
                       <Box component="ol" sx={{ listStyle: 'none', p: 0, m: 0, display: 'flex', flexDirection: 'column', gap: 2 }}>
                         {currentWeek.bonusQuestions.map((question, index) => (
                           <Box key={index} component="li">
                             <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
-                              <Typography sx={{ color: '#60a5fa', fontWeight: 600, mr: 1.5, mt: 0.1, minWidth: 24, fontSize: '1.1rem' }}>
+                              <Typography sx={{ color: '#09BA5B', fontWeight: 600, mr: 1.5, mt: 0.1, minWidth: 24, fontSize: '1.1rem' }}>
                                 {index + 1}.
                               </Typography>
                               <Typography sx={{ color: '#e4e4e7', lineHeight: 1.7, fontSize: '1.1rem', whiteSpace: 'pre-line' }}>
@@ -382,7 +382,7 @@ const InstructionsLayout: React.FC<InstructionsLayoutProps> = ({
                   {/* Activity */}
                   {currentWeek.activity && (
                     <Box>
-                      <Typography variant="h6" sx={{ fontWeight: 700, color: '#60a5fa', mb: 2 }}>Activity</Typography>
+                      <Typography variant="h6" sx={{ fontWeight: 700, color: '#09BA5B', mb: 2 }}>Activity</Typography>
                       <Typography sx={{ color: '#e4e4e7', fontSize: '1.1rem', lineHeight: 1.7, whiteSpace: 'pre-line' }}>
                         {currentWeek.activity}
                       </Typography>

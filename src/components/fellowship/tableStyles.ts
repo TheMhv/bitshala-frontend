@@ -1,7 +1,7 @@
 import type { SxProps, Theme } from '@mui/material';
 
 export const adminCardSx: SxProps<Theme> = {
-  bgcolor: 'rgba(39,39,42,0.5)',
+  bgcolor: '#142522',
   borderRadius: 3,
   border: '1px solid rgba(249,115,22,0.2)',
   overflow: 'hidden',
@@ -47,12 +47,12 @@ export const tableHeaderCellSx: SxProps<Theme> = {
   top: 0,
   zIndex: 2,
   bgcolor: '#1f1410',
-  color: '#fb923c',
+  color: '#09BA5B',
   fontWeight: 700,
   fontSize: '0.7rem',
   textTransform: 'uppercase',
   letterSpacing: '0.06em',
-  borderBottom: '1px solid rgba(249,115,22,0.3)',
+  borderBottom: '1px solid #09BA5B',
   py: 1.75,
   px: 2.5,
   whiteSpace: 'nowrap',
@@ -88,5 +88,5 @@ export const emptyStateSx: SxProps<Theme> = {
   display: 'flex',
   justifyContent: 'center',
   py: 10,
-  color: '#71717a',
+  color: '#BFBEC2',
 };

@@ -42,12 +42,12 @@ const cellSx = {
 const tooltipSx = {
   tooltip: {
     sx: {
-      bgcolor: '#18181b',
+      bgcolor: '#051714',
       color: '#e4e4e7',
       fontSize: '0.8rem',
       p: 1.5,
       maxWidth: 280,
-      '& .MuiTooltip-arrow': { color: '#18181b' },
+      '& .MuiTooltip-arrow': { color: '#051714' },
     },
   },
 };
@@ -112,7 +112,7 @@ export const StudentRow: React.FC<StudentRowProps> = ({
 
   const gdTooltipContent = person.gdScore ? (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
-      <Typography variant="caption" fontWeight={600} sx={{ mb: 0.5, color: '#fed7aa' }}>
+      <Typography variant="caption" fontWeight={600} sx={{ mb: 0.5, color: '#09BA5B' }}>
         GD Score Breakdown
       </Typography>
       <Typography variant="caption">Communication: {person.gdScore.fa}/5</Typography>
@@ -129,7 +129,7 @@ export const StudentRow: React.FC<StudentRowProps> = ({
 
   const bonusTooltipContent = person.bonusScore ? (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
-      <Typography variant="caption" fontWeight={600} sx={{ mb: 0.5, color: '#fed7aa' }}>
+      <Typography variant="caption" fontWeight={600} sx={{ mb: 0.5, color: '#09BA5B' }}>
         Bonus Score Breakdown
       </Typography>
       <Typography variant="caption">
@@ -143,7 +143,7 @@ export const StudentRow: React.FC<StudentRowProps> = ({
   // Exercise score summary
   const exerciseTooltipContent = person.exerciseScore ? (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
-      <Typography variant="caption" fontWeight={600} sx={{ mb: 0.5, color: '#fed7aa' }}>
+      <Typography variant="caption" fontWeight={600} sx={{ mb: 0.5, color: '#09BA5B' }}>
         Exercise Breakdown
       </Typography>
       <Typography variant="caption">
@@ -181,7 +181,7 @@ export const StudentRow: React.FC<StudentRowProps> = ({
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
           <Avatar
             sx={{
-              bgcolor: '#f97316',
+              bgcolor: '#09BA5B',
               width: 36,
               height: 36,
               fontSize: '0.875rem',
@@ -382,8 +382,8 @@ export const StudentRow: React.FC<StudentRowProps> = ({
           onClick={handleEditClick}
           sx={{
             textTransform: 'none',
-            backgroundColor: '#ea580c',
-            '&:hover': { backgroundColor: '#c2410c' },
+            backgroundColor: '#09BA5B',
+            '&:hover': { backgroundColor: '#09BA5B' },
             fontWeight: 500,
             fontSize: '0.75rem',
             px: 2,

@@ -180,7 +180,7 @@ const StudentDetailPage = () => {
   });
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: '#000', color: '#fafafa' }}>
+    <Box sx={{ minHeight: '100vh', bgcolor: 'rgba(5, 23, 20, 1)', color: '#F7F7F5' }}>
       <Box sx={{ maxWidth: 1200, mx: 'auto', px: { xs: 2, sm: 3, lg: 4 }, py: { xs: 2, sm: 3 } }}>
 
         {/* Back button */}
@@ -193,7 +193,7 @@ const StudentDetailPage = () => {
             fontWeight: 500,
             mb: 2,
             px: 1.5,
-            '&:hover': { color: '#fafafa', bgcolor: 'rgba(255,255,255,0.05)' },
+            '&:hover': { color: '#F7F7F5', bgcolor: 'rgba(255,255,255,0.05)' },
           }}
         >
           Back
@@ -215,7 +215,7 @@ const StudentDetailPage = () => {
                     <Chip
                       label={selectedCohort.cohortType.replace(/_/g, ' ')}
                       size="small"
-                      sx={{ bgcolor: 'rgba(249,115,22,0.15)', color: '#fb923c', fontWeight: 600, fontSize: '0.7rem' }}
+                      sx={{ bgcolor: '#0B2E28', color: '#09BA5B', fontWeight: 600, fontSize: '0.7rem' }}
                     />
                     <Chip
                       label={`Season ${selectedCohort.seasonNumber}`}
@@ -250,7 +250,7 @@ const StudentDetailPage = () => {
                         navigate('/bbr-instructions');
                       }
                     }}
-                    sx={{ bgcolor: '#ea580c', textTransform: 'none', fontWeight: 600, boxShadow: 'none', '&:hover': { bgcolor: '#c2410c' } }}
+                    sx={{ bgcolor: '#09BA5B', textTransform: 'none', fontWeight: 600, boxShadow: 'none', '&:hover': { bgcolor: '#09BA5B' } }}
                   >
                     Instructions
                   </Button>
@@ -261,7 +261,7 @@ const StudentDetailPage = () => {
                     size="small"
                     startIcon={<Trophy size={16} />}
                     onClick={() => navigate(`/results/${cohortIdParam}`)}
-                    sx={{ color: '#fb923c', borderColor: 'rgba(249,115,22,0.4)', textTransform: 'none', fontWeight: 600, '&:hover': { borderColor: '#fb923c', bgcolor: 'rgba(249,115,22,0.08)' } }}
+                    sx={{ color: '#09BA5B', borderColor: '#09BA5B', textTransform: 'none', fontWeight: 600, '&:hover': { borderColor: '#09BA5B', bgcolor: 'rgba(249,115,22,0.08)' } }}
                   >
                     View Ranking
                   </Button>
@@ -283,8 +283,8 @@ const StudentDetailPage = () => {
         {validWeeks.length > 0 && (canViewOtherScores ? isViewingOwnProfile : true) && (
           <Box>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
-              <Calendar size={20} color="#fafafa" />
-              <Typography sx={{ fontWeight: 600, color: '#fafafa' }}>
+              <Calendar size={20} color="#F7F7F5" />
+              <Typography sx={{ fontWeight: 600, color: '#F7F7F5' }}>
                 Weekly Breakdown
               </Typography>
             </Box>

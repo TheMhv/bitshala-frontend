@@ -229,8 +229,8 @@ export const ResultPage: React.FC = () => {
 
   if (loading) {
     return (
-      <Box sx={{ minHeight: '100vh', bgcolor: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <CircularProgress sx={{ color: '#f97316' }} />
+      <Box sx={{ minHeight: '100vh', bgcolor: 'rgba(5, 23, 20, 1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <CircularProgress sx={{ color: '#09BA5B' }} />
       </Box>
     );
   }
@@ -240,7 +240,7 @@ export const ResultPage: React.FC = () => {
   // a bad-request error.
   if (isAxiosError(rawError) && rawError.response?.status === 400) {
     return (
-      <Box sx={{ minHeight: '100vh', bgcolor: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center', px: 3 }}>
+      <Box sx={{ minHeight: '100vh', bgcolor: 'rgba(5, 23, 20, 1)', display: 'flex', alignItems: 'center', justifyContent: 'center', px: 3 }}>
         <Typography sx={{ color: '#a1a1aa', textAlign: 'center' }}>
           That cohort doesn&apos;t exist.
         </Typography>
@@ -250,7 +250,7 @@ export const ResultPage: React.FC = () => {
 
   if (throttled) {
     return (
-      <Box sx={{ minHeight: '100vh', bgcolor: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center', px: 3 }}>
+      <Box sx={{ minHeight: '100vh', bgcolor: 'rgba(5, 23, 20, 1)', display: 'flex', alignItems: 'center', justifyContent: 'center', px: 3 }}>
         <Typography sx={{ color: '#a1a1aa', textAlign: 'center' }}>
           This leaderboard is busy right now. Refresh in a moment.
         </Typography>
@@ -260,14 +260,14 @@ export const ResultPage: React.FC = () => {
 
   if (error) {
     return (
-      <Box sx={{ minHeight: '100vh', bgcolor: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Box sx={{ minHeight: '100vh', bgcolor: 'rgba(5, 23, 20, 1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Typography sx={{ color: '#f87171' }}>Failed to load leaderboard: {error}</Typography>
       </Box>
     );
   }
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: '#000', px: { xs: 2, md: 4 }, py: { xs: 2, md: 4 } }}>
+    <Box sx={{ minHeight: '100vh', bgcolor: 'rgba(5, 23, 20, 1)', px: { xs: 2, md: 4 }, py: { xs: 2, md: 4 } }}>
       <Box sx={{ maxWidth: 960, mx: 'auto' }}>
         {/* Back button */}
         <Button
@@ -279,7 +279,7 @@ export const ResultPage: React.FC = () => {
             fontWeight: 500,
             mb: 3,
             px: 1.5,
-            '&:hover': { color: '#fafafa', bgcolor: 'rgba(255,255,255,0.05)' },
+            '&:hover': { color: '#F7F7F5', bgcolor: 'rgba(255,255,255,0.05)' },
           }}
         >
           Back
@@ -288,7 +288,7 @@ export const ResultPage: React.FC = () => {
         {/* Header */}
         <Box sx={{ textAlign: 'center', mb: 5 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 2, mb: 1.5 }}>
-            <Flame size={32} color="#f97316" />
+            <Flame size={32} color="#09BA5B" />
             <Typography
               variant="h3"
               sx={{
@@ -296,12 +296,12 @@ export const ResultPage: React.FC = () => {
                 color: '#fff',
                 fontSize: { xs: '2rem', md: '2.75rem' },
                 letterSpacing: '-0.02em',
-                textShadow: '0 0 40px rgba(249,115,22,0.3)',
+                textShadow: '0 0 40px #09BA5B',
               }}
             >
               Leaderboard
             </Typography>
-            <Flame size={32} color="#f97316" />
+            <Flame size={32} color="#09BA5B" />
           </Box>
           <Typography variant="body1" sx={{ color: '#a1a1aa', fontSize: '1.1rem' }}>
             {cohortName || 'Cohort information unavailable'}
@@ -364,7 +364,7 @@ export const ResultPage: React.FC = () => {
 
                       <TableCell sx={cellSx}>
                         <Typography sx={{
-                          color: '#fafafa',
+                          color: '#F7F7F5',
                           fontWeight: highlight ? 700 : 500,
                           fontSize: '1rem',
                         }}>
@@ -397,7 +397,7 @@ export const ResultPage: React.FC = () => {
                             size="small"
                             sx={{
                               bgcolor: student.exercisesCompleted > 0 ? 'rgba(34,197,94,0.15)' : 'rgba(255,255,255,0.05)',
-                              color: student.exercisesCompleted > 0 ? '#4ade80' : '#71717a',
+                              color: student.exercisesCompleted > 0 ? '#4ade80' : '#BFBEC2',
                               fontWeight: 600,
                               fontSize: '0.9rem',
                               height: 26,
@@ -444,7 +444,7 @@ export const ResultPage: React.FC = () => {
                                 )}
                               </Button>
                             ) : (
-                              <Typography sx={{ color: '#71717a', fontSize: '0.8rem' }}>—</Typography>
+                              <Typography sx={{ color: '#BFBEC2', fontSize: '0.8rem' }}>—</Typography>
                             )}
                           </TableCell>
                         );
@@ -458,13 +458,13 @@ export const ResultPage: React.FC = () => {
         )}
 
         {/* Footer */}
-        <Typography sx={{ textAlign: 'center', color: '#71717a', mt: 4, fontSize: '0.95rem' }}>
+        <Typography sx={{ textAlign: 'center', color: '#BFBEC2', mt: 4, fontSize: '0.95rem' }}>
           Showing {sortedResults.length} students
         </Typography>
 
         {/* Empty state */}
         {sortedResults.length === 0 && (
-          <Typography sx={{ textAlign: 'center', color: '#71717a', mt: 6 }}>
+          <Typography sx={{ textAlign: 'center', color: '#BFBEC2', mt: 6 }}>
             No students found for this cohort.
           </Typography>
         )}

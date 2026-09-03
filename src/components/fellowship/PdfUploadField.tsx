@@ -71,7 +71,7 @@ const PdfUploadField = ({ file, onChange, error, disabled, label = 'Choose PDF' 
             bgcolor: 'rgba(255,255,255,0.02)',
           }}
         >
-          <FileText size={16} color="#fb923c" />
+          <FileText size={16} color="#09BA5B" />
           <Typography
             sx={{
               flex: 1,

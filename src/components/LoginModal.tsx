@@ -35,7 +35,7 @@ const LoginModal = () => {
         },
         paper: {
           sx: {
-            bgcolor: '#18181b',
+            bgcolor: '#051714',
             backgroundImage: 'none',
             border: '1px solid #27272a',
             borderRadius: 3,
@@ -52,7 +52,7 @@ const LoginModal = () => {
             position: 'absolute',
             top: 12,
             right: 12,
-            color: '#71717a',
+            color: '#BFBEC2',
             '&:hover': { color: '#e4e4e7', bgcolor: 'rgba(255,255,255,0.05)' },
           }}
         >
@@ -65,7 +65,7 @@ const LoginModal = () => {
             fontWeight: 700,
             fontSize: '2rem',
             letterSpacing: '0.15em',
-            color: '#fafafa',
+            color: '#F7F7F5',
             mb: 1,
           }}
         >

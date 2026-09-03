@@ -127,14 +127,14 @@ const MyStudentDashboard = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            bgcolor: 'rgba(20,184,166,0.1)',
-            border: '1px solid rgba(20,184,166,0.25)',
+            bgcolor: '#0B2E28',
+            border: '1px solid #09BA5B',
             mb: 2,
           }}
         >
-          {isUpcoming ? <Clock size={26} color="#5eead4" /> : <BookOpen size={26} color="#5eead4" />}
+          {isUpcoming ? <Clock size={26} color="#09BA5B" /> : <BookOpen size={26} color="#09BA5B" />}
         </Box>
-        <Typography variant="h6" sx={{ color: '#fafafa', fontWeight: 700, mb: 0.75 }}>
+        <Typography variant="h6" sx={{ color: '#F7F7F5', fontWeight: 700, mb: 0.75 }}>
           {title}
         </Typography>
         <Typography variant="body2" sx={{ color: '#a1a1aa', lineHeight: 1.7 }}>
@@ -146,7 +146,7 @@ const MyStudentDashboard = () => {
             onClick={() => setActiveTab('Active')}
             sx={{
               mt: 2.5,
-              color: '#5eead4',
+              color: '#09BA5B',
               borderColor: 'rgba(20,184,166,0.35)',
               bgcolor: 'rgba(20,184,166,0.08)',
               textTransform: 'none',
@@ -283,12 +283,12 @@ const MyStudentDashboard = () => {
   };
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: '#000', color: '#fafafa', px: { xs: 2, md: 5, lg: 8 }, py: 3 }}>
+    <Box sx={{ minHeight: '100vh', bgcolor: '#051714', color: '#F7F7F5', px: { xs: 2, md: 5, lg: 8 }, py: 3 }}>
       {/* Header */}
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: { xs: 'flex-start', sm: 'center' }, flexDirection: { xs: 'column', sm: 'row' }, gap: 2, mb: 4 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', justifyContent: 'center', width: 48, height: 48, borderRadius: 3, bgcolor: 'rgba(20,184,166,0.15)', border: '1px solid rgba(20,184,166,0.25)' }}>
-            <BookOpen size={24} color="#2dd4bf" />
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', justifyContent: 'center', width: 48, height: 48, borderRadius: 3, bgcolor: 'rgba(20,184,166,0.15)', border: '1px solid #09BA5B' }}>
+            <BookOpen size={24} color="#09BA5B" />
           </Box>
           <Box>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
@@ -301,8 +301,8 @@ const MyStudentDashboard = () => {
                 sx={{
                   display: { xs: 'none', sm: 'inline-flex' },
                   bgcolor: 'rgba(20,184,166,0.15)',
-                  color: '#2dd4bf',
-                  border: '1px solid rgba(20,184,166,0.25)',
+                  color: '#09BA5B',
+                  border: '1px solid #09BA5B',
                   fontWeight: 600,
                   fontSize: '0.75rem',
                 }}
@@ -318,9 +318,9 @@ const MyStudentDashboard = () => {
           startIcon={<User size={16} />}
           onClick={() => (isAuthenticated ? navigate('/me') : openLogin())}
           sx={{
-            color: '#5eead4',
-            borderColor: 'rgba(20,184,166,0.25)',
-            bgcolor: 'rgba(20,184,166,0.1)',
+            color: '#F7F7F5',
+            borderColor: '#FFFFFF1F',
+            bgcolor: '#051714',
             textTransform: 'none',
             fontWeight: 500,
             fontSize: '0.875rem',
@@ -333,9 +333,9 @@ const MyStudentDashboard = () => {
       </Box>
 
       {/* Tabs + Table */}
-      <Paper sx={{ bgcolor: 'rgba(39,39,42,0.5)', borderRadius: 3, border: '1px solid rgba(20,184,166,0.2)', overflow: 'hidden' }}>
+      <Paper sx={{ bgcolor: '#142522', borderRadius: 3, border: '1px solid rgba(20,184,166,0.2)', overflow: 'hidden' }}>
         <Box sx={{ px: 2, pt: 1.5 }}>
-          <Tabs tabs={tabs} activeTab={activeTab} onChange={setActiveTab} accent="#14b8a6" />
+          <Tabs tabs={tabs} activeTab={activeTab} onChange={setActiveTab} accent="#09BA5B" />
         </Box>
 
         <CohortTable
@@ -373,8 +373,8 @@ const MyStudentDashboard = () => {
                         }
                       }}
                       sx={{
-                        color: '#fb923c',
-                        bgcolor: 'rgba(249,115,22,0.1)',
+                        color: '#09BA5B',
+                        bgcolor: '#0B2E28',
                         '&:hover': { bgcolor: 'rgba(249,115,22,0.2)' },
                       }}
                     >
@@ -414,21 +414,21 @@ const MyStudentDashboard = () => {
                       size="small"
                       startIcon={
                         isDownloading && downloadingCertId === certificate.id
-                          ? <CircularProgress size={14} sx={{ color: '#2dd4bf' }} />
+                          ? <CircularProgress size={14} sx={{ color: '#09BA5B' }} />
                           : <Download size={14} />
                       }
                       disabled={isDownloading && downloadingCertId === certificate.id}
                       onClick={() => handleDownloadCertificate(certificate.id, `${row.name}-S${row.season}-certificate`)}
                       sx={{
-                        color: '#2dd4bf',
-                        bgcolor: 'rgba(20,184,166,0.1)',
+                        color: '#09BA5B',
+                        bgcolor: '#0B2E28',
                         textTransform: 'none',
                         fontWeight: 500,
                         fontSize: '0.75rem',
                         px: 1.5,
                         minWidth: 'auto',
                         '&:hover': { bgcolor: 'rgba(20,184,166,0.2)' },
-                        '&.Mui-disabled': { color: '#2dd4bf', opacity: 0.5 },
+                        '&.Mui-disabled': { color: '#09BA5B', opacity: 0.5 },
                       }}
                     >
                       Certificate
@@ -474,21 +474,21 @@ const MyStudentDashboard = () => {
                 size="small"
                 startIcon={
                   isJoining
-                    ? <CircularProgress size={14} sx={{ color: '#60a5fa' }} />
+                    ? <CircularProgress size={14} sx={{ color: '#09BA5B' }} />
                     : <Clock size={14} />
                 }
                 disabled={isJoining}
                 onClick={() => row.cohortType && handleJoinWaitlist(row.id, row.cohortType)}
                 sx={{
-                  color: '#60a5fa',
-                  bgcolor: 'rgba(59,130,246,0.1)',
+                  color: '#09BA5B',
+                  bgcolor: '#09BA5B1F',
                   textTransform: 'none',
                   fontWeight: 500,
                   fontSize: '0.75rem',
                   px: 1.5,
                   minWidth: 104,
-                  '&:hover': { bgcolor: 'rgba(59,130,246,0.2)' },
-                  '&.Mui-disabled': { color: '#60a5fa', opacity: 0.5 },
+                  '&:hover': { bgcolor: '#09BA5B1F' },
+                  '&.Mui-disabled': { color: '#09BA5B', opacity: 0.5 },
                 }}
               >
                 Waitlist
@@ -507,7 +507,7 @@ const MyStudentDashboard = () => {
           sx: { bgcolor: '#27272a', borderRadius: 3, border: '1px solid #3f3f46', maxWidth: 440 },
         }}
       >
-        <DialogTitle sx={{ color: '#fafafa', fontWeight: 700, fontSize: '1.125rem', pb: 1 }}>
+        <DialogTitle sx={{ color: '#F7F7F5', fontWeight: 700, fontSize: '1.125rem', pb: 1 }}>
           {confirmationModal.isWaitlist ? 'Join Waitlist' : 'Join Cohort'}
         </DialogTitle>
         <DialogContent>
@@ -527,7 +527,7 @@ const MyStudentDashboard = () => {
           <Button
             onClick={confirmJoinCohort}
             variant="contained"
-            sx={{ bgcolor: '#ea580c', textTransform: 'none', fontWeight: 600, boxShadow: 'none', '&:hover': { bgcolor: '#c2410c' } }}
+            sx={{ bgcolor: '#09BA5B', textTransform: 'none', fontWeight: 600, boxShadow: 'none', '&:hover': { bgcolor: '#09BA5B' } }}
           >
             {confirmationModal.isWaitlist ? 'Join Waitlist' : 'Join Cohort'}
           </Button>

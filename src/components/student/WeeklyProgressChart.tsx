@@ -10,7 +10,7 @@ interface WeeklyProgressChartProps {
 const getBarColor = (score: number): string => {
   if (score >= 80) return '#4ade80';
   if (score >= 60) return '#facc15';
-  if (score >= 40) return '#fb923c';
+  if (score >= 40) return '#09BA5B';
   if (score > 0) return '#f87171';
   return '#52525b';
 };
@@ -25,8 +25,8 @@ export const WeeklyProgressChart = ({ weeklyData }: WeeklyProgressChartProps) =>
   return (
     <Box>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
-        <TrendingUp size={20} color="#fb923c" />
-        <Typography sx={{ fontWeight: 600, color: '#fafafa', fontSize: '1rem' }}>Weekly Progress</Typography>
+        <TrendingUp size={20} color="#09BA5B" />
+        <Typography sx={{ fontWeight: 600, color: '#F7F7F5', fontSize: '1rem' }}>Weekly Progress</Typography>
       </Box>
 
       <Box sx={{ width: '100%', height: { xs: 250, sm: 300 } }}>
@@ -35,7 +35,7 @@ export const WeeklyProgressChart = ({ weeklyData }: WeeklyProgressChartProps) =>
             <CartesianGrid strokeDasharray="3 3" stroke="#3f3f46" vertical={false} />
             <XAxis
               dataKey="name"
-              tick={{ fill: '#fb923c', fontSize: 12, fontWeight: 600 }}
+              tick={{ fill: '#09BA5B', fontSize: 12, fontWeight: 600 }}
               axisLine={{ stroke: '#3f3f46' }}
               tickLine={false}
             />
@@ -48,13 +48,13 @@ export const WeeklyProgressChart = ({ weeklyData }: WeeklyProgressChartProps) =>
             <Tooltip
               cursor={{ fill: 'rgba(249,115,22,0.08)' }}
               contentStyle={{
-                backgroundColor: '#18181b',
+                backgroundColor: '#051714',
                 border: '1px solid #3f3f46',
                 borderRadius: 8,
-                color: '#fafafa',
+                color: '#F7F7F5',
                 fontSize: 13,
               }}
-              labelStyle={{ color: '#fb923c', fontWeight: 600 }}
+              labelStyle={{ color: '#09BA5B', fontWeight: 600 }}
               itemStyle={{ color: '#d4d4d8' }}
               formatter={(value: number) => [`${value} / 100`, 'Score']}
               labelFormatter={(label: string) => `Week ${label.replace('W', '')}`}

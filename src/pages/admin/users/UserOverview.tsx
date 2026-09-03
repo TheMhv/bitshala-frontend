@@ -21,8 +21,8 @@ import { formatCertificateRank, formatCertificateType, formatUserRole } from '..
 import { extractErrorMessage, isBadFilterError } from '../../../utils/errorUtils';
 
 const TRACK_COLORS: Record<FellowshipType, string> = {
-  [FellowshipType.DEVELOPER]: '#fb923c',
-  [FellowshipType.DESIGNER]: '#60a5fa',
+  [FellowshipType.DEVELOPER]: '#09BA5B',
+  [FellowshipType.DESIGNER]: '#09BA5B',
   [FellowshipType.EDUCATOR]: '#a78bfa',
 };
 
@@ -69,7 +69,7 @@ const UserOverview = () => {
         // user — surface a friendly not-found state rather than a raw error.
         isBadFilterError(error) ? (
           <Box sx={{ py: 8, textAlign: 'center' }}>
-            <Typography sx={{ fontSize: '1.15rem', fontWeight: 700, color: '#fafafa', mb: 1 }}>
+            <Typography sx={{ fontSize: '1.15rem', fontWeight: 700, color: '#F7F7F5', mb: 1 }}>
               User not found
             </Typography>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
@@ -119,7 +119,7 @@ const UserOverview = () => {
           {/* Cohorts */}
           <Box sx={{ mt: 5 }}>
             <SectionHeading
-              icon={<GraduationCap size={20} color="#fb923c" />}
+              icon={<GraduationCap size={20} color="#09BA5B" />}
               title="Cohorts"
               summary={`${data.cohortSummary.enrolledCount} enrolled · ${data.cohortSummary.completedCount} completed`}
             />
@@ -155,7 +155,7 @@ const UserOverview = () => {
           {/* Fellowships */}
           <Box sx={{ mt: 5 }}>
             <SectionHeading
-              icon={<Award size={20} color="#fb923c" />}
+              icon={<Award size={20} color="#09BA5B" />}
               title="Fellowships"
               summary={`${data.fellowshipSummary.totalCount} total · ${data.fellowshipSummary.completedCount} completed`}
             />
@@ -336,7 +336,7 @@ const CohortRow = ({ cohort }: { cohort: UserOverviewCohortDto }) => (
               ? 'rgba(251,191,36,0.12)'
               : 'rgba(96,165,250,0.12)'
           }
-          color={cohort.certificate.certificateType === 'PERFORMER' ? '#fbbf24' : '#60a5fa'}
+          color={cohort.certificate.certificateType === 'PERFORMER' ? '#fbbf24' : '#09BA5B'}
           border={
             cohort.certificate.certificateType === 'PERFORMER'
               ? 'rgba(251,191,36,0.3)'

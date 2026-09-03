@@ -1,6 +1,13 @@
+import presetWebFonts from '@unocss/preset-web-fonts'
 import { defineConfig } from 'unocss'
 
 export default defineConfig({
+  presets: [
+      presetWebFonts({
+        provider: 'google',
+        fonts: { sans: 'Sora', mono: 'Sora' },
+      }),
+    ],
   theme: {
     fontFamily: {
       sans: ['Sora', 'ui-sans-serif', 'system-ui', 'sans-serif'],

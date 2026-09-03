@@ -66,20 +66,20 @@ const CohortInstructions: React.FC<CohortInstructionsProps> = ({ cohortType }) =
 
   if (isLoading) {
     return (
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', bgcolor: '#000' }}>
-        <CircularProgress sx={{ color: '#f97316' }} />
+      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', bgcolor: 'rgba(5, 23, 20, 1)' }}>
+        <CircularProgress sx={{ color: '#09BA5B' }} />
       </Box>
     );
   }
 
   if (error || !hasAccess) {
     return (
-      <Box sx={{ minHeight: '100vh', bgcolor: '#000', px: 2, py: 4, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Box sx={{ minHeight: '100vh', bgcolor: 'rgba(5, 23, 20, 1)', px: 2, py: 4, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Box sx={{ textAlign: 'center', maxWidth: 480 }}>
           <Box sx={{ width: 64, height: 64, mx: 'auto', mb: 3, bgcolor: 'rgba(239,68,68,0.2)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <AlertTriangle size={32} color="#f87171" />
           </Box>
-          <Typography variant="h5" sx={{ fontWeight: 700, color: '#fafafa', mb: 1.5 }}>
+          <Typography variant="h5" sx={{ fontWeight: 700, color: '#F7F7F5', mb: 1.5 }}>
             Access Restricted
           </Typography>
           <Typography variant="body2" sx={{ color: '#a1a1aa', mb: 4, lineHeight: 1.6 }}>
@@ -89,14 +89,14 @@ const CohortInstructions: React.FC<CohortInstructionsProps> = ({ cohortType }) =
             <Button
               variant="contained"
               onClick={() => navigate('/me')}
-              sx={{ bgcolor: '#ea580c', '&:hover': { bgcolor: '#c2410c' }, textTransform: 'none', fontWeight: 600, boxShadow: 'none' }}
+              sx={{ bgcolor: '#09BA5B', '&:hover': { bgcolor: '#09BA5B' }, textTransform: 'none', fontWeight: 600, boxShadow: 'none' }}
             >
               View Profile & Cohorts
             </Button>
             <Button
               variant="outlined"
               onClick={() => navigate(-1)}
-              sx={{ color: '#d4d4d8', borderColor: '#52525b', textTransform: 'none', '&:hover': { borderColor: '#71717a', bgcolor: 'rgba(255,255,255,0.04)' } }}
+              sx={{ color: '#d4d4d8', borderColor: '#52525b', textTransform: 'none', '&:hover': { borderColor: '#BFBEC2', bgcolor: '#0B2E28' } }}
             >
               Go Back
             </Button>

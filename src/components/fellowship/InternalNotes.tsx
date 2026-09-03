@@ -325,7 +325,7 @@ const NoteCard = ({
               height: 26,
               borderRadius: '50%',
               flexShrink: 0,
-              bgcolor: 'rgba(249,115,22,0.15)',
+              bgcolor: '#0B2E28',
               color: 'primary.light',
               display: 'flex',
               alignItems: 'center',

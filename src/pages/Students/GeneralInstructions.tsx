@@ -41,10 +41,10 @@ const GeneralInstructions: React.FC = () => {
 
   if (isLoading) {
     return (
-      <Box sx={{ minHeight: '100vh', bgcolor: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Box sx={{ minHeight: '100vh', bgcolor: 'rgba(5, 23, 20, 1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-          <CircularProgress size={24} sx={{ color: '#f97316' }} />
-          <Typography sx={{ color: '#fafafa', fontWeight: 500 }}>Loading...</Typography>
+          <CircularProgress size={24} sx={{ color: '#09BA5B' }} />
+          <Typography sx={{ color: '#F7F7F5', fontWeight: 500 }}>Loading...</Typography>
         </Box>
       </Box>
     );
@@ -52,7 +52,7 @@ const GeneralInstructions: React.FC = () => {
 
   if (error || !hasAccess) {
     return (
-      <Box sx={{ minHeight: '100vh', bgcolor: '#000', px: 2, py: 4 }}>
+      <Box sx={{ minHeight: '100vh', bgcolor: 'rgba(5, 23, 20, 1)', px: 2, py: 4 }}>
         <Box sx={{ maxWidth: 600, mx: 'auto', textAlign: 'center' }}>
           <Box
             sx={{
@@ -80,14 +80,14 @@ const GeneralInstructions: React.FC = () => {
               variant="contained"
               onClick={() => navigate('/me')}
               sx={{
-                bgcolor: '#ea580c',
+                bgcolor: '#09BA5B',
                 textTransform: 'none',
                 fontWeight: 600,
                 px: 3,
                 py: 1.2,
                 borderRadius: 2,
                 boxShadow: 'none',
-                '&:hover': { bgcolor: '#c2410c' },
+                '&:hover': { bgcolor: '#09BA5B' },
               }}
             >
               View Profile & Cohorts
@@ -103,7 +103,7 @@ const GeneralInstructions: React.FC = () => {
                 px: 3,
                 py: 1.2,
                 borderRadius: 2,
-                '&:hover': { borderColor: '#71717a', bgcolor: 'rgba(255,255,255,0.05)' },
+                '&:hover': { borderColor: '#BFBEC2', bgcolor: 'rgba(255,255,255,0.05)' },
               }}
             >
               Go Back

@@ -53,14 +53,14 @@ const RATING_LABELS: Record<ComponentRating, string> = {
 const RATING_COLOR: Record<ComponentRating, string> = {
   [ComponentRating.NOT_AT_ALL]: '#f87171',
   [ComponentRating.SOMEWHAT]: '#facc15',
-  [ComponentRating.HELPFUL]: '#60a5fa',
+  [ComponentRating.HELPFUL]: '#09BA5B',
   [ComponentRating.VERY_HELPFUL]: '#4ade80',
 };
 
 const PAGE_SIZE = 20;
 
 const headerCellSx = {
-  color: '#71717a',
+  color: '#BFBEC2',
   fontWeight: 600,
   fontSize: '0.75rem',
   textTransform: 'uppercase' as const,
@@ -80,14 +80,14 @@ const bodyCellSx = {
 const sectionLabelSx = {
   fontSize: '0.7rem',
   fontWeight: 700,
-  color: '#71717a',
+  color: '#BFBEC2',
   textTransform: 'uppercase' as const,
   letterSpacing: 0.6,
 };
 
 const INTEREST_COLORS = {
-  opportunity: { bg: 'rgba(59,130,246,0.1)', text: '#60a5fa', border: 'rgba(59,130,246,0.3)' },
-  fellowship: { bg: 'rgba(249,115,22,0.1)', text: '#fb923c', border: 'rgba(249,115,22,0.3)' },
+  opportunity: { bg: '#09BA5B1F', text: '#09BA5B', border: 'rgba(59,130,246,0.3)' },
+  fellowship: { bg: '#0B2E28', text: '#09BA5B', border: '#09BA5B' },
 };
 
 const cohortLabel = (cohort: { displayName: string; season: number }): string =>
@@ -100,11 +100,11 @@ const DiscordUsernameCell = ({ userId, fallback }: { userId: string; fallback: s
   const { data: user, isLoading } = useUserById(userId);
 
   if (isLoading) {
-    return <CircularProgress size={14} sx={{ color: '#71717a' }} />;
+    return <CircularProgress size={14} sx={{ color: '#BFBEC2' }} />;
   }
 
   return (
-    <Typography variant="body2" sx={{ color: '#fafafa', fontWeight: 500 }}>
+    <Typography variant="body2" sx={{ color: '#F7F7F5', fontWeight: 500 }}>
       {user?.discordUsername ?? fallback}
     </Typography>
   );
@@ -177,14 +177,14 @@ const FeedbackDetailDialog = ({
   >
     <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', pb: 1 }}>
       <Box>
-        <Typography variant="h6" sx={{ fontWeight: 700, color: '#fafafa' }}>
+        <Typography variant="h6" sx={{ fontWeight: 700, color: '#F7F7F5' }}>
           {feedback.userName ?? feedback.userEmail ?? 'Anonymous'}
         </Typography>
-        <Typography variant="body2" sx={{ color: '#71717a', mt: 0.25 }}>
+        <Typography variant="body2" sx={{ color: '#BFBEC2', mt: 0.25 }}>
           {feedback.userEmail}
         </Typography>
       </Box>
-      <IconButton onClick={onClose} size="small" sx={{ color: '#a1a1aa', '&:hover': { color: '#fafafa' } }}>
+      <IconButton onClick={onClose} size="small" sx={{ color: '#a1a1aa', '&:hover': { color: '#F7F7F5' } }}>
         <X size={20} />
       </IconButton>
     </DialogTitle>
@@ -313,12 +313,12 @@ const FeedbackAdmin: React.FC = () => {
     <Box sx={{ p: { xs: 2, md: 4 }, maxWidth: 1400, mx: 'auto' }}>
       <Box sx={{ mb: 4 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1 }}>
-          <MessageSquare size={28} color="#fb923c" />
-          <Typography variant="h4" sx={{ fontWeight: 700, color: '#fafafa', fontSize: { xs: '1.5rem', md: '2rem' } }}>
+          <MessageSquare size={28} color="#09BA5B" />
+          <Typography variant="h4" sx={{ fontWeight: 700, color: '#F7F7F5', fontSize: { xs: '1.5rem', md: '2rem' } }}>
             Feedback
           </Typography>
         </Box>
-        <Typography sx={{ color: '#71717a', fontSize: '0.9rem' }}>
+        <Typography sx={{ color: '#BFBEC2', fontSize: '0.9rem' }}>
           View all cohort feedback submissions
         </Typography>
       </Box>
@@ -339,14 +339,14 @@ const FeedbackAdmin: React.FC = () => {
             justifyContent: 'space-between',
             textTransform: 'none',
             bgcolor: '#1c1c1f',
-            color: '#fafafa',
+            color: '#F7F7F5',
             borderColor: '#3f3f46',
             px: 1.75,
             py: 0.85,
             '&:hover': { borderColor: '#52525b', bgcolor: '#1c1c1f' },
           }}
         >
-          <Typography noWrap sx={{ color: '#fafafa', fontSize: '0.875rem' }}>
+          <Typography noWrap sx={{ color: '#F7F7F5', fontSize: '0.875rem' }}>
             {selectedLabel}
           </Typography>
         </Button>
@@ -369,7 +369,7 @@ const FeedbackAdmin: React.FC = () => {
           <MenuItem
             selected={!selectedCohort}
             onClick={() => handleCohortChange('')}
-            sx={{ color: '#fafafa' }}
+            sx={{ color: '#F7F7F5' }}
           >
             All Cohorts
           </MenuItem>
@@ -383,11 +383,11 @@ const FeedbackAdmin: React.FC = () => {
                 onClick={(e) => openSubmenu(e, group.type)}
                 selected={isGroupSelected || activeType === group.type}
                 sx={{
-                  color: '#fafafa',
+                  color: '#F7F7F5',
                   display: 'flex',
                   justifyContent: 'space-between',
                   gap: 2,
-                  '&.Mui-selected': { bgcolor: 'rgba(249,115,22,0.12)' },
+                  '&.Mui-selected': { bgcolor: '#0B2E28' },
                   '&.Mui-selected:hover': { bgcolor: 'rgba(249,115,22,0.18)' },
                 }}
               >
@@ -395,7 +395,7 @@ const FeedbackAdmin: React.FC = () => {
                   primary={group.name}
                   primaryTypographyProps={{ fontSize: '0.875rem', noWrap: true }}
                 />
-                <Typography component="span" sx={{ color: '#71717a', fontSize: '0.85rem' }}>
+                <Typography component="span" sx={{ color: '#BFBEC2', fontSize: '0.85rem' }}>
                   ›
                 </Typography>
               </MenuItem>
@@ -434,8 +434,8 @@ const FeedbackAdmin: React.FC = () => {
               selected={selectedCohort === cohort.id}
               onClick={() => handleCohortChange(cohort.id)}
               sx={{
-                color: '#fafafa',
-                '&.Mui-selected': { bgcolor: 'rgba(249,115,22,0.12)', color: '#fb923c' },
+                color: '#F7F7F5',
+                '&.Mui-selected': { bgcolor: '#0B2E28', color: '#09BA5B' },
                 '&.Mui-selected:hover': { bgcolor: 'rgba(249,115,22,0.18)' },
               }}
             >
@@ -447,12 +447,12 @@ const FeedbackAdmin: React.FC = () => {
 
       {isLoading ? (
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1.5, py: 10 }}>
-          <CircularProgress size={36} sx={{ color: '#f97316' }} />
-          <Typography variant="body2" sx={{ color: '#71717a' }}>Loading feedback...</Typography>
+          <CircularProgress size={36} sx={{ color: '#09BA5B' }} />
+          <Typography variant="body2" sx={{ color: '#BFBEC2' }}>Loading feedback...</Typography>
         </Box>
       ) : records.length === 0 ? (
         <Box sx={{ display: 'flex', justifyContent: 'center', py: 10 }}>
-          <Typography variant="body2" sx={{ color: '#71717a' }}>
+          <Typography variant="body2" sx={{ color: '#BFBEC2' }}>
             No feedback submissions yet{selectedCohort ? ' for this cohort' : ''}.
           </Typography>
         </Box>
@@ -498,7 +498,7 @@ const FeedbackAdmin: React.FC = () => {
                       <FeedbackSummaryCell feedback={feedback} />
                     </TableCell>
                     <TableCell sx={{ ...bodyCellSx, display: { xs: 'none', md: 'table-cell' } }}>
-                      <Typography variant="body2" sx={{ color: '#71717a', whiteSpace: 'nowrap' }}>
+                      <Typography variant="body2" sx={{ color: '#BFBEC2', whiteSpace: 'nowrap' }}>
                         {new Date(feedback.createdAt).toLocaleDateString()}
                       </Typography>
                     </TableCell>
@@ -516,7 +516,7 @@ const FeedbackAdmin: React.FC = () => {
                 onChange={(_, value) => setPage(value - 1)}
                 sx={{
                   '& .MuiPaginationItem-root': { color: '#a1a1aa' },
-                  '& .Mui-selected': { bgcolor: 'rgba(249,115,22,0.15) !important', color: '#fb923c' },
+                  '& .Mui-selected': { bgcolor: '#0B2E28 !important', color: '#09BA5B' },
                 }}
               />
             </Box>

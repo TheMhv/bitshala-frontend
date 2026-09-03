@@ -13,7 +13,7 @@ type TabsProps = {
   accent?: string;
 };
 
-const DEFAULT_ACCENT = '#f97316';
+const DEFAULT_ACCENT = '#09BA5B';
 
 const Tabs = ({ tabs, activeTab, onChange, accent = DEFAULT_ACCENT }: TabsProps) => {
   return (
@@ -34,7 +34,7 @@ const Tabs = ({ tabs, activeTab, onChange, accent = DEFAULT_ACCENT }: TabsProps)
               border: '1px solid',
               borderColor: isActive ? accent : '#3f3f46',
               bgcolor: isActive ? `${accent}1a` : 'transparent',
-              color: isActive ? accent : '#71717a',
+              color: isActive ? accent : '#BFBEC2',
               cursor: 'pointer',
               fontSize: '0.85rem',
               fontWeight: 500,
@@ -44,7 +44,7 @@ const Tabs = ({ tabs, activeTab, onChange, accent = DEFAULT_ACCENT }: TabsProps)
               '&:hover': {
                 borderColor: isActive ? accent : '#52525b',
                 color: isActive ? accent : '#d4d4d8',
-                bgcolor: isActive ? `${accent}1a` : 'rgba(255,255,255,0.04)',
+                bgcolor: isActive ? `${accent}1a` : '#0B2E28',
               },
             }}
           >
@@ -57,8 +57,8 @@ const Tabs = ({ tabs, activeTab, onChange, accent = DEFAULT_ACCENT }: TabsProps)
                   '& .MuiBadge-badge': {
                     position: 'relative',
                     transform: 'none',
-                    bgcolor: isActive ? `${accent}33` : '#3f3f46',
-                    color: isActive ? accent : '#71717a',
+                    bgcolor: isActive ? '#09BA5B' : '#12332B',
+                    color: isActive ? '#010101' : '#BFBEC2',
                     fontWeight: 600,
                     fontSize: '0.7rem',
                     minWidth: 20,

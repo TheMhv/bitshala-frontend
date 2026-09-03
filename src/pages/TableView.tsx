@@ -543,14 +543,14 @@ const TableView: React.FC = () => {
   // === Loading & error states ===
   if (isCohortLoading && !cohortError) {
     return (
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', bgcolor: '#000' }}>
-        <CircularProgress sx={{ color: '#f97316' }} />
+      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', bgcolor: 'rgba(5, 23, 20, 1)' }}>
+        <CircularProgress sx={{ color: '#09BA5B' }} />
       </Box>
     );
   }
 
   return (
-    <Box sx={{ p: { xs: 2, sm: 3, lg: 4 }, bgcolor: '#000', color: '#d4d4d8', minHeight: '100vh' }}>
+    <Box sx={{ p: { xs: 2, sm: 3, lg: 4 }, bgcolor: 'rgba(5, 23, 20, 1)', color: '#d4d4d8', minHeight: '100vh' }}>
       <Box sx={{ maxWidth: '100%', mx: 'auto' }}>
         {/* Page Title */}
         <Box
@@ -568,11 +568,11 @@ const TableView: React.FC = () => {
               <>
                 <Typography
                   variant="h5"
-                  sx={{ color: '#fafafa', fontWeight: 700, fontSize: { xs: '1.25rem', sm: '1.5rem' } }}
+                  sx={{ color: '#F7F7F5', fontWeight: 700, fontSize: { xs: '1.25rem', sm: '1.5rem' } }}
                 >
                   {cohortTypeToName(cohortData.type)} &ndash; Season {cohortData.season}
                 </Typography>
-                <Typography variant="body2" sx={{ color: '#71717a', mt: 0.5 }}>
+                <Typography variant="body2" sx={{ color: '#BFBEC2', mt: 0.5 }}>
                   {formatCohortDate(cohortData.startDate)} to {formatCohortDate(cohortData.endDate)}
                 </Typography>
               </>
@@ -583,8 +583,8 @@ const TableView: React.FC = () => {
             startIcon={<Eye size={16} />}
             onClick={() => navigate(`/results/${cohortIdParam}`)}
             sx={{
-              bgcolor: '#ea580c',
-              '&:hover': { bgcolor: '#c2410c' },
+              bgcolor: '#09BA5B',
+              '&:hover': { bgcolor: '#09BA5B' },
               textTransform: 'none',
               fontWeight: 600,
               boxShadow: 'none',
@@ -639,7 +639,7 @@ const TableView: React.FC = () => {
 
         {isScoresLoading || isScoresPending ? (
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', py: 12 }}>
-            <CircularProgress size={32} sx={{ color: '#f97316' }} />
+            <CircularProgress size={32} sx={{ color: '#09BA5B' }} />
           </Box>
         ) : (
           <StudentTableGrid
@@ -698,14 +698,14 @@ const TableView: React.FC = () => {
             <>
               <Box sx={{ px: 3.5, pt: 3.5, pb: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <Box>
-                  <Typography sx={{ fontWeight: 700, color: '#fafafa', fontSize: '1.35rem', letterSpacing: '-0.01em' }}>
+                  <Typography sx={{ fontWeight: 700, color: '#F7F7F5', fontSize: '1.35rem', letterSpacing: '-0.01em' }}>
                     Assign Groups
                   </Typography>
-                  <Typography sx={{ color: '#71717a', fontSize: '0.85rem', mt: 0.5 }}>
+                  <Typography sx={{ color: '#BFBEC2', fontSize: '0.85rem', mt: 0.5 }}>
                     Distribute students into groups for this week.
                   </Typography>
                 </Box>
-                <IconButton onClick={() => setShowAssignModal(false)} size="small" sx={{ color: '#52525b', mt: -0.5, '&:hover': { color: '#fafafa', bgcolor: 'rgba(255,255,255,0.06)' } }}>
+                <IconButton onClick={() => setShowAssignModal(false)} size="small" sx={{ color: '#52525b', mt: -0.5, '&:hover': { color: '#F7F7F5', bgcolor: 'rgba(255,255,255,0.06)' } }}>
                   <X size={18} />
                 </IconButton>
               </Box>
@@ -722,13 +722,13 @@ const TableView: React.FC = () => {
                     size="small"
                     sx={{
                       '& .MuiOutlinedInput-root': {
-                        bgcolor: 'rgba(255,255,255,0.04)', color: '#fafafa', borderRadius: 2,
+                        bgcolor: '#0B2E28', color: '#F7F7F5', borderRadius: 2,
                         '& fieldset': { borderColor: 'rgba(255,255,255,0.1)' },
-                        '&:hover fieldset': { borderColor: 'rgba(249,115,22,0.5)' },
-                        '&.Mui-focused fieldset': { borderColor: '#f97316' },
+                        '&:hover fieldset': { borderColor: '#12332B' },
+                        '&.Mui-focused fieldset': { borderColor: '#09BA5B' },
                       },
-                      '& .MuiInputLabel-root': { color: '#71717a', fontSize: '0.85rem' },
-                      '& .MuiInputLabel-root.Mui-focused': { color: '#f97316' },
+                      '& .MuiInputLabel-root': { color: '#BFBEC2', fontSize: '0.85rem' },
+                      '& .MuiInputLabel-root.Mui-focused': { color: '#09BA5B' },
                     }}
                   />
                   <TextField
@@ -742,13 +742,13 @@ const TableView: React.FC = () => {
                     size="small"
                     sx={{
                       '& .MuiOutlinedInput-root': {
-                        bgcolor: 'rgba(255,255,255,0.04)', color: '#fafafa', borderRadius: 2,
+                        bgcolor: '#0B2E28', color: '#F7F7F5', borderRadius: 2,
                         '& fieldset': { borderColor: 'rgba(255,255,255,0.1)' },
-                        '&:hover fieldset': { borderColor: 'rgba(249,115,22,0.5)' },
-                        '&.Mui-focused fieldset': { borderColor: '#f97316' },
+                        '&:hover fieldset': { borderColor: '#12332B' },
+                        '&.Mui-focused fieldset': { borderColor: '#09BA5B' },
                       },
-                      '& .MuiInputLabel-root': { color: '#71717a', fontSize: '0.85rem' },
-                      '& .MuiInputLabel-root.Mui-focused': { color: '#f97316' },
+                      '& .MuiInputLabel-root': { color: '#BFBEC2', fontSize: '0.85rem' },
+                      '& .MuiInputLabel-root.Mui-focused': { color: '#09BA5B' },
                     }}
                   />
                 </Box>
@@ -756,7 +756,7 @@ const TableView: React.FC = () => {
               <DialogActions sx={{ px: 3.5, pb: 3, pt: 2, gap: 1 }}>
                 <MuiButton
                   onClick={() => setShowAssignModal(false)}
-                  sx={{ color: '#71717a', textTransform: 'none', fontWeight: 500, fontSize: '0.85rem', '&:hover': { color: '#d4d4d8', bgcolor: 'rgba(255,255,255,0.04)' } }}
+                  sx={{ color: '#BFBEC2', textTransform: 'none', fontWeight: 500, fontSize: '0.85rem', '&:hover': { color: '#d4d4d8', bgcolor: '#0B2E28' } }}
                 >
                   Cancel
                 </MuiButton>
@@ -764,7 +764,7 @@ const TableView: React.FC = () => {
                   onClick={handleAssignGroupsSubmit}
                   variant="contained"
                   sx={{
-                    bgcolor: '#f97316', '&:hover': { bgcolor: '#ea580c' },
+                    bgcolor: '#09BA5B', '&:hover': { bgcolor: '#09BA5B' },
                     textTransform: 'none', fontWeight: 600, fontSize: '0.85rem',
                     boxShadow: 'none', borderRadius: 2, px: 3,
                   }}
@@ -778,8 +778,8 @@ const TableView: React.FC = () => {
           {/* Loading state */}
           {assignStep === 'loading' && (
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', py: 8, gap: 2 }}>
-              <CircularProgress size={32} sx={{ color: '#f97316' }} />
-              <Typography sx={{ color: '#71717a', fontSize: '0.9rem' }}>Assigning groups...</Typography>
+              <CircularProgress size={32} sx={{ color: '#09BA5B' }} />
+              <Typography sx={{ color: '#BFBEC2', fontSize: '0.9rem' }}>Assigning groups...</Typography>
             </Box>
           )}
 
@@ -788,14 +788,14 @@ const TableView: React.FC = () => {
             <>
               <Box sx={{ px: 3.5, pt: 3.5, pb: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <Box>
-                  <Typography sx={{ fontWeight: 700, color: '#fafafa', fontSize: '1.35rem', letterSpacing: '-0.01em' }}>
+                  <Typography sx={{ fontWeight: 700, color: '#F7F7F5', fontSize: '1.35rem', letterSpacing: '-0.01em' }}>
                     Assign TAs
                   </Typography>
-                  <Typography sx={{ color: '#71717a', fontSize: '0.85rem', mt: 0.5 }}>
+                  <Typography sx={{ color: '#BFBEC2', fontSize: '0.85rem', mt: 0.5 }}>
                     {Object.keys(taAssignments).length} groups found. Select a TA for each group.
                   </Typography>
                 </Box>
-                <IconButton onClick={() => setShowAssignModal(false)} size="small" sx={{ color: '#52525b', mt: -0.5, '&:hover': { color: '#fafafa', bgcolor: 'rgba(255,255,255,0.06)' } }}>
+                <IconButton onClick={() => setShowAssignModal(false)} size="small" sx={{ color: '#52525b', mt: -0.5, '&:hover': { color: '#F7F7F5', bgcolor: 'rgba(255,255,255,0.06)' } }}>
                   <X size={18} />
                 </IconButton>
               </Box>
@@ -814,9 +814,9 @@ const TableView: React.FC = () => {
                       }}
                     >
                       <Typography sx={{
-                        color: '#f97316', fontWeight: 700, fontSize: '0.8rem',
+                        color: '#09BA5B', fontWeight: 700, fontSize: '0.8rem',
                         minWidth: 70, textAlign: 'center',
-                        bgcolor: 'rgba(249,115,22,0.1)', borderRadius: 1.5, py: 0.75, px: 1.5,
+                        bgcolor: '#0B2E28', borderRadius: 1.5, py: 0.75, px: 1.5,
                         letterSpacing: '0.02em',
                       }}>
                         Group {groupNum}
@@ -828,20 +828,20 @@ const TableView: React.FC = () => {
                         size="small"
                         fullWidth
                         sx={{
-                          bgcolor: 'transparent', color: '#fafafa', borderRadius: 1.5,
+                          bgcolor: 'transparent', color: '#F7F7F5', borderRadius: 1.5,
                           '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(255,255,255,0.08)' },
-                          '&:hover .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(249,115,22,0.4)' },
-                          '&.Mui-focused .MuiOutlinedInput-notchedOutline': { borderColor: '#f97316' },
+                          '&:hover .MuiOutlinedInput-notchedOutline': { borderColor: '#09BA5B' },
+                          '&.Mui-focused .MuiOutlinedInput-notchedOutline': { borderColor: '#09BA5B' },
                           '& .MuiSvgIcon-root': { color: '#52525b' },
                           '& .MuiSelect-select': { py: 1, fontSize: '0.875rem' },
                         }}
                         MenuProps={{ PaperProps: { sx: { bgcolor: '#1c1c1e', color: '#d4d4d8', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 2, mt: 0.5 } } }}
                       >
-                        <MenuItem value="" sx={{ color: '#52525b', fontSize: '0.875rem', '&:hover': { bgcolor: 'rgba(255,255,255,0.04)' } }}>
+                        <MenuItem value="" sx={{ color: '#52525b', fontSize: '0.875rem', '&:hover': { bgcolor: '#0B2E28' } }}>
                           Select TA...
                         </MenuItem>
                         {teachingAssistants?.map((ta) => (
-                          <MenuItem key={ta.id} value={ta.id} sx={{ fontSize: '0.875rem', '&:hover': { bgcolor: 'rgba(255,255,255,0.04)' } }}>
+                          <MenuItem key={ta.id} value={ta.id} sx={{ fontSize: '0.875rem', '&:hover': { bgcolor: '#0B2E28' } }}>
                             {ta.discordGlobalName || ta.discordUserName || ta.name || ta.email}
                           </MenuItem>
                         ))}
@@ -853,7 +853,7 @@ const TableView: React.FC = () => {
               <DialogActions sx={{ px: 3.5, pb: 3, pt: 2, gap: 1 }}>
                 <MuiButton
                   onClick={() => setShowAssignModal(false)}
-                  sx={{ color: '#71717a', textTransform: 'none', fontWeight: 500, fontSize: '0.85rem', '&:hover': { color: '#d4d4d8', bgcolor: 'rgba(255,255,255,0.04)' } }}
+                  sx={{ color: '#BFBEC2', textTransform: 'none', fontWeight: 500, fontSize: '0.85rem', '&:hover': { color: '#d4d4d8', bgcolor: '#0B2E28' } }}
                 >
                   Skip
                 </MuiButton>
@@ -862,10 +862,10 @@ const TableView: React.FC = () => {
                   variant="contained"
                   disabled={Object.values(taAssignments).every((v) => v === '')}
                   sx={{
-                    bgcolor: '#f97316', '&:hover': { bgcolor: '#ea580c' },
+                    bgcolor: '#09BA5B', '&:hover': { bgcolor: '#09BA5B' },
                     textTransform: 'none', fontWeight: 600, fontSize: '0.85rem',
                     boxShadow: 'none', borderRadius: 2, px: 3,
-                    '&.Mui-disabled': { bgcolor: 'rgba(249,115,22,0.2)', color: 'rgba(249,115,22,0.4)' },
+                    '&.Mui-disabled': { bgcolor: 'rgba(249,115,22,0.2)', color: '#09BA5B' },
                   }}
                 >
                   Assign TAs
@@ -877,8 +877,8 @@ const TableView: React.FC = () => {
           {/* Assigning TAs loading */}
           {assignStep === 'assigning-ta' && (
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', py: 8, gap: 2 }}>
-              <CircularProgress size={32} sx={{ color: '#f97316' }} />
-              <Typography sx={{ color: '#71717a', fontSize: '0.9rem' }}>Assigning TAs...</Typography>
+              <CircularProgress size={32} sx={{ color: '#09BA5B' }} />
+              <Typography sx={{ color: '#BFBEC2', fontSize: '0.9rem' }}>Assigning TAs...</Typography>
             </Box>
           )}
         </Dialog>
@@ -893,16 +893,16 @@ const TableView: React.FC = () => {
             <Dialog
               open={scheduleDateOpen}
               onClose={() => setScheduleDateOpen(false)}
-              PaperProps={{ sx: { bgcolor: '#18181b', border: '1px solid #27272a', borderRadius: 2, minWidth: 360 } }}
+              PaperProps={{ sx: { bgcolor: '#051714', border: '1px solid #27272a', borderRadius: 2, minWidth: 360 } }}
             >
               <DialogContent sx={{ pb: 1 }}>
-                <Typography sx={{ color: '#fafafa', fontWeight: 600, mb: 2.5, fontSize: '1rem' }}>
+                <Typography sx={{ color: '#F7F7F5', fontWeight: 600, mb: 2.5, fontSize: '1rem' }}>
                   Schedule Date — {weekLabel}
                 </Typography>
                 {schedWeek && (
                   <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                     <Box>
-                      <Typography variant="caption" sx={{ color: '#71717a', textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '0.7rem' }}>
+                      <Typography variant="caption" sx={{ color: '#BFBEC2', textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '0.7rem' }}>
                         Current Date
                       </Typography>
                       <Typography sx={{ color: schedWeek.scheduledDate ? '#a1a1aa' : '#3f3f46', fontSize: '0.85rem', mt: 0.5 }}>
@@ -910,7 +910,7 @@ const TableView: React.FC = () => {
                       </Typography>
                     </Box>
                     <Box>
-                      <Typography variant="caption" sx={{ color: '#71717a', textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '0.7rem', display: 'block', mb: 0.75 }}>
+                      <Typography variant="caption" sx={{ color: '#BFBEC2', textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '0.7rem', display: 'block', mb: 0.75 }}>
                         New Date
                       </Typography>
                       <TextField

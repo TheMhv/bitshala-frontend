@@ -79,8 +79,8 @@ const SORT_OPTIONS: {
 ];
 
 const TRACK_COLORS: Record<FellowshipType, string> = {
-  [FellowshipType.DEVELOPER]: '#fb923c',
-  [FellowshipType.DESIGNER]: '#60a5fa',
+  [FellowshipType.DEVELOPER]: '#09BA5B',
+  [FellowshipType.DESIGNER]: '#09BA5B',
   [FellowshipType.EDUCATOR]: '#a78bfa',
 };
 
@@ -101,8 +101,8 @@ const initials = (name: string | null): string => {
 };
 
 const AVATAR_TINTS = [
-  { bg: 'rgba(249,115,22,0.15)', color: '#fb923c' },
-  { bg: 'rgba(96,165,250,0.15)', color: '#60a5fa' },
+  { bg: '#0B2E28', color: '#09BA5B' },
+  { bg: 'rgba(96,165,250,0.15)', color: '#09BA5B' },
   { bg: 'rgba(74,222,128,0.15)', color: '#4ade80' },
   { bg: 'rgba(167,139,250,0.15)', color: '#a78bfa' },
   { bg: 'rgba(244,114,182,0.15)', color: '#f472b6' },
@@ -498,7 +498,7 @@ const SortMenu = ({
               cursor: 'pointer',
               bgcolor: sortKey === o.value ? 'rgba(249,115,22,0.08)' : 'transparent',
               color: sortKey === o.value ? 'primary.light' : 'text.primary',
-              '&:hover': { bgcolor: 'rgba(255,255,255,0.04)' },
+              '&:hover': { bgcolor: '#0B2E28' },
             }}
           >
             {o.label}

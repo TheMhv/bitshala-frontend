@@ -251,7 +251,7 @@ const DebugErrorPage = ({ error, componentStack, onReset }: DebugErrorPageProps)
               sx={{
                 fontFamily: 'Sora, ui-monospace, SFMono-Regular, Menlo, monospace',
                 fontSize: '0.95rem',
-                color: '#fafafa',
+                color: '#F7F7F5',
                 whiteSpace: 'pre-wrap',
                 wordBreak: 'break-word',
               }}
@@ -266,7 +266,7 @@ const DebugErrorPage = ({ error, componentStack, onReset }: DebugErrorPageProps)
             variant="outlined"
             startIcon={<RotateCcw size={14} />}
             onClick={handleReload}
-            sx={{ color: '#fafafa', borderColor: '#3f3f46', textTransform: 'none' }}
+            sx={{ color: '#F7F7F5', borderColor: '#3f3f46', textTransform: 'none' }}
           >
             Reload
           </Button>
@@ -275,7 +275,7 @@ const DebugErrorPage = ({ error, componentStack, onReset }: DebugErrorPageProps)
               variant="outlined"
               startIcon={<Copy size={14} />}
               onClick={handleCopy}
-              sx={{ color: '#fafafa', borderColor: '#3f3f46', textTransform: 'none' }}
+              sx={{ color: '#F7F7F5', borderColor: '#3f3f46', textTransform: 'none' }}
             >
               {copied ? 'Copied' : 'Copy details'}
             </Button>
@@ -306,11 +306,11 @@ const DebugErrorPage = ({ error, componentStack, onReset }: DebugErrorPageProps)
 
         {firstUserFrame && (
           <Section
-            icon={<Code2 size={14} color="#fb923c" />}
+            icon={<Code2 size={14} color="#09BA5B" />}
             title="Where in your code"
           >
             <FrameRow frame={firstUserFrame} highlight />
-            <Typography variant="caption" sx={{ color: '#71717a', display: 'block', mt: 1.25 }}>
+            <Typography variant="caption" sx={{ color: '#BFBEC2', display: 'block', mt: 1.25 }}>
               First frame inside <code>/src/</code> (most likely cause).
             </Typography>
           </Section>
@@ -497,7 +497,7 @@ const FrameRow = ({ frame, highlight }: { frame: Frame; highlight?: boolean }) =
           height: 6,
           borderRadius: '50%',
           flexShrink: 0,
-          bgcolor: frame.isUserCode ? '#fb923c' : '#3f3f46',
+          bgcolor: frame.isUserCode ? '#09BA5B' : '#3f3f46',
         }}
       />
       <Box sx={{ minWidth: 0, flex: 1 }}>
@@ -518,7 +518,7 @@ const FrameRow = ({ frame, highlight }: { frame: Frame; highlight?: boolean }) =
           sx={{
             fontFamily: 'Sora, ui-monospace, SFMono-Regular, Menlo, monospace',
             fontSize: '0.72rem',
-            color: '#71717a',
+            color: '#BFBEC2',
             overflow: 'hidden',
             textOverflow: 'ellipsis',
             whiteSpace: 'nowrap',
@@ -533,8 +533,8 @@ const FrameRow = ({ frame, highlight }: { frame: Frame; highlight?: boolean }) =
             size="small"
             onClick={openInEditor}
             sx={{
-              color: '#71717a',
-              '&:hover': { color: '#fb923c', bgcolor: 'rgba(251,146,60,0.08)' },
+              color: '#BFBEC2',
+              '&:hover': { color: '#09BA5B', bgcolor: 'rgba(251,146,60,0.08)' },
             }}
           >
             <ExternalLink size={13} />

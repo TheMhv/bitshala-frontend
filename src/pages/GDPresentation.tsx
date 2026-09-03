@@ -9,8 +9,8 @@ import { buildPresentationSlides, type PresentationSlide } from '../helpers/pres
 import { useFullscreen, useWakeLock } from '../hooks/presentationHooks';
 import Attachment from '../components/instructions/Attachment';
 
-const ORANGE = '#fb923c';
-const BLUE = '#60a5fa';
+const ORANGE = '#09BA5B';
+const BLUE = '#09BA5B';
 const IDLE_MS = 2500;
 
 // Eyebrow label shown above the slide body, varies by slide kind.
@@ -136,7 +136,7 @@ const GDPresentation: React.FC = () => {
 
   if (isLoading) {
     return (
-      <Box sx={{ minHeight: '100vh', bgcolor: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Box sx={{ minHeight: '100vh', bgcolor: 'rgba(5, 23, 20, 1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <CircularProgress sx={{ color: ORANGE }} />
       </Box>
     );
@@ -144,7 +144,7 @@ const GDPresentation: React.FC = () => {
 
   if (slides.length === 0) {
     return (
-      <Box sx={{ minHeight: '100vh', bgcolor: '#000', color: '#fafafa', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3, px: 3, textAlign: 'center' }}>
+      <Box sx={{ minHeight: '100vh', bgcolor: 'rgba(5, 23, 20, 1)', color: '#F7F7F5', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3, px: 3, textAlign: 'center' }}>
         <Typography sx={{ fontSize: '1.25rem', color: '#a1a1aa' }}>
           No questions available to present for this week.
         </Typography>
@@ -165,8 +165,8 @@ const GDPresentation: React.FC = () => {
       sx={{
         position: 'fixed',
         inset: 0,
-        bgcolor: slide.kind === 'safety' ? '#0a0a0a' : '#000',
-        color: '#fafafa',
+        bgcolor: slide.kind === 'safety' ? '#142522' : 'rgba(5, 23, 20, 1)',
+        color: '#F7F7F5',
         overflow: 'hidden',
         cursor: controlsVisible ? 'default' : 'none',
         transition: 'background-color 300ms ease',
@@ -240,7 +240,7 @@ const GDPresentation: React.FC = () => {
                 {eyebrow.text}
               </Typography>
             )}
-            <Typography sx={{ fontWeight: 800, lineHeight: 1.2, fontSize: 'clamp(2.25rem, 5.5vw, 4.5rem)', maxWidth: 1200, color: '#fafafa' }}>
+            <Typography sx={{ fontWeight: 800, lineHeight: 1.2, fontSize: 'clamp(2.25rem, 5.5vw, 4.5rem)', maxWidth: 1200, color: '#F7F7F5' }}>
               {slide.text}
             </Typography>
           </>
@@ -273,10 +273,10 @@ const GDPresentation: React.FC = () => {
           pointerEvents: controlsVisible ? 'auto' : 'none',
         }}
       >
-        <IconButton onClick={toggleFullscreen} size="small" sx={{ color: '#a1a1aa', bgcolor: 'rgba(255,255,255,0.04)', '&:hover': { color: '#fafafa', bgcolor: 'rgba(255,255,255,0.1)' } }}>
+        <IconButton onClick={toggleFullscreen} size="small" sx={{ color: '#a1a1aa', bgcolor: '#0B2E28', '&:hover': { color: '#F7F7F5', bgcolor: 'rgba(255,255,255,0.1)' } }}>
           {isFullscreen ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
         </IconButton>
-        <IconButton onClick={() => { exitFullscreen(); goBack(); }} size="small" sx={{ color: '#a1a1aa', bgcolor: 'rgba(255,255,255,0.04)', '&:hover': { color: '#fafafa', bgcolor: 'rgba(255,255,255,0.1)' } }}>
+        <IconButton onClick={() => { exitFullscreen(); goBack(); }} size="small" sx={{ color: '#a1a1aa', bgcolor: '#0B2E28', '&:hover': { color: '#F7F7F5', bgcolor: 'rgba(255,255,255,0.1)' } }}>
           <X size={18} />
         </IconButton>
       </Box>

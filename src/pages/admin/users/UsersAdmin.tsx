@@ -42,8 +42,8 @@ const initials = (name: string): string => {
 };
 
 const AVATAR_TINTS = [
-  { bg: 'rgba(249,115,22,0.15)', color: '#fb923c' },
-  { bg: 'rgba(96,165,250,0.15)', color: '#60a5fa' },
+  { bg: '#0B2E28', color: '#09BA5B' },
+  { bg: 'rgba(96,165,250,0.15)', color: '#09BA5B' },
   { bg: 'rgba(74,222,128,0.15)', color: '#4ade80' },
   { bg: 'rgba(167,139,250,0.15)', color: '#a78bfa' },
   { bg: 'rgba(244,114,182,0.15)', color: '#f472b6' },

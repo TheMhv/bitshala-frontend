@@ -10,8 +10,8 @@ interface LayoutProps {
 
 // Shown while a lazily-loaded route chunk is being fetched
 const PageFallback = () => (
-  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', width: '100%', bgcolor: '#000' }}>
-    <CircularProgress sx={{ color: '#f97316' }} />
+  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', width: '100%', bgcolor: 'rgba(5, 23, 20, 1)' }}>
+    <CircularProgress sx={{ color: '#09BA5B' }} />
   </Box>
 );
 

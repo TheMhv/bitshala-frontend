@@ -64,8 +64,8 @@ const selectSx = {
   color: '#d4d4d8',
   borderRadius: 1,
   '& .MuiOutlinedInput-notchedOutline': { borderColor: '#3f3f46' },
-  '&:hover .MuiOutlinedInput-notchedOutline': { borderColor: '#f97316' },
-  '&.Mui-focused .MuiOutlinedInput-notchedOutline': { borderColor: '#f97316' },
+  '&:hover .MuiOutlinedInput-notchedOutline': { borderColor: '#09BA5B' },
+  '&.Mui-focused .MuiOutlinedInput-notchedOutline': { borderColor: '#09BA5B' },
   '& .MuiSvgIcon-root': { color: '#a1a1aa' },
   '& .MuiSelect-select': { py: 1.25, fontSize: '0.875rem' },
 };
@@ -130,14 +130,14 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
               transition: 'all 0.2s',
               ...(selectedWeekId === weekData.id
                 ? {
-                    bgcolor: '#ea580c',
+                    bgcolor: '#09BA5B',
                     color: '#fff',
-                    '&:hover': { bgcolor: '#c2410c' },
+                    '&:hover': { bgcolor: '#09BA5B' },
                   }
                 : {
-                    bgcolor: '#fb923c',
+                    bgcolor: '#09BA5B',
                     color: '#fff',
-                    '&:hover': { bgcolor: '#f97316' },
+                    '&:hover': { bgcolor: '#09BA5B' },
                   }),
             }}
           />
@@ -148,7 +148,7 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
       <Paper
         elevation={0}
         sx={{
-          bgcolor: '#000',
+          bgcolor: 'rgba(5, 23, 20, 1)',
           border: '1px solid #27272a',
           borderRadius: 2,
           p: { xs: 1.5, sm: 2 },
@@ -194,10 +194,10 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
                 borderRadius: 1,
                 fontSize: '0.875rem',
                 '& fieldset': { borderColor: '#3f3f46' },
-                '&:hover fieldset': { borderColor: '#f97316' },
-                '&.Mui-focused fieldset': { borderColor: '#f97316' },
+                '&:hover fieldset': { borderColor: '#09BA5B' },
+                '&.Mui-focused fieldset': { borderColor: '#09BA5B' },
               },
-              '& .MuiInputBase-input::placeholder': { color: '#71717a', opacity: 1 },
+              '& .MuiInputBase-input::placeholder': { color: '#BFBEC2', opacity: 1 },
             }}
           />
 
@@ -259,7 +259,7 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
               textTransform: 'none',
               fontSize: '0.8rem',
               whiteSpace: 'nowrap',
-              '&:hover': { borderColor: '#71717a', bgcolor: 'rgba(255,255,255,0.04)' },
+              '&:hover': { borderColor: '#BFBEC2', bgcolor: '#0B2E28' },
             }}
           >
             Clear Filters
@@ -295,7 +295,7 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
               gap: 1.5,
               px: 2,
               py: 1.5,
-              bgcolor: '#000',
+              bgcolor: 'rgba(5, 23, 20, 1)',
               border: '1px solid #27272a',
               borderRadius: 2,
               flex: 1,
@@ -310,17 +310,17 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
                 width: 36,
                 height: 36,
                 borderRadius: '8px',
-                bgcolor: 'rgba(249,115,22,0.15)',
+                bgcolor: '#0B2E28',
                 flexShrink: 0,
               }}
             >
-              <Users size={18} color="#f97316" />
+              <Users size={18} color="#09BA5B" />
             </Box>
             <Box sx={{ minWidth: 0 }}>
-              <Typography variant="caption" sx={{ color: '#71717a', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              <Typography variant="caption" sx={{ color: '#BFBEC2', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                 Participants
               </Typography>
-              <Typography variant="h6" sx={{ color: '#fafafa', fontWeight: 600, lineHeight: 1.2, fontSize: '1.25rem' }}>
+              <Typography variant="h6" sx={{ color: '#F7F7F5', fontWeight: 600, lineHeight: 1.2, fontSize: '1.25rem' }}>
                 {totalCount ?? '...'}
               </Typography>
             </Box>
@@ -335,7 +335,7 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
               gap: 1.5,
               px: 2,
               py: 1.5,
-              bgcolor: '#000',
+              bgcolor: 'rgba(5, 23, 20, 1)',
               border: '1px solid #27272a',
               borderRadius: 2,
               flex: 1,
@@ -357,7 +357,7 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
               <UserCheck size={18} color="#22c55e" />
             </Box>
             <Box sx={{ minWidth: 0 }}>
-              <Typography variant="caption" sx={{ color: '#71717a', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              <Typography variant="caption" sx={{ color: '#BFBEC2', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                 Attendees
               </Typography>
               <Typography variant="h6" sx={{ color: '#22c55e', fontWeight: 600, lineHeight: 1.2, fontSize: '1.25rem' }}>
@@ -375,7 +375,7 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
               gap: 1.5,
               px: 2,
               py: 1.5,
-              bgcolor: '#000',
+              bgcolor: 'rgba(5, 23, 20, 1)',
               border: '1px solid #27272a',
               borderRadius: 2,
               flex: 1,
@@ -397,7 +397,7 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
               <UserX size={18} color="#ef4444" />
             </Box>
             <Box sx={{ minWidth: 0 }}>
-              <Typography variant="caption" sx={{ color: '#71717a', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              <Typography variant="caption" sx={{ color: '#BFBEC2', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                 Absentees
               </Typography>
               <Typography variant="h6" sx={{ color: '#ef4444', fontWeight: 600, lineHeight: 1.2, fontSize: '1.25rem' }}>
@@ -424,8 +424,8 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
                 }
               }}
               sx={{
-                bgcolor: '#fb923c',
-                '&:hover': { bgcolor: '#f97316' },
+                bgcolor: '#09BA5B',
+                '&:hover': { bgcolor: '#09BA5B' },
                 textTransform: 'none',
                 fontWeight: 500,
                 fontSize: '0.8rem',
@@ -444,8 +444,8 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
               startIcon={<Shuffle size={15} />}
               onClick={onAssignGroups}
               sx={{
-                bgcolor: '#fb923c',
-                '&:hover': { bgcolor: '#f97316' },
+                bgcolor: '#09BA5B',
+                '&:hover': { bgcolor: '#09BA5B' },
                 textTransform: 'none',
                 fontWeight: 500,
                 fontSize: '0.8rem',
@@ -488,7 +488,7 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
               fontSize: '0.8rem',
               boxShadow: 'none',
               whiteSpace: 'nowrap',
-              '&:hover': { borderColor: '#71717a', bgcolor: 'rgba(255,255,255,0.04)' },
+              '&:hover': { borderColor: '#BFBEC2', bgcolor: '#0B2E28' },
             }}
           >
             CSV

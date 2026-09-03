@@ -34,9 +34,9 @@ interface DataTableProps<T = TableRow> {
   className?: string;
 }
 
-const DataTable = <T extends TableRow = TableRow>({ 
-  data = [], 
-  columns = [], 
+const DataTable = <T extends TableRow = TableRow>({
+  data = [],
+  columns = [],
   title = "Data Table",
   loading = false,
   error = null,
@@ -72,12 +72,12 @@ const DataTable = <T extends TableRow = TableRow>({
   const sortedData: T[] = sortable ? [...filteredData].sort((a: T, b: T) => {
     const aValue = getNestedValue(a, sortField) || '';
     const bValue = getNestedValue(b, sortField) || '';
-    
+
     // Handle different data types
     if (typeof aValue === 'number' && typeof bValue === 'number') {
       return sortOrder === 'asc' ? aValue - bValue : bValue - aValue;
     }
-    
+
     const aString = String(aValue);
     const bString = String(bValue);
     const comparison = aString.localeCompare(bString);
@@ -111,11 +111,11 @@ const DataTable = <T extends TableRow = TableRow>({
 
   const formatDate = (timestamp: unknown): string => {
     if (!timestamp) return '-';
-    
+
     try {
       const date = new Date(timestamp as string | number);
       if (isNaN(date.getTime())) return '-';
-      
+
       return date.toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'short',
@@ -130,15 +130,15 @@ const DataTable = <T extends TableRow = TableRow>({
 
   const renderCellContent = (item: T, column: Column<T>): React.ReactNode => {
     const value = getNestedValue(item, column.key.toString());
-    
+
     if (column.render) {
       return column.render(value, item);
     }
-    
+
     if (column.type === 'date') {
       return formatDate(value);
     }
-    
+
     if (column.type === 'truncate') {
       return (
         <span className="max-w-xs truncate block" title={String(value || '')}>
@@ -146,13 +146,13 @@ const DataTable = <T extends TableRow = TableRow>({
         </span>
       );
     }
-    
+
     return value?.toString() || '-';
   };
 
   // Get columns for table display (non-expandable columns)
   const displayColumns: Column<T>[] = columns.filter((col: Column<T>) => !col.expandable);
-  
+
   // Get columns for expanded view
   const expandableColumns: Column<T>[] = columns.filter((col: Column<T>) => col.expandable);
 
@@ -220,7 +220,7 @@ const DataTable = <T extends TableRow = TableRow>({
                 </div>
               </div>
             )}
-            
+
             {sortable && (
               <div className="flex gap-3">
                 <select
@@ -247,7 +247,7 @@ const DataTable = <T extends TableRow = TableRow>({
 
         {/* Modern Table */}
         <div className="bg-zinc-800 rounded-2xl overflow-hidden shadow-2xl border border-zinc-700">
-          <div className="overflow-x-auto" style={{ scrollbarColor: '#fb923c #52525b', scrollbarWidth: 'thin' }}>
+          <div className="overflow-x-auto" style={{ scrollbarColor: '#09BA5B #52525b', scrollbarWidth: 'thin' }}>
             <div className="min-w-full">
               <table className="w-full">
               <thead>
@@ -349,7 +349,7 @@ const DataTable = <T extends TableRow = TableRow>({
               <span className="font-semibold text-white">{Math.min(startIndex + pageSize, sortedData.length)}</span> of{' '}
               <span className="font-semibold text-orange-400">{sortedData.length}</span> results
             </div>
-            
+
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
@@ -358,7 +358,7 @@ const DataTable = <T extends TableRow = TableRow>({
               >
                 Previous
               </button>
-              
+
               <div className="flex gap-1">
                 {Array.from({ length: Math.min(totalPages, 7) }, (_, i: number) => {
                   let page: number;
@@ -371,7 +371,7 @@ const DataTable = <T extends TableRow = TableRow>({
                   } else {
                     page = currentPage - 3 + i;
                   }
-                  
+
                   return (
                     <button
                       key={page}
@@ -387,7 +387,7 @@ const DataTable = <T extends TableRow = TableRow>({
                   );
                 })}
               </div>
-              
+
               <button
                 onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
                 disabled={currentPage === totalPages}

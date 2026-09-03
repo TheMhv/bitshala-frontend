@@ -172,7 +172,7 @@ const CertificatePreviewModal = ({
                 Certificate Preview
               </Typography>
             </Box>
-            <Typography variant="h6" sx={{ fontWeight: 700, color: '#fafafa', fontSize: '1.1rem', lineHeight: 1.3 }}>
+            <Typography variant="h6" sx={{ fontWeight: 700, color: '#F7F7F5', fontSize: '1.1rem', lineHeight: 1.3 }}>
               {cohortName}
             </Typography>
             <Typography variant="caption" sx={{ color: '#52525b', mt: 0.25, display: 'block' }}>
@@ -182,7 +182,7 @@ const CertificatePreviewModal = ({
           <IconButton
             onClick={onClose}
             size="small"
-            sx={{ color: '#52525b', '&:hover': { color: '#fafafa', bgcolor: 'rgba(255,255,255,0.06)' }, mt: -0.5 }}
+            sx={{ color: '#52525b', '&:hover': { color: '#F7F7F5', bgcolor: 'rgba(255,255,255,0.06)' }, mt: -0.5 }}
           >
             <X size={18} />
           </IconButton>
@@ -205,7 +205,7 @@ const CertificatePreviewModal = ({
             {/* Stat cards */}
             <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 1.5, mb: 3 }}>
               {[
-                { label: 'Total Recipients', value: previews.length, color: '#60a5fa', bg: 'rgba(96,165,250,0.08)', border: 'rgba(96,165,250,0.2)' },
+                { label: 'Total Recipients', value: previews.length, color: '#09BA5B', bg: 'rgba(96,165,250,0.08)', border: 'rgba(96,165,250,0.2)' },
                 { label: 'Performers', value: performers.length, color: '#f59e0b', bg: 'rgba(245,158,11,0.08)', border: 'rgba(245,158,11,0.2)' },
                 { label: 'Participants', value: participants.length, color: '#a1a1aa', bg: 'rgba(161,161,170,0.08)', border: 'rgba(161,161,170,0.2)' },
               ].map((stat) => (
@@ -222,7 +222,7 @@ const CertificatePreviewModal = ({
                   <Typography sx={{ fontSize: '1.6rem', fontWeight: 700, color: stat.color, lineHeight: 1.1 }}>
                     {stat.value}
                   </Typography>
-                  <Typography sx={{ fontSize: '0.7rem', color: '#71717a', mt: 0.5, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <Typography sx={{ fontSize: '0.7rem', color: '#BFBEC2', mt: 0.5, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     {stat.label}
                   </Typography>
                 </Box>
@@ -265,7 +265,7 @@ const CertificatePreviewModal = ({
                       py: 1.25,
                       alignItems: 'center',
                       bgcolor: i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.015)',
-                      borderTop: i === 0 ? 'none' : '1px solid #18181b',
+                      borderTop: i === 0 ? 'none' : '1px solid #051714',
                       transition: 'background 0.15s',
                       '&:hover': { bgcolor: 'rgba(255,255,255,0.03)' },
                     }}
@@ -345,7 +345,7 @@ const CertificatePreviewModal = ({
             borderColor: '#3f3f46',
             textTransform: 'none',
             fontWeight: 500,
-            '&:hover': { borderColor: '#71717a', bgcolor: 'rgba(255,255,255,0.04)' },
+            '&:hover': { borderColor: '#BFBEC2', bgcolor: '#0B2E28' },
           }}
         >
           Close
@@ -354,10 +354,10 @@ const CertificatePreviewModal = ({
           onClick={() => { onGenerate(); onClose(); }}
           variant="contained"
           disabled={isGenerating || isLoading || !previews || previews.length === 0}
-          startIcon={isGenerating ? <CircularProgress size={13} sx={{ color: '#000' }} /> : undefined}
+          startIcon={isGenerating ? <CircularProgress size={13} sx={{ color: 'rgba(5, 23, 20, 1)' }} /> : undefined}
           sx={{
             bgcolor: '#f59e0b',
-            color: '#000',
+            color: 'rgba(5, 23, 20, 1)',
             textTransform: 'none',
             fontWeight: 600,
             boxShadow: 'none',
@@ -374,18 +374,18 @@ const CertificatePreviewModal = ({
 
 const inputSx = {
   '& .MuiOutlinedInput-root': {
-    bgcolor: '#18181b',
-    color: '#fafafa',
+    bgcolor: '#051714',
+    color: '#F7F7F5',
     '& fieldset': { borderColor: '#52525b' },
-    '&:hover fieldset': { borderColor: '#f97316' },
-    '&.Mui-focused fieldset': { borderColor: '#f97316' },
-    '&.Mui-disabled': { bgcolor: '#18181b' },
+    '&:hover fieldset': { borderColor: '#09BA5B' },
+    '&.Mui-focused fieldset': { borderColor: '#09BA5B' },
+    '&.Mui-disabled': { bgcolor: '#051714' },
     '&.Mui-disabled fieldset': { borderColor: '#3f3f46' },
   },
   '& .MuiInputLabel-root': { color: '#d4d4d8' },
-  '& .MuiInputLabel-root.Mui-focused': { color: '#f97316' },
+  '& .MuiInputLabel-root.Mui-focused': { color: '#09BA5B' },
   '& .MuiInputLabel-root.Mui-disabled': { color: '#a1a1aa' },
-  '& .MuiInputBase-input': { color: '#fafafa' },
+  '& .MuiInputBase-input': { color: '#F7F7F5' },
   '& .MuiInputBase-input.Mui-disabled': { WebkitTextFillColor: '#a1a1aa' },
   '& .MuiSelect-icon': { color: '#d4d4d8' },
 };
@@ -560,16 +560,16 @@ export const CohortSelection = () => {
               width: 48,
               height: 48,
               borderRadius: 2.5,
-              bgcolor: 'rgba(249,115,22,0.15)',
+              bgcolor: '#0B2E28',
               border: '1px solid rgba(249,115,22,0.25)',
               flexShrink: 0,
             }}
           >
-            <Settings size={24} color="#fb923c" />
+            <Settings size={24} color="#09BA5B" />
           </Box>
           <Box>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-              <Typography variant="h5" sx={{ fontWeight: 700, color: '#fafafa', fontSize: { xs: '1.5rem', md: '1.75rem' } }}>
+              <Typography variant="h5" sx={{ fontWeight: 700, color: '#F7F7F5', fontSize: { xs: '1.5rem', md: '1.75rem' } }}>
                 Cohort Selection
               </Typography>
               <Chip
@@ -577,8 +577,8 @@ export const CohortSelection = () => {
                 size="small"
                 sx={{
                   display: { xs: 'none', sm: 'inline-flex' },
-                  bgcolor: 'rgba(249,115,22,0.15)',
-                  color: '#fb923c',
+                  bgcolor: '#0B2E28',
+                  color: '#09BA5B',
                   border: '1px solid rgba(249,115,22,0.25)',
                   fontWeight: 600,
                   fontSize: '0.7rem',
@@ -586,7 +586,7 @@ export const CohortSelection = () => {
                 }}
               />
             </Box>
-            <Typography variant="body2" sx={{ color: '#71717a', mt: 0.5 }}>
+            <Typography variant="body2" sx={{ color: '#BFBEC2', mt: 0.5 }}>
               Select a cohort to manage students.
             </Typography>
           </Box>
@@ -603,7 +603,7 @@ export const CohortSelection = () => {
         <Paper
           elevation={0}
           sx={{
-            bgcolor: 'rgba(39,39,42,0.5)',
+            bgcolor: '#142522',
             borderRadius: 3,
             border: '1px solid rgba(249,115,22,0.2)',
             overflow: 'hidden',
@@ -635,7 +635,7 @@ export const CohortSelection = () => {
                   textTransform: 'none',
                   fontWeight: 500,
                   fontSize: '0.8rem',
-                  '&:hover': { borderColor: '#71717a', bgcolor: 'rgba(255,255,255,0.04)' },
+                  '&:hover': { borderColor: '#BFBEC2', bgcolor: '#0B2E28' },
                 }}
               >
                 CSV
@@ -647,8 +647,8 @@ export const CohortSelection = () => {
                   startIcon={<Plus size={15} />}
                   onClick={openCreateModal}
                   sx={{
-                    bgcolor: '#f97316',
-                    '&:hover': { bgcolor: '#ea580c' },
+                    bgcolor: '#09BA5B',
+                    '&:hover': { bgcolor: '#09BA5B' },
                     textTransform: 'none',
                     fontWeight: 500,
                     fontSize: '0.8rem',
@@ -679,7 +679,7 @@ export const CohortSelection = () => {
                         border: '1px solid #52525b',
                         borderRadius: 1,
                         p: 0.75,
-                        '&:hover': { borderColor: '#71717a', bgcolor: 'rgba(255,255,255,0.04)' },
+                        '&:hover': { borderColor: '#BFBEC2', bgcolor: '#0B2E28' },
                       }}
                     >
                       <Pencil size={14} />
@@ -734,7 +734,7 @@ export const CohortSelection = () => {
       >
         <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', pb: 0 }}>
           <Box>
-            <Typography variant="h6" sx={{ fontWeight: 700, color: '#fafafa' }}>
+            <Typography variant="h6" sx={{ fontWeight: 700, color: '#F7F7F5' }}>
               {isEditMode ? 'Edit Cohort' : 'Create Cohort'}
             </Typography>
             <Typography variant="caption" sx={{ color: '#a1a1aa' }}>
@@ -743,7 +743,7 @@ export const CohortSelection = () => {
                 : 'Fill out the information to create a new cohort.'}
             </Typography>
           </Box>
-          <IconButton onClick={closeModal} size="small" sx={{ color: '#a1a1aa', '&:hover': { color: '#fafafa' } }}>
+          <IconButton onClick={closeModal} size="small" sx={{ color: '#a1a1aa', '&:hover': { color: '#F7F7F5' } }}>
             <X size={20} />
           </IconButton>
         </DialogTitle>
@@ -759,7 +759,7 @@ export const CohortSelection = () => {
                   label="Cohort Type"
                   onChange={(e) => setSelectedCohortType(e.target.value as CohortType)}
                   required
-                  MenuProps={{ PaperProps: { sx: { bgcolor: '#18181b', border: '1px solid #27272a', color: '#fafafa' } } }}
+                  MenuProps={{ PaperProps: { sx: { bgcolor: '#051714', border: '1px solid #27272a', color: '#F7F7F5' } } }}
                 >
                   {COHORT_TYPES.map((ct) => (
                     <MenuItem key={ct} value={ct} sx={{ '&:hover': { bgcolor: '#52525b' } }}>
@@ -802,7 +802,7 @@ export const CohortSelection = () => {
                 color: '#d4d4d8',
                 borderColor: '#52525b',
                 textTransform: 'none',
-                '&:hover': { borderColor: '#71717a', bgcolor: 'rgba(255,255,255,0.04)' },
+                '&:hover': { borderColor: '#BFBEC2', bgcolor: '#0B2E28' },
               }}
             >
               Cancel
@@ -812,8 +812,8 @@ export const CohortSelection = () => {
               variant="contained"
               disabled={createCohortMutation.isPending || updateCohortMutation.isPending}
               sx={{
-                bgcolor: '#f97316',
-                '&:hover': { bgcolor: '#ea580c' },
+                bgcolor: '#09BA5B',
+                '&:hover': { bgcolor: '#09BA5B' },
                 textTransform: 'none',
                 fontWeight: 600,
                 boxShadow: 'none',

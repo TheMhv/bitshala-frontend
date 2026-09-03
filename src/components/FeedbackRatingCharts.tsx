@@ -174,7 +174,7 @@ const FeedbackRatingCharts = ({ cohorts }: FeedbackRatingChartsProps) => {
       <SectionShell>
         <Stack direction="row" spacing={1} alignItems="center">
           <CircularProgress size={16} sx={{ color: '#fbbf24' }} />
-          <Typography sx={{ color: '#71717a', fontSize: '0.8rem' }}>Loading ratings...</Typography>
+          <Typography sx={{ color: '#BFBEC2', fontSize: '0.8rem' }}>Loading ratings...</Typography>
         </Stack>
       </SectionShell>
     );
@@ -183,7 +183,7 @@ const FeedbackRatingCharts = ({ cohorts }: FeedbackRatingChartsProps) => {
   if (hasError) {
     return (
       <SectionShell>
-        <Typography sx={{ fontWeight: 600, color: '#fafafa', fontSize: '1rem', mb: 1 }}>
+        <Typography sx={{ fontWeight: 600, color: '#F7F7F5', fontSize: '1rem', mb: 1 }}>
           Cohort Ratings
         </Typography>
         <Typography sx={{ color: '#f87171', fontSize: '0.85rem' }}>
@@ -196,10 +196,10 @@ const FeedbackRatingCharts = ({ cohorts }: FeedbackRatingChartsProps) => {
   if (ratingSeriesByCohort.length === 0) {
     return (
       <SectionShell>
-        <Typography sx={{ fontWeight: 600, color: '#fafafa', fontSize: '1rem', mb: 1 }}>
+        <Typography sx={{ fontWeight: 600, color: '#F7F7F5', fontSize: '1rem', mb: 1 }}>
           Cohort Ratings
         </Typography>
-        <Typography sx={{ color: '#71717a', fontSize: '0.85rem' }}>
+        <Typography sx={{ color: '#BFBEC2', fontSize: '0.85rem' }}>
           No component ratings in submissions yet — written feedback alone isn’t enough for this view.
         </Typography>
       </SectionShell>
@@ -208,7 +208,7 @@ const FeedbackRatingCharts = ({ cohorts }: FeedbackRatingChartsProps) => {
 
   return (
     <SectionShell>
-      <Typography sx={{ fontWeight: 600, color: '#fafafa', fontSize: '1rem', mb: 0.5 }}>
+      <Typography sx={{ fontWeight: 600, color: '#F7F7F5', fontSize: '1rem', mb: 0.5 }}>
         Cohort Ratings
       </Typography>
       <Typography sx={{ color: '#a1a1aa', fontSize: '0.8rem', mb: 2.5 }}>
@@ -242,11 +242,11 @@ const FeedbackRatingCharts = ({ cohorts }: FeedbackRatingChartsProps) => {
               <Stack spacing={1}>
                 <Stack direction="row" alignItems="baseline" justifyContent="space-between" spacing={1}>
                   <Typography
-                    sx={{ color: '#fafafa', fontWeight: 700, fontSize: '1rem', letterSpacing: 0.3 }}
+                    sx={{ color: '#F7F7F5', fontWeight: 700, fontSize: '1rem', letterSpacing: 0.3 }}
                   >
                     {series.shortName}
                   </Typography>
-                  <Typography sx={{ color: '#71717a', fontSize: '0.72rem' }}>
+                  <Typography sx={{ color: '#BFBEC2', fontSize: '0.72rem' }}>
                     S{latest.season}
                   </Typography>
                 </Stack>

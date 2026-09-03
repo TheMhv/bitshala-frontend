@@ -23,7 +23,7 @@ const COLOR_MAP: Record<string, { bg: string; color: string; border: string }> =
   DOCUMENTS_IN_REVIEW: { bg: 'rgba(251,191,36,0.12)', color: '#fbbf24', border: 'rgba(251,191,36,0.3)' },
   PENDING_REVIEW: { bg: 'rgba(251,191,36,0.12)', color: '#fbbf24', border: 'rgba(251,191,36,0.3)' },
   // orange — needs revision
-  CHANGES_REQUESTED: { bg: 'rgba(251,146,60,0.12)', color: '#fb923c', border: 'rgba(251,146,60,0.3)' },
+  CHANGES_REQUESTED: { bg: 'rgba(251,146,60,0.12)', color: '#09BA5B', border: 'rgba(251,146,60,0.3)' },
   // green — good
   ACCEPTED: { bg: 'rgba(74,222,128,0.12)', color: '#4ade80', border: 'rgba(74,222,128,0.3)' },
   ACTIVE: { bg: 'rgba(74,222,128,0.12)', color: '#4ade80', border: 'rgba(74,222,128,0.3)' },
@@ -32,7 +32,7 @@ const COLOR_MAP: Record<string, { bg: string; color: string; border: string }> =
   // red — bad
   REJECTED: { bg: 'rgba(248,113,113,0.12)', color: '#f87171', border: 'rgba(248,113,113,0.3)' },
   // blue — closed
-  COMPLETED: { bg: 'rgba(96,165,250,0.12)', color: '#60a5fa', border: 'rgba(96,165,250,0.3)' },
+  COMPLETED: { bg: 'rgba(96,165,250,0.12)', color: '#09BA5B', border: 'rgba(96,165,250,0.3)' },
 };
 
 const LABEL_MAP: Record<string, string> = {

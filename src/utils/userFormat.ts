@@ -14,8 +14,8 @@ export const formatUserRole = (role: UserRole | string): string =>
 // Chip palette per role — matches the StatusChip idiom:
 // rgba(color,0.12) bg / solid text color / rgba(color,0.3) border.
 export const USER_ROLE_COLORS: Record<UserRole, { bg: string; color: string; border: string }> = {
-  [UserRole.ADMIN]: { bg: 'rgba(249,115,22,0.12)', color: '#fb923c', border: 'rgba(249,115,22,0.3)' },
-  [UserRole.TEACHING_ASSISTANT]: { bg: 'rgba(96,165,250,0.12)', color: '#60a5fa', border: 'rgba(96,165,250,0.3)' },
+  [UserRole.ADMIN]: { bg: '#0B2E28', color: '#09BA5B', border: '#09BA5B' },
+  [UserRole.TEACHING_ASSISTANT]: { bg: 'rgba(96,165,250,0.12)', color: '#09BA5B', border: 'rgba(96,165,250,0.3)' },
   [UserRole.STUDENT]: { bg: 'rgba(161,161,170,0.12)', color: '#d4d4d8', border: 'rgba(161,161,170,0.25)' },
 };
 

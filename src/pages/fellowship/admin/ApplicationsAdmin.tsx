@@ -113,8 +113,8 @@ const initials = (name: string | null): string => {
 };
 
 const AVATAR_TINTS: { bg: string; color: string }[] = [
-  { bg: 'rgba(249,115,22,0.15)', color: '#fb923c' },
-  { bg: 'rgba(96,165,250,0.15)', color: '#60a5fa' },
+  { bg: '#0B2E28', color: '#09BA5B' },
+  { bg: 'rgba(96,165,250,0.15)', color: '#09BA5B' },
   { bg: 'rgba(74,222,128,0.15)', color: '#4ade80' },
   { bg: 'rgba(167,139,250,0.15)', color: '#a78bfa' },
   { bg: 'rgba(244,114,182,0.15)', color: '#f472b6' },
@@ -556,7 +556,7 @@ const Toolbar = ({
                   cursor: 'pointer',
                   bgcolor: sortKey === o.value ? 'rgba(249,115,22,0.08)' : 'transparent',
                   color: sortKey === o.value ? 'primary.light' : 'text.primary',
-                  '&:hover': { bgcolor: 'rgba(255,255,255,0.04)' },
+                  '&:hover': { bgcolor: '#0B2E28' },
                 }}
               >
                 {o.label}
@@ -880,7 +880,7 @@ const DetailPane = ({
                 color: 'text.secondary',
                 width: 28,
                 height: 28,
-                '&:hover': { color: 'text.primary', bgcolor: 'rgba(255,255,255,0.04)' },
+                '&:hover': { color: 'text.primary', bgcolor: '#0B2E28' },
               }}
             >
               <FileDown size={14} />
@@ -995,7 +995,7 @@ const PaginatorButton = ({
       color: 'text.secondary',
       width: 28,
       height: 28,
-      '&:hover': { color: 'text.primary', bgcolor: 'rgba(255,255,255,0.04)' },
+      '&:hover': { color: 'text.primary', bgcolor: '#0B2E28' },
       '&.Mui-disabled': { opacity: 0.4 },
     }}
   >

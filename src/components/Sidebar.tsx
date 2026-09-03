@@ -208,14 +208,14 @@ const Sidebar = () => {
   const drawerWidth = collapsed ? COLLAPSED_WIDTH : EXPANDED_WIDTH;
 
   const activeItemSx = {
-    bgcolor: 'rgba(249,115,22,0.08)',
-    color: '#fb923c',
-    '&:hover': { bgcolor: 'rgba(249,115,22,0.12)' },
+    bgcolor: '#0B2E28',
+    color: '#09BA5B',
+    '&:hover': { bgcolor: '#0B2E28' },
   };
 
   const inactiveItemSx = {
     color: '#a1a1aa',
-    '&:hover': { bgcolor: 'rgba(255,255,255,0.04)', color: '#e4e4e7' },
+    '&:hover': { bgcolor: '#0B2E28', color: '#e4e4e7' },
   };
 
   return (
@@ -226,7 +226,7 @@ const Sidebar = () => {
         flexShrink: 0,
         '& .MuiDrawer-paper': {
           width: drawerWidth,
-          bgcolor: '#0f0f0f',
+          bgcolor: '#03100E',
           borderRight: '1px solid #27272a',
           transition: 'width 200ms ease',
           overflowX: 'hidden',
@@ -248,11 +248,11 @@ const Sidebar = () => {
         }}
       >
         {!collapsed && (
-          <Typography variant="h6" sx={{ fontWeight: 700, color: '#fafafa', fontSize: '1.1rem' }}>
+          <Typography variant="h6" sx={{ fontWeight: 700, color: '#F7F7F5', fontSize: '1.1rem' }}>
             Vinteum
           </Typography>
         )}
-        <IconButton onClick={toggleCollapse} size="small" sx={{ color: '#71717a', '&:hover': { color: '#d4d4d8', bgcolor: '#27272a' } }}>
+        <IconButton onClick={toggleCollapse} size="small" sx={{ color: '#BFBEC2', '&:hover': { color: '#d4d4d8', bgcolor: '#27272a' } }}>
           {collapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
         </IconButton>
       </Box>
@@ -369,8 +369,8 @@ const Sidebar = () => {
                         px: 2,
                         gap: 1,
                         ...(active
-                          ? { color: '#fb923c', bgcolor: 'rgba(249,115,22,0.08)', '&:hover': { bgcolor: 'rgba(249,115,22,0.12)' } }
-                          : { color: '#a1a1aa', '&:hover': { color: '#e4e4e7', bgcolor: 'rgba(255,255,255,0.04)' } }),
+                          ? { color: '#09BA5B', bgcolor: 'rgba(249,115,22,0.08)', '&:hover': { bgcolor: '#0B2E28' } }
+                          : { color: '#a1a1aa', '&:hover': { color: '#e4e4e7', bgcolor: '#0B2E28' } }),
                       }}
                     >
                       <Icon size={15} />
@@ -412,8 +412,8 @@ const Sidebar = () => {
                               px: 2,
                               gap: 1,
                               ...(active
-                                ? { color: '#fb923c', bgcolor: 'rgba(249,115,22,0.08)', '&:hover': { bgcolor: 'rgba(249,115,22,0.12)' } }
-                                : { color: '#a1a1aa', '&:hover': { color: '#e4e4e7', bgcolor: 'rgba(255,255,255,0.04)' } }),
+                                ? { color: '#09BA5B', bgcolor: '#0B2E28', '&:hover': { bgcolor: '#0B2E28' } }
+                                : { color: '#a1a1aa', '&:hover': { color: '#e4e4e7', bgcolor: '#0B2E28' } }),
                             }}
                           >
                             <Icon size={15} />
@@ -447,8 +447,8 @@ const Sidebar = () => {
                         px: 1.5,
                         mb: 0.25,
                         ...(active
-                          ? { color: '#fb923c', bgcolor: 'rgba(249,115,22,0.1)', '&:hover': { bgcolor: 'rgba(249,115,22,0.15)' } }
-                          : { color: '#a1a1aa', '&:hover': { color: '#e4e4e7', bgcolor: 'rgba(255,255,255,0.04)' } }),
+                          ? { color: '#09BA5B', bgcolor: '#0B2E28', '&:hover': { bgcolor: '#0B2E28' } }
+                          : { color: '#a1a1aa', '&:hover': { color: '#e4e4e7', bgcolor: '#0B2E28' } }),
                       }}
                     >
                       <ListItemText
@@ -486,8 +486,8 @@ const Sidebar = () => {
                               px: 1.5,
                               mb: 0.25,
                               ...(active
-                                ? { color: '#fb923c', bgcolor: 'rgba(249,115,22,0.1)', '&:hover': { bgcolor: 'rgba(249,115,22,0.15)' } }
-                                : { color: '#a1a1aa', '&:hover': { color: '#e4e4e7', bgcolor: 'rgba(255,255,255,0.04)' } }),
+                                ? { color: '#09BA5B', bgcolor: '#0B2E28', '&:hover': { bgcolor: '#0B2E28' } }
+                                : { color: '#a1a1aa', '&:hover': { color: '#e4e4e7', bgcolor: '#0B2E28' } }),
                             }}
                           >
                             <ListItemText
@@ -573,8 +573,8 @@ const Sidebar = () => {
                         py: 0.75,
                         px: 2,
                         ...(active
-                          ? { color: '#fb923c', bgcolor: 'rgba(249,115,22,0.08)', '&:hover': { bgcolor: 'rgba(249,115,22,0.12)' } }
-                          : { color: '#a1a1aa', '&:hover': { color: '#e4e4e7', bgcolor: 'rgba(255,255,255,0.04)' } }),
+                          ? { color: '#09BA5B', bgcolor: 'rgba(249,115,22,0.08)', '&:hover': { bgcolor: '#0B2E28' } }
+                          : { color: '#a1a1aa', '&:hover': { color: '#e4e4e7', bgcolor: '#0B2E28' } }),
                       }}
                     >
                       <Typography sx={{ fontSize: '0.8rem', fontWeight: 500 }}>
@@ -602,8 +602,8 @@ const Sidebar = () => {
                         px: 1.5,
                         mb: 0.25,
                         ...(active
-                          ? { color: '#fb923c', bgcolor: 'rgba(249,115,22,0.1)', '&:hover': { bgcolor: 'rgba(249,115,22,0.15)' } }
-                          : { color: '#a1a1aa', '&:hover': { color: '#e4e4e7', bgcolor: 'rgba(255,255,255,0.04)' } }),
+                          ? { color: '#09BA5B', bgcolor: '#0B2E28', '&:hover': { bgcolor: '#0B2E28' } }
+                          : { color: '#a1a1aa', '&:hover': { color: '#e4e4e7', bgcolor: '#0B2E28' } }),
                       }}
                     >
                       <ListItemText
@@ -632,7 +632,7 @@ const Sidebar = () => {
                 px: collapsed ? 0 : 1.5,
                 justifyContent: collapsed ? 'center' : 'flex-start',
                 color: '#d4d4d8',
-                '&:hover': { bgcolor: 'rgba(255,255,255,0.04)' },
+                '&:hover': { bgcolor: '#0B2E28' },
                 mb: 0.5,
               }}
             >
@@ -659,7 +659,7 @@ const Sidebar = () => {
                   </Typography>
                   <Typography
                     variant="caption"
-                    sx={{ color: '#71717a', fontSize: '0.7rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', display: 'block' }}
+                    sx={{ color: '#BFBEC2', fontSize: '0.7rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', display: 'block' }}
                   >
                     {user.role}
                   </Typography>
@@ -678,10 +678,10 @@ const Sidebar = () => {
               py: 1,
               px: collapsed ? 0 : 2,
               justifyContent: collapsed ? 'center' : 'flex-start',
-              color: isAuthenticated ? '#a1a1aa' : '#fb923c',
+              color: isAuthenticated ? '#a1a1aa' : '#09BA5B',
               '&:hover': isAuthenticated
-                ? { color: '#ef4444', bgcolor: 'rgba(239,68,68,0.1)' }
-                : { color: '#fdba74', bgcolor: 'rgba(249,115,22,0.1)' },
+                ? { color: '#09BA5B', bgcolor: '#0B2E28' }
+                : { color: '#09BA5B', bgcolor: '#0B2E28' },
             }}
           >
             {collapsed ? (

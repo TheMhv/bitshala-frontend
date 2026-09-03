@@ -55,13 +55,13 @@ const FellowshipFallback = () => (
   <Box
     sx={{
       minHeight: '100vh',
-      bgcolor: '#000',
+      bgcolor: 'rgba(5, 23, 20, 1)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
     }}
   >
-    <CircularProgress size={28} sx={{ color: '#f97316' }} />
+    <CircularProgress size={28} sx={{ color: '#09BA5B' }} />
   </Box>
 );
 
@@ -166,7 +166,7 @@ const routes = [
       path: '/:cohortId/present/:weekId',
       element: (
         <ProtectedRoute requiredRole={[UserRole.ADMIN, UserRole.TEACHING_ASSISTANT]}>
-          <Suspense fallback={<div style={{ minHeight: '100vh', background: '#000' }} />}>
+          <Suspense fallback={<div style={{ minHeight: '100vh', background: 'rgba(5, 23, 20, 1)' }} />}>
             <GDPresentation />
           </Suspense>
         </ProtectedRoute>
