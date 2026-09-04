@@ -248,9 +248,23 @@ const Sidebar = () => {
         }}
       >
         {!collapsed && (
-          <Typography variant="h6" sx={{ fontWeight: 700, color: '#F7F7F5', fontSize: '1.1rem' }}>
-            Vinteum
-          </Typography>
+          <>
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  px: collapsed ? 1 : 2.5
+                }}
+              >
+              <img
+                  src="/lms_logo.svg"
+                  className="w-full h-full rounded-full"
+                  alt="logo"
+              />
+            </Box>
+          </>
+
         )}
         <IconButton onClick={toggleCollapse} size="small" sx={{ color: '#BFBEC2', '&:hover': { color: '#d4d4d8', bgcolor: '#27272a' } }}>
           {collapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
