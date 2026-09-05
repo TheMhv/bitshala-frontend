@@ -43,7 +43,7 @@ function Home() {
     // sees, with nothing enrolled.
     if (!token && !sessionId) {
       hasRedirected.current = true;
-      navigate('/myDashboard', { replace: true });
+      navigate('/login', { replace: true });
       return;
     }
 

@@ -40,10 +40,10 @@ export const useAuth = (): AuthState => {
     // Land on the public dashboard rather than a login screen — signing out
     // drops you to the preview, not out of the app. `replace` because the page
     // being left is now unreachable; you can't go back to being signed in.
-    navigate('/myDashboard', { replace: true });
+    navigate('/login', { replace: true });
   }, [navigate]);
 
-  const openLogin = useCallback(() => authStore.openLoginModal(), []);
+  const openLogin = useCallback(() => navigate("/login"), []);
   const closeLogin = useCallback(() => authStore.closeLoginModal(), []);
 
   return { isAuthenticated, token, login, logout, isLoginModalOpen, openLogin, closeLogin };

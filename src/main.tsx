@@ -16,7 +16,7 @@ import 'virtual:uno.css';
 
 // Route components are lazy-loaded so each page ships as its own chunk and is
 // fetched on demand, keeping the initial bundle small. Suspense fallback lives in Layout.
-const LoginRedirect = lazy(() => import('./pages/LoginRedirect.tsx'));
+const Login = lazy(() => import('./pages/Login.tsx'));
 const Home = lazy(() => import('./pages/Home.tsx'));
 const TableView = lazy(() => import('./pages/TableView.tsx'));
 const CohortSelection = lazy(() => import('./pages/CohortSelection.tsx').then((m) => ({ default: m.CohortSelection })));
@@ -74,7 +74,7 @@ const routes = [
     // Kept for old links — redirects to the dashboard with the sign-in modal
     // open. Signing in itself happens in that modal, not on a page.
     path: '/login',
-    element: <Layout><LoginRedirect /></Layout>,
+    element: <Login />,
   },
   {
     // OAuth callback target; redirects everyone else to their entry screen.
